@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{0271d8fb-a266-4c5e-8822-69b557064ed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{5c896ef2-4dff-4f4a-992e-9252ea65a764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore">
+      <UniqueIdentifier>{ffa474ac-89fb-4981-9a98-7b13e89289af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Statistics">
+      <UniqueIdentifier>{7f9202e4-d4d4-4022-b7f3-35ba7f17200d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Containers">
+      <UniqueIdentifier>{4c3f6b50-0c23-4ac6-830a-f25b502e5021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Events">
+      <UniqueIdentifier>{02cf2677-4d67-4252-a5b0-f19b0688deea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Object">
+      <UniqueIdentifier>{32b6e23f-f1f7-4410-86bc-3ebfb98f6adc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Material">
+      <UniqueIdentifier>{376c3465-1354-4ccf-bafe-db8a6f874d60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Memory">
+      <UniqueIdentifier>{be10bfe3-4019-4e39-b0d4-cc44fe0ce180}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Material\Shaders">
+      <UniqueIdentifier>{94fbe36c-ea19-432a-be5b-7693d76623be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Material\Texture">
+      <UniqueIdentifier>{973ad405-933e-4f6e-a2e9-81bb21bef334}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Renderer\Material\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderEffect.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderParameter.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Texture.h">
+      <Filter>Renderer\Material\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderEffect.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderParameter.h" />
+    <ClInclude Include="ShaderManager.h" />
+  </ItemGroup>
+</Project>
