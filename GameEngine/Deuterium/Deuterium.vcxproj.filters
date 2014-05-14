@@ -19,9 +19,6 @@
     <Filter Include="Events">
       <UniqueIdentifier>{02cf2677-4d67-4252-a5b0-f19b0688deea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Renderer\Object">
-      <UniqueIdentifier>{32b6e23f-f1f7-4410-86bc-3ebfb98f6adc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Renderer\Material">
       <UniqueIdentifier>{376c3465-1354-4ccf-bafe-db8a6f874d60}</UniqueIdentifier>
     </Filter>
@@ -34,25 +31,209 @@
     <Filter Include="Renderer\Material\Texture">
       <UniqueIdentifier>{973ad405-933e-4f6e-a2e9-81bb21bef334}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Statistics\GPU">
+      <UniqueIdentifier>{0dfe78ef-66ef-4ce9-8486-b3cb6291e724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debugger">
+      <UniqueIdentifier>{5fe93acf-19ed-475b-89e2-8d4694e94911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\RenderTarget">
+      <UniqueIdentifier>{97dbec25-96da-4969-bcfc-db04fea7df1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Containers\RenderingContainers">
+      <UniqueIdentifier>{b6cc28fa-50dd-4e36-afd8-fe11d7af0570}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{76ab8756-3eec-476d-9fce-8b659feca489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Object">
+      <UniqueIdentifier>{32b6e23f-f1f7-4410-86bc-3ebfb98f6adc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{8812452a-b51d-40f2-9f19-277f1fa861db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Renderer\Material\Texture</Filter>
+    <ClCompile Include="EventListener.cpp">
+      <Filter>Events</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderEffect.cpp">
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="index_buffer_container.cpp">
+      <Filter>Containers\RenderingContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex_buffer_container.cpp">
+      <Filter>Containers\RenderingContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="game_core.cpp">
+      <Filter>GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="game_core_event.cpp">
+      <Filter>GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="game_core_init.cpp">
+      <Filter>GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="game_core_render.cpp">
+      <Filter>GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="game_core_update.cpp">
+      <Filter>GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_component.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderParameter.cpp" />
-    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="shader_effect.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_manager.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_parameter.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Renderer\Material\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="memory_manager.cpp">
+      <Filter>Renderer\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh.cpp">
+      <Filter>Scene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh_manager.cpp">
+      <Filter>Scene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="render_target.cpp">
+      <Filter>Renderer\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="profiler.cpp">
+      <Filter>Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="file_stream.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="string_helper.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer_init.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer_render.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer_update.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_request.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="viewport.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="primitive_type_helper.cpp" />
+    <ClCompile Include="shader_parameter_DA.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Texture.h">
-      <Filter>Renderer\Material\Texture</Filter>
+    <ClInclude Include="EventListener.h">
+      <Filter>Events</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderEffect.h">
+    <ClInclude Include="EventManager.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer_container.h">
+      <Filter>Containers\RenderingContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="index_buffer_container.h">
+      <Filter>Containers\RenderingContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_buffer_container.h">
+      <Filter>Containers\RenderingContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="object_container.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="game_core.h">
+      <Filter>GameCore</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_component.h">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderParameter.h" />
-    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="shader_effect.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_manager.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_parameter.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Renderer\Material\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="memory_manager.h">
+      <Filter>Renderer\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Scene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh_manager.h">
+      <Filter>Scene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="render_target.h">
+      <Filter>Renderer\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler.h">
+      <Filter>Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="file_stream.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="global_data.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="string_helper.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="viewport.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="primitive_type_handler.h" />
+    <ClInclude Include="shader_parameter_DA.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

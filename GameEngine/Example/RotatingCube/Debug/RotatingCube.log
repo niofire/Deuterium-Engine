@@ -1,0 +1,11 @@
+﻿Build started 2014-05-13 11:43:04 AM.
+     1>Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\RotatingCube.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\Debug\RotatingCube.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\\Deuterium\Debug_LIB\ Deuterium.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\Debug\RotatingCube.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\Debug\RotatingCube.lib" /MACHINE:X86 Debug\client_game_core.obj
+         Debug\main.obj
+         RotatingCube.vcxproj -> C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\Debug\RotatingCube.exe
+     1>Done Building Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\RotatingCube.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.13
