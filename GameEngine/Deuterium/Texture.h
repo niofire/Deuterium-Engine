@@ -2,14 +2,16 @@
 #include "global_data.h"
 #include "3rdParty/LodePNG/LodePNG.h"
 
-class Texture_L
+namespace deuterium
+{
+class Texture
 {
 public:
 	//--------------------------------------------------------------------
 	//					Constructor / Destructor
 	//--------------------------------------------------------------------
-	Texture_L();
-	virtual ~Texture_L();
+	Texture();
+	virtual ~Texture();
 
 	bool				LoadDDSTexture(char* file_path);
 	bool				LoadPngTexture(char* file_path);
@@ -21,3 +23,4 @@ private:
 
 
 };
+}

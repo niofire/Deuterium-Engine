@@ -12,18 +12,18 @@
 #include "mesh_manager.h"
 #include "shader_manager.h"
 #include "shader.h"
-#include "primitive_type_handler.h"
+#include "primitive_type_helper.h"
 #include "math.h"
 #include "Camera.h"
 #include <vector>
 
 
-#define ADD_DRAWREQUEST(x)	gData.RendererPtr->add_draw_request(x)
+#define ADD_DRAWREQUEST(x)	deuterium::g_data._renderer_ptr->add_draw_request(x)
 
 namespace deuterium
 {
 	
-class ShaderParameterAndValueArray;
+	class ShaderParameterDA;
 
 struct DrawRequest
 {
@@ -31,7 +31,7 @@ struct DrawRequest
 	U32			MeshId;
 	S32			ZValue;
 	bool		IsTransparent;
-	ShaderParameterAndValueArray* ShaderParamArray;
+	ShaderParameterDA* ShaderParamArray;
 };
 
 class Renderer
@@ -67,7 +67,6 @@ public:
 	//--------------------------------------------------------
 	Mat4x4			perspective_projection_matrix(float left, float right, float bottom, float top, float near, float far);
 	Mat4x4			perspective_projection_matrix(float FOV, float AspectRatio, float zNear, float zFar);
-
 	//-------------------------------------------------------
 	//				RenderState functions
 	//-------------------------------------------------------

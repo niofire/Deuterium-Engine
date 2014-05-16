@@ -1,14 +1,15 @@
-#include "primitive_type_handler.h"
+#include "primitive_type_helper.h"
 
 namespace deuterium
 {
 
 	
 	bool PrimitiveTypeHelper::is_instantiated = false;
+	PrimitiveTypeHelper::TypeData PrimitiveTypeHelper::_type_info[DEUTERIUM_UNKNOWN];
 
 void PrimitiveTypeHelper::instantiate_handler()
 {
-	if(!PrimitiveTypeHelper::is_instantiated)
+	if(PrimitiveTypeHelper::is_instantiated)
 		return;
 
 	
@@ -86,6 +87,12 @@ U32 PrimitiveTypeHelper::num_of_values(DeuteriumPrimitiveType i_Type)
 	if(i_Type != DEUTERIUM_UNKNOWN)
 		return _type_info[i_Type]._num_values;
 	return 0;
+}
+
+U32 PrimitiveTypeHelper::size_of(DeuteriumPrimitiveType type)
+{
+	return _type_info[type]._size_of_primitive;
+
 }
 
 bool	PrimitiveTypeHelper::is_double_derived(DeuteriumPrimitiveType i_Type)

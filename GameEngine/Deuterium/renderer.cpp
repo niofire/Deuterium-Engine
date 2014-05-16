@@ -2,10 +2,6 @@
 
 #if defined(DEUTERIUM_PC)
 #include "renderer.h"
-#pragma comment(lib, "3rdParty/SDL2/lib/SDL2main.lib")
-#pragma comment(lib, "3rdParty/SDL2/lib/SDL2.lib")
-#pragma comment(lib, "3rdParty/Glew/lib/glew32.lib")
-#pragma comment(lib, "opengl32.lib")
 #endif
 
 namespace deuterium
@@ -62,8 +58,8 @@ Mat4x4 Renderer::perspective_projection_matrix(float left, float right, float bo
 Mat4x4 Renderer::perspective_projection_matrix(float FOV, float AspectRatio, float zNear, float zFar)
 {
 	//Convert FOV to screen size
-	float degToRad = 3.141589f * 2.0f / 360.0f;
-	float FovRad = FOV * degToRad;
+	float deg_to_rad = 3.141589f * 2.0f / 360.0f;
+	float FovRad = FOV * deg_to_rad;
 	float size = 1.0f/tan(FovRad);
 
 	//Call Perspective Matrix func

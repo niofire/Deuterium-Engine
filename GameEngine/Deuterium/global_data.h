@@ -7,6 +7,10 @@ typedef unsigned	__int16	U16;
 typedef				__int16 S16;
 typedef unsigned	__int8	U8;
 typedef				__int8	S8;
+#pragma comment(lib, "SDL2/lib/SDL2main.lib")
+#pragma comment(lib, "SDL2/lib/SDL2.lib")
+#pragma comment(lib, "Glew/lib/glew32.lib")
+#pragma comment(lib, "opengl32.lib")
 #elif defined(EMSCRIPTEN)
 #include <stdint.h>
 #include <emscripten.h>
@@ -36,7 +40,7 @@ namespace deuterium
 	class Renderer;
 	class MeshManager;
 	class ShaderManager;
-	class PrimtiveTypeHelper;
+	class PrimitiveTypeHelper;
 	class EventManager;
 
 
@@ -76,14 +80,14 @@ namespace deuterium
 //					GlobalData class
 //------------------------------------------------------------------------
 
-struct GlobalData_L
+struct GlobalData
 {
-	GameCore*			_game_core_ptr;
-	MeshManager*		_mesh_manager_ptr;
-	Renderer*			_renderer_ptr;
-	ShaderManager*		_shader_manager_ptr;
-	PrimtiveTypeHelper*	_primitive_type_helper;
-	EventManager*		_event_manager_ptr;
+public:	
+	GameCore*				_game_core_ptr;
+	MeshManager*			_mesh_manager_ptr;
+	Renderer*				_renderer_ptr;
+	ShaderManager*			_shader_manager_ptr;
+	EventManager*			_event_manager_ptr;
 };
-GlobalData_L gData;
+	extern GlobalData g_data;
 }

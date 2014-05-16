@@ -1,12 +1,13 @@
+#pragma once
 #include <string>
 #include "global_data.h"
+
 
 namespace deuterium
 {
 class ShaderParameter
 {
 public:
-
 	//----------------------------------------------------
 	//				struct/enum
 	//----------------------------------------------------
@@ -27,7 +28,7 @@ public:
 		SemanticId				_id;
 		DeuteriumPrimitiveType	_type;
 		void*					_value;
-		U32						_uniform_location;
+		S32						_uniform_location;
 	};
 
 
@@ -35,22 +36,21 @@ public:
 	//				Constructor / destructor
 	//----------------------------------------------------
 	ShaderParameter(std::string i_ParameterType, std::string i_ParameterName,GLint i_UniformLocation);
+	ShaderParameter(const ShaderParameter& param);
 	ShaderParameter();
 	~ShaderParameter();
 
-	void						UpdateParameter(void* i_Value);
-	void						UpdateProgramParameter();
+	void						update_parameter(void* i_Value);
+	void						update_program_parameter();
 	//----------------------------------------------------
 	//				Accessors
 	//----------------------------------------------------
-	const char*					GetParameterName() {return _parameter_data._name.c_str();}
-	SemanticId					GetShaderParameterId() {return _parameter_data._id;}
-	DeuteriumPrimitiveType					GetParameterType()	{return _parameter_data._type;}
-	void*						GetParameterValue()	{return	_parameter_data._value;}
-	bool						IsParameterInitialized()	{return _is_initialized;}
+	const char*					name() {return _parameter_data._name.c_str();}
+	SemanticId					semantic_id() {return _parameter_data._id;}
+	DeuteriumPrimitiveType		type()	{return _parameter_data._type;}
+	void*						value()	{return	_parameter_data._value;}
 
 private:
-	bool				_is_initialized;
 	ParameterData		_parameter_data;
 };
 }

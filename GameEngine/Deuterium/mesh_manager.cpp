@@ -22,21 +22,22 @@ Mesh&		MeshManager::add_existing_mesh(U32& o_Id, char* i_sMeshName, Mesh& i_Mesh
 	return i_Mesh;
 }
 
-Mesh&		MeshManager::add_new_mesh( char* i_sMeshName)
-{
-	U32 tempVal = 0;
-
-	U32 Id = _mesh_container.add(MeshData(Mesh(),tempVal,i_sMeshName));
-	_mesh_container.get_at(Id)->set_id(Id);
-	return _mesh_container.get_at(Id)->mesh();
-}
-
 Mesh&		MeshManager::add_new_mesh(U32& o_Id, char* i_sMeshName)
 {
 	o_Id = _mesh_container.add(MeshData(Mesh(),0,i_sMeshName));
 	_mesh_container.get_at(o_Id)->set_id(o_Id);
 	return _mesh_container.get_at(o_Id)->mesh();
 }
+
+Mesh&		MeshManager::add_and_load_new_mesh(U32& o_Id, char* i_sMeshName, char* mesh_file_name)
+{
+	o_Id = _mesh_container.add(MeshData(Mesh(),0,i_sMeshName));
+	
+	_mesh_container.get_at(o_Id)->set_id(o_Id);
+	_mesh_container.get_at(o_Id)->mesh().load_mesh(mesh_file_name);
+	return _mesh_container.get_at(o_Id)->mesh();
+}
+
 
 void	MeshManager::remove_mesh(const U32& i_Id)
 {

@@ -106,8 +106,8 @@ void Camera::set_camera_orientation(float x, float y, float z)
 Vec3f Camera::euclidean_camera_position()
 {
 	//convert the position in spherical coordinates
-	float phi = MathHelper_L::DegToRad(_camera_data._spherical_camera_position.x);
-	float theta = MathHelper_L::DegToRad(_camera_data._spherical_camera_position.y + 90);
+	float phi = MathHelper_L::deg_to_rad(_camera_data._spherical_camera_position.x);
+	float theta = MathHelper_L::deg_to_rad(_camera_data._spherical_camera_position.y + 90);
     
 	//Spherical transform => 
 	//x = rsin(theta)cos(phi)
@@ -126,8 +126,8 @@ Vec3f Camera::euclidean_camera_position()
 void Camera::resolve_up_direction()
 {
 		//convert the position in spherical coordinates
-	float phi = MathHelper_L::DegToRad(_camera_data._spherical_camera_position.x);
-	float theta = MathHelper_L::DegToRad(_camera_data._spherical_camera_position.y);
+	float phi = MathHelper_L::deg_to_rad(_camera_data._spherical_camera_position.x);
+	float theta = MathHelper_L::deg_to_rad(_camera_data._spherical_camera_position.y);
     
 	//Spherical transform => 
 	//x = rsin(theta)cos(phi)
@@ -146,30 +146,32 @@ void Camera::resolve_up_direction()
 
 void Camera::update_lookat_matrix()
 {
+	Vec3f l_CameraPosition = euclidean_camera_position();
+
+
 	//Resolve the Up direction
 	resolve_up_direction();
 
-	//Get the camera Position
-	Vec3f l_CameraPosition = euclidean_camera_position();
+	
 	
 	//Get the camera direction, Target - position
 	Vec3f l_CameraDirection = (_camera_data._camera_target_position - l_CameraPosition).GetNormalized();
 
 	//Get right direction, camDirection  X up
-	Vec3f l_RightDirection = MathHelper_L::CrossProduct(l_CameraDirection, _camera_data._up_direction).GetNormalized();
+	Vec3f l_RightDirection = MathHelper_L::cross_product(l_CameraDirection, _camera_data._up_direction).GetNormalized();
 
 	//Get the up direction, camDirection X right
-	Vec3f l__up_direction =  (MathHelper_L::CrossProduct(l_CameraDirection,l_RightDirection)).GetNormalized();
+	Vec3f l_up_direction =  -(MathHelper_L::cross_product(l_CameraDirection,l_RightDirection)).GetNormalized();
 
 
 	//Fill lookat matrix
 	_lookat_matrix[0] = Vec4f(l_RightDirection,0);
-	_lookat_matrix[1] = Vec4f(l__up_direction,0);
+	_lookat_matrix[1] = Vec4f(l_up_direction,0);
 	_lookat_matrix[2] = Vec4f(-l_CameraDirection,0);
 	_lookat_matrix[3] = Vec4f(0,0,0,1);
 	_lookat_matrix.Transpose();
 
 	//_lookat_matrix.SetIdentity();
-	MathHelper_L::FastTranslate(_lookat_matrix,-l_CameraPosition);
+	MathHelper_L::fast_translate(_lookat_matrix,-l_CameraPosition);
 }
 }

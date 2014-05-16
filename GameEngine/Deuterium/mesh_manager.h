@@ -25,7 +25,7 @@ public:
 	//----------------------------------------------------------------
 	Mesh&					add_existing_mesh(U32& o_MeshId, char* i_sMeshName, Mesh& i_Mesh);
 	Mesh&					add_new_mesh(U32& o_Id,char* i_sMeshName);
-	Mesh&					add_new_mesh(char* i_sMeshName);
+	Mesh&					add_and_load_new_mesh(U32& o_id, char* mesh_name, char* mesh_file_path);
 	void					remove_mesh(const U32& Id);
 	MeshData*				mesh_data_by_name(const char* i_sMeshName);
 	Mesh*					mesh_by_name(const char* i_sMeshName);

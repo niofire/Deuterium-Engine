@@ -1,6 +1,7 @@
 #pragma once
 #include "global_data.h"
 #include <stdlib.h>
+#include "primitive_type_helper.h"
 namespace deuterium
 {
 class MemoryManager

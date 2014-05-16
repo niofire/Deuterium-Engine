@@ -2,10 +2,12 @@
 
 #include "object_container.h"
 #include "shader_parameter.h"
+#include "string_helper.h"
+#include "shader_manager.h"
 
 namespace deuterium
 {
-class shader;
+class Shader;
 
 class ShaderParameterDA
 {
@@ -25,9 +27,9 @@ public:
 	//				core functions
 	//-------------------------------------------------
 	void	update_shader_parameter_declaration(U32 i_ShaderId);
-	void	update_parameter(char* i_Name, void* value);
+	void	dirty_parameter(char* i_Name, void* value);
+	void	clean_parameters(U32 shader_id);
 	void	update_parameter(ShaderParameter::SemanticId	i_ShaderId, void* value);
-
 	void	update_shader();
 
 	

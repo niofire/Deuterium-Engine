@@ -17,7 +17,7 @@ GameCore::~GameCore()
 
 void GameCore::reset()
 {
-	//gData._renderer_ptr->GetDebugCamera().ResetCameraPosition();
+	//g_data._renderer_ptr->GetDebugCamera().ResetCameraPosition();
 }
 
 void GameCore::exit()
@@ -28,20 +28,21 @@ void GameCore::exit()
 void GameCore::main_loop()
 {
 	//First process events
-	gData._game_core_ptr->on_event();
+
+	g_data._game_core_ptr->on_event();
 
 	//The Update is called
-	gData._game_core_ptr->update();
+	g_data._game_core_ptr->update();
 
 	//Finally, render
-	gData._game_core_ptr->render();
+	g_data._game_core_ptr->render();
 }
 
 
 int GameCore::execute(GameCore* gPtr)
 {
-	if(!s_gEngine)
-		s_gEngine = gPtr;
+	if(!s_game_core)
+		s_game_core = gPtr;
 	else
 		return 1;
 
@@ -52,7 +53,7 @@ int GameCore::execute(GameCore* gPtr)
 	);
 	#endif
 
-	s_gEngine->init();
+	s_game_core->init();
 
 	//Javascript tracing
 	#ifdef EMSCRIPTEN
@@ -65,16 +66,16 @@ int GameCore::execute(GameCore* gPtr)
 	//---------------------------------------------------
 	//			Native App entry point
 	//---------------------------------------------------
-#ifdef _LODEES_PC_
-	while(s_gEngine->IsRunning())
-		s_gEngine->MainLoop();
+#ifdef DEUTERIUM_PC
+	while(s_game_core->is_running())
+		s_game_core->main_loop();
 #endif
 
 	//---------------------------------------------------
 	//			Web Browser entry point
 	//---------------------------------------------------
 #ifdef EMSCRIPTEN
-	emscripten_set_main_loop(s_gEngine->MainLoop,60,true);
+	emscripten_set_main_loop(s_game_core->MainLoop,60,true);
 #endif
 
 	return 0;

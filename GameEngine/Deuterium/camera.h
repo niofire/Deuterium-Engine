@@ -1,5 +1,5 @@
 #pragma once
-#include "math.h"
+#include "deuterium_math.h"
 #include "global_data.h"
 
 namespace deuterium
@@ -54,7 +54,7 @@ class Camera
 		const Vec3f			spherical_camera_position() { return _camera_data._spherical_camera_position;}
 		const Vec3f			camera_target_position()	 { return _camera_data._camera_target_position;}
 		const Vec3f			up_direction()	 { return _camera_data._up_direction;}
-		Mat4x4				camera_lookat_matrix() { return _lookat_matrix;}
+		Mat4x4				to_viewspace_matrix() { return _lookat_matrix;}
 		const char*			name();
 		void				set_name(char* i_CameraName);
 

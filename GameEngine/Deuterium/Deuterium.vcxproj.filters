@@ -52,14 +52,14 @@
     <Filter Include="Physics">
       <UniqueIdentifier>{8812452a-b51d-40f2-9f19-277f1fa861db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdParty">
+      <UniqueIdentifier>{e6ce35f9-dc2a-45c2-aa76-d56cff74e9ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Light">
+      <UniqueIdentifier>{0be22681-d093-4d3d-8fce-f33def1dfb83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EventListener.cpp">
-      <Filter>Events</Filter>
-    </ClCompile>
-    <ClCompile Include="EventManager.cpp">
-      <Filter>Events</Filter>
-    </ClCompile>
     <ClCompile Include="index_buffer_container.cpp">
       <Filter>Containers\RenderingContainers</Filter>
     </ClCompile>
@@ -117,9 +117,6 @@
     <ClCompile Include="file_stream.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
-    <ClCompile Include="math.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
     <ClCompile Include="string_helper.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
@@ -151,14 +148,26 @@
     <ClCompile Include="shader_parameter_DA.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
+    <ClCompile Include="event_listener.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="event_manager.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\LodePNG\LodePNG.cpp">
+      <Filter>3rdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="model_space_transform.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="deuterium_math.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="node.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EventListener.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-    <ClInclude Include="EventManager.h">
-      <Filter>Events</Filter>
-    </ClInclude>
     <ClInclude Include="buffer_container.h">
       <Filter>Containers\RenderingContainers</Filter>
     </ClInclude>
@@ -213,9 +222,6 @@
     <ClInclude Include="global_data.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="math.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
     <ClInclude Include="string_helper.h">
       <Filter>Utility</Filter>
     </ClInclude>
@@ -231,9 +237,27 @@
     <ClInclude Include="shader.h">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="primitive_type_handler.h" />
     <ClInclude Include="shader_parameter_DA.h">
       <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="primitive_type_helper.h" />
+    <ClInclude Include="event_listener.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="event_manager.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\LodePNG\LodePNG.h">
+      <Filter>3rdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="model_space_transform.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="deuterium_math.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="node.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include "mesh.h"
-#include "math.h"
+#include "deuterium_math.h"
 
 #include <stack>
 #include <iostream>

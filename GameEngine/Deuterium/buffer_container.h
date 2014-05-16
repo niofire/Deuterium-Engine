@@ -8,8 +8,8 @@ class BufferContainer
 {
 
 public:
-					BufferContainer();
-	virtual			~BufferContainer();
+	BufferContainer(){}
+	virtual			~BufferContainer(){}
 
 	virtual void				begin_render() = 0;
 	virtual void				end_render() = 0;

@@ -1,7 +1,6 @@
 #include "shader.h"
 #include <fstream>
 #include <iostream>
-#include "string_helper.h"
 #include "shader_parameter_DA.h"
 
 namespace deuterium
@@ -41,9 +40,10 @@ void 	Shader::compile()
 		_shader_handle = glCreateProgram();
 
 		std::cout << "Compiling Shader: " << _shader_name << std::endl;
-		for(int i = 0; i < _shader_component_list.size(); ++i)
+		for(U32 i = 0; i < _shader_component_list.size(); ++i)
 		{
 			_shader_component_list[i].compile();
+
 			glAttachShader(_shader_handle,_shader_component_list[i].component_handle());
 		}
 
@@ -56,54 +56,29 @@ void 	Shader::compile()
 
 }
 
-void	Shader::update_parameter(ShaderParameter::SemanticId i_Param,void* i_Value)
+void	Shader::update_parameter(const char* i_ParamName, void* i_Value)
 {
-	m_ShaderParameterList.Iterator_Reset();
+	_shader_parameter_list.reset_iterator();
 	ShaderParameter* l_ShaderParameter;
-	while(l_ShaderParameter = m_ShaderParameterList.Iterator_Next())
+	while(l_ShaderParameter = _shader_parameter_list.iterator_next())
 	{
-		if(l_ShaderParameter->GetShaderParameterId() == i_Param)
+		if(StringHelper::is_identical_string(l_ShaderParameter->name(),i_ParamName))
 		{
-			l_ShaderParameter->UpdateParameter(i_Value);
-			return;
+			l_ShaderParameter->update_parameter(i_Value);
 		}
 	}
 }
 
-void	Shader::update_parameter(char* i_ParamName, void* i_Value)
-{
-	m_ShaderParameterList.Iterator_Reset();
-	ShaderParameter* l_ShaderParameter;
-	while(l_ShaderParameter = m_ShaderParameterList.Iterator_Next())
-	{
-		if(StringHelper_L::IsIdenticalString(l_ShaderParameter->GetParameterName(),i_ParamName))
-		{
-			l_ShaderParameter->UpdateParameter(i_Value);
-		}
-	}
-}
 
-void	Shader::update_parameter(ShaderParameterAndValueArray_L* i_ShaderParamAndValueArrayPtr)
-{
-	i_ShaderParamAndValueArrayPtr->UpdateShader();
-}
-
-
-void	Shader::bind_texture_to_sampler(char* i_ParamName, Texture_L* i_Texture)
+void	Shader::bind_texture_to_sampler(char* i_ParamName, Texture* i_Texture)
 {
 	glActiveTexture(GL_TEXTURE0 + _number_of_textures_in_pass);
-	glBindTexture(GL_TEXTURE_2D,i_Texture->GetTextureHandle());
-	UpdateParameter(i_ParamName, &_number_of_textures_in_pass);
+	glBindTexture(GL_TEXTURE_2D,i_Texture->texture_handle());
+	update_parameter(i_ParamName, &_number_of_textures_in_pass);
 	_number_of_textures_in_pass++;
 }
 
-void Shader::bind_texture_to_sampler(ShaderParameter::SemanticId i_Param, Texture_L* i_Texture)
-{
-	glActiveTexture(GL_TEXTURE0 + _number_of_textures_in_pass);
-	glBindTexture(GL_TEXTURE_2D,i_Texture->GetTextureHandle());
-	UpdateParameter(i_Param, &_number_of_textures_in_pass);
-	_number_of_textures_in_pass++;
-}
+
 
 void Shader::update_shader_attribute_binding()
 {
@@ -121,35 +96,40 @@ void Shader::update_shader_attribute_binding()
 	glBindAttribLocation(_shader_handle,11,"texcoord6");
 	glBindAttribLocation(_shader_handle,11,"texcoord7");
 }
+
+void Shader::set_shader_attribute_binding(U32 index, char* attribute_name)
+{
+	glBindAttribLocation(_shader_handle,index,attribute_name);
+}
 void Shader::update_shader_parameter_declaration()
 {
 
-	//Parse through all active shaders
+	//Parse through all active shader components
 	for(U32 i = 0 ;i < _shader_component_list.size(); ++i)
 	{
 		//Parse through content of shader file
-		for(U32 j = 0; j < _shader_component_list[i].GetComponentContent().size(); ++j)
+		for(U32 j = 0; j < _shader_component_list[i].component_content().size(); ++j)
 		{
-			std::string l_CurrentString = _shader_component_list[i].GetComponentContent()[j];
+			std::string l_CurrentString = _shader_component_list[i].component_content()[j];
 
 			//if string contains a uniform
 			if(l_CurrentString.find("uniform") != std::string::npos)
 			{
 				//string containing uniform type
 				std::string l_UniformTypeString = l_CurrentString.substr(l_CurrentString.find("uniform") + 7);
-				StringHelper_L::TrimFront(l_UniformTypeString);
+				StringHelper::trim_front(l_UniformTypeString);
 				l_UniformTypeString = l_UniformTypeString.substr(0,l_UniformTypeString.find(" "));
-				StringHelper_L::Trim(l_UniformTypeString);
+				StringHelper::trim(l_UniformTypeString);
 
 				//string containing uniform name
 				std::string l_UniformNameString = l_CurrentString.substr(l_CurrentString.find("uniform") + 7);
-				StringHelper_L::TrimFront(l_UniformNameString);
+				StringHelper::trim_front(l_UniformNameString);
 				l_UniformNameString = l_UniformNameString.substr(l_UniformNameString.find(" "));
 				l_UniformNameString = l_UniformNameString.substr(0,l_UniformNameString.find(";"));
-				StringHelper_L::Trim(l_UniformNameString);
+				StringHelper::trim(l_UniformNameString);
 
 				//add ShaderParameter to list
-				m_ShaderParameterList.AddObject(ShaderParameter(l_UniformTypeString,l_UniformNameString,glGetUniformLocation(_shader_handle,l_UniformNameString.c_str())));
+				_shader_parameter_list.add(ShaderParameter(l_UniformTypeString,l_UniformNameString,glGetUniformLocation(_shader_handle,l_UniformNameString.c_str())));
 
 			}
 
@@ -157,7 +137,7 @@ void Shader::update_shader_parameter_declaration()
 	}
 
 }
-void Shader::update_shader_parameters()
+void Shader::bind_current_parameters()
 {
 
 	glUseProgram(_shader_handle);
@@ -166,7 +146,7 @@ void Shader::update_shader_parameters()
 	ShaderParameter* l_ShaderParameter;
 	while( l_ShaderParameter = _shader_parameter_list.iterator_next())
 	{
-		l_ShaderParameter->UpdateProgramParameter();
+		l_ShaderParameter->update_program_parameter();
 	}
 	glUseProgram(0);
 }
@@ -183,3 +163,4 @@ void Shader::end_render()
 	_number_of_textures_in_pass = 0;
 }
 }
+

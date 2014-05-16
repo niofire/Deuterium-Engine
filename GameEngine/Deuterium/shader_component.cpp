@@ -34,7 +34,7 @@ void ShaderComponent::compile()
 	//Get the shader code and compile it
 	const char* l_sShaderContent = l_shaderContent.c_str();
 	int length = strlen(l_sShaderContent);
-	GLuint _component_handle = glCreateShader(_shader_type);
+	_component_handle = glCreateShader(_shader_type);
 	glShaderSource(_component_handle,1, &l_sShaderContent,&length);
 	glCompileShader(_component_handle);
 

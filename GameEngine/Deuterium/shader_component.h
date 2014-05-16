@@ -31,7 +31,7 @@ private:
 	char* _shader_filename;
 	GLenum _shader_type;
 	bool	_is_compiled;
-	GLuint	_component_handle;
+	U32	_component_handle;
 
 };
 }

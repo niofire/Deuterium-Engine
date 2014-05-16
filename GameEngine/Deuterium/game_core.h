@@ -58,7 +58,7 @@ protected:
 	//---------------------------------------------------
 	
 	//static pointer to GameEngine instance used
-	static GameCore* s_gEngine;
+	static GameCore* s_game_core;
 
 	//---------------------------------------------------
 	//				Member Variable Declaration
@@ -72,8 +72,6 @@ protected:
 	//				Test variables
 	//---------------------------------------------------
 	//ShaderParameterAndValueArray_L m_sValues;
-	U32 ShaderId;
-	Texture* texture;
 };
 }
 

@@ -6,18 +6,19 @@
 #define FOURCC_DXT1 0x31545844 // Equivalent to "DXT1" in ASCII
 #define FOURCC_DXT3 0x33545844 // Equivalent to "DXT3" in ASCII
 #define FOURCC_DXT5 0x35545844 // Equivalent to "DXT5" in ASCII
-
-Texture_L::Texture_L()
+namespace deuterium
+{
+Texture::Texture()
 {
 	this->_texture_handle = 0;
 }
 
-Texture_L::~Texture_L()
+Texture::~Texture()
 {
-	glDeleteTextures(1,&_texture_handle);
+	//glDeleteTextures(1,&_texture_handle);
 }
 
-bool Texture_L::LoadPngTexture(char* i_FilePath)
+bool Texture::LoadPngTexture(char* i_FilePath)
 {
   std::vector<unsigned char> image; //the raw pixels
   unsigned int width, height;
@@ -26,7 +27,8 @@ bool Texture_L::LoadPngTexture(char* i_FilePath)
   unsigned int error = lodepng::decode(image, width, height, i_FilePath);
 
   //if there's an error, display it
-  if(error) std::cerr << "decoder error " << error << ": " << lodepng_error_text(error) << std::endl;
+  if(error)
+	  std::cerr << "decoder error " << error << ": " << lodepng_error_text(error) << std::endl;
 
   // Create one OpenGL texture
   if(_texture_handle == 0)
@@ -51,7 +53,7 @@ bool Texture_L::LoadPngTexture(char* i_FilePath)
 
 
 
-bool Texture_L::LoadDDSTexture(char* i_FilePath)
+bool Texture::LoadDDSTexture(char* i_FilePath)
 {
 	unsigned char header[124];
 
@@ -136,3 +138,5 @@ bool Texture_L::LoadDDSTexture(char* i_FilePath)
 }
 
 
+
+}

@@ -1,6 +1,6 @@
 #include <iostream>
-
-int main()
+#include "client_game_core.h"
+int main(int argc, char* argv[])
 {
-	return 0;
+	return ClientGameCore::execute(new ClientGameCore());
 }

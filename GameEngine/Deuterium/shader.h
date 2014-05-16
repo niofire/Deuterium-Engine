@@ -12,10 +12,11 @@
 #include "object_container.h"
 #include "shader_parameter.h"
 #include "shader_component.h"
+#include "string_helper.h"
 
 namespace deuterium
 {
-class ShaderParameterAndValueArray_L;
+	class ShaderParameterDA;
 //---------------------------------------------------------------
 //						Shader class definition
 //---------------------------------------------------------------
@@ -73,14 +74,12 @@ public:
 		void					clean_dirty_parameter();
 			
 		//Dirties a ShaderParameter by updating its value.
-		void					update_parameter(ShaderParameter::SemanticId i_Param,void* i_Value);
-		void					update_parameter(char* i_ParamName, void* i_Value);
-		void					update_parameter(ShaderParameterDA* i_ShaderParamAndValueArrayPtr);
+		void					update_parameter(const char* i_ParamName, void* i_Value);
 
-		void					bind_texture_to_sampler(char* i_ParamName,Texture_L* i_Texture);
-		void					bind_texture_to_sampler(ShaderParameter::SemanticId i_Param,Texture_L* i_Texture);
-
-		void				update_shader_parameters();
+		void					bind_texture_to_sampler(char* i_ParamName,Texture* i_Texture);
+		void					update_shader_attribute_binding();
+		void					set_shader_attribute_binding(U32 index, char* name);
+		void					bind_current_parameters();
 		bool					contains_parameter(ShaderParameter::SemanticId i_Param);
 		bool					contains_parameter(char* i_ParamName);
 private:
@@ -98,8 +97,6 @@ private:
 					
 		//Called at start, will fill ShaderParameters
 		void					update_shader_parameter_declaration();
-
-		void					update_shader_attribute_binding();
 		//-------------------------------------------------------------------
 		//						Variable declaration
 		//-------------------------------------------------------------------

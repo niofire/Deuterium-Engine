@@ -1,5 +1,5 @@
 #include "renderer.h"
-
+#include "shader_parameter_DA.h"
 
 namespace deuterium
 {
@@ -49,10 +49,10 @@ namespace deuterium
 		if(_draw_request_DA[i]->ShaderId != l_CurrentShaderId)
 		{
 			if(l_CurrentShaderId != 0)
-				gData._shader_manager_ptr->GetShader(l_CurrentShaderId).EndRender();
+				g_data._shader_manager_ptr->GetShader(l_CurrentShaderId).end_render();
 			
 			l_CurrentShaderId = _draw_request_DA[i]->ShaderId;
-			gData._shader_manager_ptr->GetShader(l_CurrentShaderId).BeginRender();
+			g_data._shader_manager_ptr->GetShader(l_CurrentShaderId).begin_render();
 		}
 
 		//Process draw request
@@ -60,7 +60,7 @@ namespace deuterium
 	}
 	
 	//End render on last shader used
-	Shader l_lastShader = gData._shader_manager_ptr->GetShader(l_CurrentShaderId);
+	Shader l_lastShader = g_data._shader_manager_ptr->GetShader(l_CurrentShaderId);
 	
 	
 	l_lastShader.end_render();
@@ -72,6 +72,7 @@ namespace deuterium
 	for(U32 i = 0; i < _draw_request_DA.size();++i)
 	{
 		delete _draw_request_DA[i];
+		_draw_request_DA[i] = NULL;
 	}
 	
 	//Clear the drawRequest structure
@@ -81,8 +82,8 @@ namespace deuterium
 void Renderer::render_draw_request(DrawRequest* i_DrawRequest)
 {
 
-	Shader		l_Shader	= gData._shader_manager_ptr->GetShader(i_DrawRequest->ShaderId);
-	Mesh*		l_Mesh		= gData._mesh_manager_ptr->mesh_by_id(i_DrawRequest->MeshId);
+	Shader		l_Shader	= g_data._shader_manager_ptr->GetShader(i_DrawRequest->ShaderId);
+	Mesh*		l_Mesh		= g_data._mesh_manager_ptr->mesh_by_id(i_DrawRequest->MeshId);
 
 	VertexBufferContainer*		l_Vbo	= l_Mesh->vertex_buffer_ptr();
 	IndexBufferContainer*		l_Ibo	= l_Mesh->index_buffer_ptr();
@@ -91,8 +92,17 @@ void Renderer::render_draw_request(DrawRequest* i_DrawRequest)
 
 
 	//Update Shader Param
-	l_Shader.update_parameter(i_DrawRequest->ShaderParamArray);
+	if(i_DrawRequest->ShaderParamArray)
+	{
+		ShaderParameterDA& s_param_DA = *i_DrawRequest->ShaderParamArray;
 
+		s_param_DA.clean_parameters(l_Shader.shader_handle());
+		l_Shader.bind_current_parameters();
+	}
+	
+	l_Shader.begin_render();
+
+	
 	l_Vbo->begin_render();
 	l_Ibo->begin_render();
 
@@ -101,6 +111,7 @@ void Renderer::render_draw_request(DrawRequest* i_DrawRequest)
 	l_Vbo->end_render();
 	l_Ibo->end_render();
 	
+	l_Shader.end_render();
 	
 	
 }

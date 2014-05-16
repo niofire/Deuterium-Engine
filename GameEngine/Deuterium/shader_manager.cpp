@@ -113,9 +113,9 @@ Shader&	ShaderManager::GetDefaultShader()
 	return *m_ShaderContainer.get_at(m_defaultShaderId);
 }
 
-void ShaderManager::UpdateShaderParameter(U32 i_ShaderId, ShaderParameterAndValueArray_L* sParamArray)
+void ShaderManager::UpdateShaderParameter(U32 i_ShaderId, ShaderParameterDA* sParamArray)
 {
-	m_ShaderContainer.get_at(i_ShaderId)->update_parameter(sParamArray);
+	//m_ShaderContainer.get_at(i_ShaderId)->update_parameter(sParamArray);
 }
 
 
