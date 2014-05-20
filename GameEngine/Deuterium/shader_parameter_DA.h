@@ -29,7 +29,6 @@ public:
 	void	update_shader_parameter_declaration(U32 i_ShaderId);
 	void	dirty_parameter(char* i_Name, void* value);
 	void	clean_parameters(U32 shader_id);
-	void	update_parameter(ShaderParameter::SemanticId	i_ShaderId, void* value);
 	void	update_shader();
 
 	

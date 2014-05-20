@@ -5,8 +5,10 @@
 
 //------------------------------------------------------------------
 //					ObjectContainer class
-//	TODO
-//
+//	The object container is optimized as an ADT which hold pointers to objects.
+//	It diverges from the standard vector class through its faster "remove" operations
+//	and its lack of linear ordering.
+//	Index 0 is reserved as a NULL index.
 namespace deuterium
 {
 
@@ -33,9 +35,25 @@ public:
 	//--------------------------------------------------------------
 	//					Iterator
 	//--------------------------------------------------------------
-	T*							iterator_next();
-	void						reset_iterator();
-	U32							get_iterator_position() {return _iterator_position;}
+	Iterator					get_iterator() {return Iterator;}
+
+	class Iterator
+	{
+	public:
+		Iterator();
+		~Iterator();
+		bool	has_next();
+		T*		next();
+		T*		peek_next();
+		void	remove();
+		void	reset();
+	private:
+		U32 _iterator_position;
+	};
+		
+
+
+	
 private:
 
 	//--------------------------------------------------------------
@@ -44,7 +62,6 @@ private:
 	inline U32					size(){ return _object_list.size(); };
 private:
 
-	U32						_iterator_position;
 	std::vector<T>			_object_list;
 	std::vector<bool>		_object_usage_map;
 	std::stack<U32>			_unused_id_stack;
@@ -56,7 +73,6 @@ private:
 template <class T>
 ObjectContainer<T>::ObjectContainer()
 {
-	_iterator_position = 0;
 }
 
 template <class T>
@@ -165,6 +181,59 @@ T* ObjectContainer<T>::iterator_next()
 		return iterator_next();
 	}
 	return &_object_list[_iterator_position++];
+}
+
+
+template<class T>
+bool	ObjectContainer<T>::Iterator::has_next()
+{
+	if(peek_next() == NULL)
+		return false;
+	return true;
+}
+
+template<class T>
+T	ObjectContainer<T>::Iterator::peek_next()
+{
+	if(_iterator_position > this->size() - 1)
+		return NULL;
+	if(!validate_id(_iterator_position + 1))
+	{
+		_iterator_position++;
+		return peek_next();
+	}
+	return &_object_list[_iterator_position];
+}
+
+template<class T>
+T	ObjectContainer<T>::Iterator::next()
+{
+	if(_iterator_position > this->size() - 1)
+		return NULL;
+	if(!validate_id(_iterator_position + 1))
+	{
+		_iterator_position++;
+		return next();
+	}
+	return &_object_list[_iterator_position++];
+}
+
+template<class T>
+void	ObjectContainer<T>::Iterator::remove()
+{
+	if(_iterator_position > this->size() - 1)
+		return;
+	if(!validate_id(_iterator_position + 1))
+	{
+		return;
+	}
+	remove_at(_iterator_position);
+}
+
+template<class T>
+void	ObjectContainer<T>::Iterator::reset()
+{
+	_iterator_position = 0;
 }
 
 }

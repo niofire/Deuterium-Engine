@@ -11,24 +11,9 @@ public:
 	//----------------------------------------------------
 	//				struct/enum
 	//----------------------------------------------------
-	enum SemanticId
-	{
-		WORLDVIEW = 0,
-		WORLDVIEWPROJ,
-		TEXTURESAMPLER,
-		NORMALSAMPLER,
-		TIME,
-		UNKNOWN,
-	};
-
-	
 	struct ParameterData
 	{
-		std::string				_name;
-		SemanticId				_id;
-		DeuteriumPrimitiveType	_type;
-		void*					_value;
-		S32						_uniform_location;
+
 	};
 
 
@@ -40,17 +25,22 @@ public:
 	ShaderParameter();
 	~ShaderParameter();
 
-	void						update_parameter(void* i_Value);
-	void						update_program_parameter();
+	void						update_cached_parameter(void* i_Value);
+	void						bind_parameter_to_bound_program();
 	//----------------------------------------------------
 	//				Accessors
 	//----------------------------------------------------
-	const char*					name() {return _parameter_data._name.c_str();}
-	SemanticId					semantic_id() {return _parameter_data._id;}
-	DeuteriumPrimitiveType		type()	{return _parameter_data._type;}
-	void*						value()	{return	_parameter_data._value;}
+	const char*					name() {return _name.c_str();}
+	DeuteriumPrimitiveType		type()	{return _type;}
+	void*						value()	{return	_value;}
+	S32							uniform_location()	{return _uniform_location;	}
+
 
 private:
-	ParameterData		_parameter_data;
+	std::string				_name;
+	DeuteriumPrimitiveType	_type;
+	void*					_value;
+	S32						_uniform_location;
+	bool					_has_cached_value;
 };
 }

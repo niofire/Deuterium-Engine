@@ -166,6 +166,9 @@
     <ClCompile Include="node.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="shader_parameter_value_settings.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="buffer_container.h">
@@ -258,6 +261,9 @@
     </ClInclude>
     <ClInclude Include="node.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_parameter_value_settings.h">
+      <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

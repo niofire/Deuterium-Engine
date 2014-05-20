@@ -13,6 +13,7 @@
 #include "shader_parameter.h"
 #include "shader_component.h"
 #include "string_helper.h"
+#include "shader_parameter_value_settings.h"
 
 namespace deuterium
 {
@@ -69,21 +70,14 @@ public:
 		//-------------------------------------------------------------------
 		//						Shader Parameter functions
 		//-------------------------------------------------------------------
-			
-		//Cleans all dirty parameter, hence updating the ShaderParameters into the shader program
-		void					clean_dirty_parameter();
-			
-		//Dirties a ShaderParameter by updating its value.
-		void					update_parameter(const char* i_ParamName, void* i_Value);
+		
+		ShaderParameterValueSettings	get_empty_shader_parameter_value_settings();
+		void							bind_shader_parameter_value_settings(ShaderParameterValueSettings* value_settings);
 
-		void					bind_texture_to_sampler(char* i_ParamName,Texture* i_Texture);
-		void					update_shader_attribute_binding();
-		void					set_shader_attribute_binding(U32 index, char* name);
-		void					bind_current_parameters();
-		bool					contains_parameter(ShaderParameter::SemanticId i_Param);
-		bool					contains_parameter(char* i_ParamName);
+		
 private:
 
+	void update_shader_attribute_binding();
 		//-------------------------------------------------------------------
 		//						Helper functions 
 		//-------------------------------------------------------------------
@@ -114,7 +108,7 @@ private:
 
 		char*							_shader_name;
 
-		friend class ShaderParameterDA;
+		friend class ShaderParameterValueSettings;
 };
 
 

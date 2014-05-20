@@ -1,48 +1,195 @@
-﻿Build started 2014-05-16 5:00:22 PM.
-     1>Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" on node 2 (Build target(s)).
+﻿Build started 19/05/2014 7:05:23 PM.
+     1>Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D DEUTERIUM_PC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug_LIB\\" /Fd"Debug_LIB\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt shader_manager.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D DEUTERIUM_PC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug_LIB\\" /Fd"Debug_LIB\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt event_listener.cpp event_manager.cpp game_core.cpp game_core_event.cpp game_core_init.cpp game_core_render.cpp game_core_update.cpp mesh_manager.cpp renderer.cpp renderer_init.cpp renderer_render.cpp renderer_update.cpp shader.cpp shader_manager.cpp shader_parameter_DA.cpp shader_parameter_value_settings.cpp
+         shader_parameter_value_settings.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(11): error C2146: syntax error : missing ';' before identifier '_parameter'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(7): error C2511: 'deuterium::ShaderParameterValueSettings::ShaderParameterValueSettings(U32)' : overloaded member function not found in 'deuterium::ShaderParameterValueSettings'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(7) : see declaration of 'deuterium::ShaderParameterValueSettings'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(23): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(23): error C2228: left of '.size' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(25): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(25): error C2228: left of '._parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(25): error C2228: left of '.bind_parameter_to_bound_program' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(34): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(34): error C2228: left of '.size' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2059: syntax error : 'for'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2143: syntax error : missing ')' before ';'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2039: 'i' : is not a member of 'deuterium::ObjectContainer<T>'
+                 with
+                 [
+                     T=deuterium::ShaderParameter
+                 ]
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2039: 'new_shader' : is not a member of 'deuterium::ObjectContainer<T>'
+                 with
+                 [
+                     T=deuterium::ShaderParameter
+                 ]
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2039: '_shader_parameter_list' : is not a member of 'deuterium::ObjectContainer<T>'
+                 with
+                 [
+                     T=deuterium::ShaderParameter
+                 ]
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2228: left of '.size' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2065: 'i' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2143: syntax error : missing ';' before ')'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(41): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(45): error C2065: '_parameter_and_value_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(45): error C2228: left of '.clear' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(46): error C2065: '_shader_id' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(46): error C2065: 'i_ShaderId' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(47): error C2065: '_shader_id' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(57): error C2039: '_parameter' : is not a member of 'deuterium::ShaderParameterValueSettings::ParameterAndValueNode'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(9) : see declaration of 'deuterium::ShaderParameterValueSettings::ParameterAndValueNode'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(58): error C2065: '_parameter_and_value_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(58): error C2228: left of '.push_back' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(65): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(65): error C2228: left of '.size' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(67): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(67): error C2228: left of '._parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(67): error C2228: left of '.name' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(69): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(69): error C2228: left of '._parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(69): error C2228: left of '.update_cached_parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(79): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(79): error C2228: left of '._parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(79): error C2228: left of '.update_cached_parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(84): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(84): error C2228: left of '.size' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(86): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(86): error C2228: left of '._parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(86): error C2228: left of '.name' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(87): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(87): error C2228: left of '._parameter_id' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(93): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(93): error C2228: left of '._parameter' must have class/struct/union
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(93): error C2228: left of '.name' must have class/struct/union
+         shader_parameter_DA.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(25): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(30): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(32): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(42): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(45): error C2039: 'update_parameter' : is not a member of 'deuterium::Shader'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(57): error C2039: 'update_parameter' : is not a member of 'deuterium::ShaderParameter'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter.h(9) : see declaration of 'deuterium::ShaderParameter'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2039: 'update_parameter' : is not a member of 'deuterium::ShaderParameterDA'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.h(13) : see declaration of 'deuterium::ShaderParameterDA'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2039: 'SemanticId' : is not a member of 'deuterium::ShaderParameter'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter.h(9) : see declaration of 'deuterium::ShaderParameter'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2065: 'SemanticId' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2146: syntax error : missing ')' before identifier 'i_ParamId'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2182: 'update_parameter' : illegal use of type 'void'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2059: syntax error : ')'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(64): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(64): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(83): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(84): error C2039: 'update_parameter' : is not a member of 'deuterium::ShaderParameter'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter.h(9) : see declaration of 'deuterium::ShaderParameter'
          shader_manager.cpp
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Debug_LIB\Deuterium.lib" /LIBPATH:C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\3rdParty /NOLOGO Debug_LIB\LodePNG.obj
-         Debug_LIB\camera.obj
-         Debug_LIB\console.obj
-         Debug_LIB\draw_request.obj
-         Debug_LIB\event_listener.obj
-         Debug_LIB\event_manager.obj
-         Debug_LIB\file_stream.obj
-         Debug_LIB\game_core.obj
-         Debug_LIB\game_core_event.obj
-         Debug_LIB\game_core_init.obj
-         Debug_LIB\game_core_render.obj
-         Debug_LIB\game_core_update.obj
-         Debug_LIB\index_buffer_container.obj
-         Debug_LIB\deuterium_math.obj
-         Debug_LIB\memory_manager.obj
-         Debug_LIB\mesh.obj
-         Debug_LIB\mesh_manager.obj
-         Debug_LIB\model_space_transform.obj
-         Debug_LIB\node.obj
-         Debug_LIB\primitive_type_helper.obj
-         Debug_LIB\profiler.obj
-         Debug_LIB\renderer.obj
-         Debug_LIB\renderer_init.obj
-         Debug_LIB\renderer_render.obj
-         Debug_LIB\renderer_update.obj
-         Debug_LIB\render_target.obj
-         Debug_LIB\shader.obj
-         Debug_LIB\shader_component.obj
-         Debug_LIB\shader_effect.obj
-         Debug_LIB\shader_manager.obj
-         Debug_LIB\shader_parameter.obj
-         Debug_LIB\shader_parameter_DA.obj
-         Debug_LIB\string_helper.obj
-         Debug_LIB\texture.obj
-         Debug_LIB\vertex_buffer_container.obj
-         Debug_LIB\viewport.obj
-         Deuterium.vcxproj -> C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Debug_LIB\Deuterium.lib
-     1>Done Building Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" (Build target(s)).
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(75): error C2065: '_iterator_position' : undeclared identifier
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(74) : while compiling class template member function 'deuterium::ObjectContainer<T>::ObjectContainer(void)'
+                 with
+                 [
+                     T=deuterium::Shader
+                 ]
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_manager.cpp(35) : see reference to function template instantiation 'deuterium::ObjectContainer<T>::ObjectContainer(void)' being compiled
+                 with
+                 [
+                     T=deuterium::Shader
+                 ]
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_manager.h(26) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+                 with
+                 [
+                     T=deuterium::Shader
+                 ]
+         shader.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(59): error C2039: 'update_parameter' : is not a member of 'deuterium::Shader'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(61): error C2065: '_shader_parameter_list' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(61): error C2228: left of '.reset_iterator' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(63): error C2065: '_shader_parameter_list' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(63): error C2228: left of '.iterator_next' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(63): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         renderer_update.cpp
+         renderer_render.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\renderer_render.cpp(100): error C2039: 'bind_current_parameters' : is not a member of 'deuterium::Shader'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+         renderer_init.cpp
+         renderer.cpp
+         mesh_manager.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(75): error C2065: '_iterator_position' : undeclared identifier
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(74) : while compiling class template member function 'deuterium::ObjectContainer<T>::ObjectContainer(void)'
+                 with
+                 [
+                     T=deuterium::MeshData
+                 ]
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(9) : see reference to function template instantiation 'deuterium::ObjectContainer<T>::ObjectContainer(void)' being compiled
+                 with
+                 [
+                     T=deuterium::MeshData
+                 ]
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.h(38) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+                 with
+                 [
+                     T=deuterium::MeshData
+                 ]
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(176): error C2065: '_iterator_position' : undeclared identifier
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(174) : while compiling class template member function 'deuterium::MeshData *deuterium::ObjectContainer<T>::iterator_next(void)'
+                 with
+                 [
+                     T=deuterium::MeshData
+                 ]
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(52) : see reference to function template instantiation 'deuterium::MeshData *deuterium::ObjectContainer<T>::iterator_next(void)' being compiled
+                 with
+                 [
+                     T=deuterium::MeshData
+                 ]
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(178): error C2065: '_iterator_position' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(180): error C2065: '_iterator_position' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(183): error C2065: '_iterator_position' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(169): error C2065: '_iterator_position' : undeclared identifier
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(168) : while compiling class template member function 'void deuterium::ObjectContainer<T>::reset_iterator(void)'
+                 with
+                 [
+                     T=deuterium::MeshData
+                 ]
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(50) : see reference to function template instantiation 'void deuterium::ObjectContainer<T>::reset_iterator(void)' being compiled
+                 with
+                 [
+                     T=deuterium::MeshData
+                 ]
+         game_core_update.cpp
+         game_core_render.cpp
+         game_core_init.cpp
+         game_core_event.cpp
+         game_core.cpp
+         event_manager.cpp
+         event_listener.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.05
+Time Elapsed 00:00:17.11

@@ -96,11 +96,6 @@ void Shader::update_shader_attribute_binding()
 	glBindAttribLocation(_shader_handle,11,"texcoord6");
 	glBindAttribLocation(_shader_handle,11,"texcoord7");
 }
-
-void Shader::set_shader_attribute_binding(U32 index, char* attribute_name)
-{
-	glBindAttribLocation(_shader_handle,index,attribute_name);
-}
 void Shader::update_shader_parameter_declaration()
 {
 
