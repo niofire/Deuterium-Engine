@@ -47,61 +47,37 @@ public:
 		//Compile the shader program
 		void 					compile();
 
-		//Called when starting to render with the shader
-		void					begin_render();
-
-		//Called when ending the render with the shader
-		void					end_render();
-
 		//-------------------------------------------------------------------
 		//						Getters / Setters
 		//-------------------------------------------------------------------
 
 		//Returns the Shader program handle
-	inline	GLuint				shader_handle()	{return _shader_handle;}
+	inline	GLuint				gl_shader_handle()	{return _gl_shader_handle;}
 
 			//Checks if the program has been compiled
-	inline	bool				is_shader_compiled()	{return _shader_handle == 0 ? true : false;}
+	inline	bool				is_shader_compiled()	{return _gl_shader_handle == 0 ? true : false;}
 
 	inline  void				set_name(char* i_shaderName)	{ _shader_name = i_shaderName;}
 
 	inline	char*				name() { return _shader_name;};
 
-		//-------------------------------------------------------------------
-		//						Shader Parameter functions
-		//-------------------------------------------------------------------
-		
-		ShaderParameterValueSettings	get_empty_shader_parameter_value_settings();
-		void							bind_shader_parameter_value_settings(ShaderParameterValueSettings* value_settings);
-
-		
+	
 private:
 
-	void update_shader_attribute_binding();
-		//-------------------------------------------------------------------
-		//						Helper functions 
-		//-------------------------------------------------------------------
-		//Checks if the ShaderParameter has a valid state inside the Shader program
-		//*NOTE An unvalid state can be either unitialized or unused ShaderParameter
-		bool					is_shader_parameter_valid(ShaderParameter* i_Parameter);
+	void	update_shader_attribute_binding();
 
-		//Cleans a parameter by updating its value
-		//*NOTE	A program needs to be binded before using this function
-		void					clean_parameter(ShaderParameter* i_Parameter);
-					
-		//Called at start, will fill ShaderParameters
-		void					update_shader_parameter_declaration();
-		//-------------------------------------------------------------------
-		//						Variable declaration
-		//-------------------------------------------------------------------
-		//Stores the Shader program handle
-		GLuint							_shader_handle;
+	void	update_shader_parameter_declaration();
+
+	
+	std::vector<U16>	_shader_semantic_mapping;
+	//Stores the Shader program handle
+		GLuint							_gl_shader_handle;
 
 		//Stack containing all of the sub-programs
 		std::vector<ShaderComponent>	_shader_component_list;
 		
 		//Stores the list of parameters added to the ShaderProgram
-		ObjectContainer<ShaderParameter>	_shader_parameter_list;
+		ObjectContainer<ShaderParameter*>	_shader_parameter_list;
 
 		
 		U32								_number_of_textures_in_pass;

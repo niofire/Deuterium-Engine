@@ -17,7 +17,6 @@ public:
 	static DeuteriumPrimitiveType parse_string_for_type(std::string i_String);
 	static bool	is_identical_string(std::string s1, std::string s2);
 	static bool is_identical_string(const char* s1, const char* s2);
-
 	static std::vector<std::string> split(char* string,char identifier);
 };
 }

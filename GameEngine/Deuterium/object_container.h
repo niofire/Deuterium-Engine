@@ -47,6 +47,7 @@ public:
 		T*		peek_next();
 		void	remove();
 		void	reset();
+		U32		get_current_index();
 	private:
 		U32 _iterator_position;
 	};
@@ -234,6 +235,12 @@ template<class T>
 void	ObjectContainer<T>::Iterator::reset()
 {
 	_iterator_position = 0;
+}
+
+template<class T>
+U32	ObjectContainer<T>::Iterator::get_current_index()
+{
+	return _iterator_position;
 }
 
 }

@@ -3,6 +3,7 @@
 #include "global_data.h"
 #include "string_helper.h"
 #include <vector>
+#include "shader_parameter"
 
 namespace deuterium
 {
@@ -28,6 +29,7 @@ public:
 
 private:
 	std::vector<std::string> _shader_content;
+	std::vector<ShaderParameter>
 	char* _shader_filename;
 	GLenum _shader_type;
 	bool	_is_compiled;

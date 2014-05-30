@@ -11,10 +11,7 @@ public:
 	//----------------------------------------------------
 	//				struct/enum
 	//----------------------------------------------------
-	struct ParameterData
-	{
 
-	};
 
 
 	//----------------------------------------------------
@@ -27,6 +24,7 @@ public:
 
 	void						update_cached_parameter(void* i_Value);
 	void						bind_parameter_to_bound_program();
+
 	//----------------------------------------------------
 	//				Accessors
 	//----------------------------------------------------
@@ -34,13 +32,14 @@ public:
 	DeuteriumPrimitiveType		type()	{return _type;}
 	void*						value()	{return	_value;}
 	S32							uniform_location()	{return _uniform_location;	}
-
-
+	ShaderSemantic				shader_semantic()	{return _semantic_id;}
+	void						set_uniform_location(S32 uniform_location) { _uniform_location = uniform_location;}
 private:
 	std::string				_name;
 	DeuteriumPrimitiveType	_type;
 	void*					_value;
 	S32						_uniform_location;
 	bool					_has_cached_value;
+	ShaderSemantic				_semantic_id;
 };
 }

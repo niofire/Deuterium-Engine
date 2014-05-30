@@ -1,19 +1,50 @@
-﻿Build started 19/05/2014 7:05:40 PM.
-     1>Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\RotatingCube.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014-05-28 9:40:50 AM.
+     1>Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\RotatingCube.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\\Deuterium\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D DEUTERIUM_PC /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt client_game_core.cpp main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\\Deuterium\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D DEUTERIUM_PC /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt client_game_core.cpp main.cpp
          main.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          client_game_core.cpp
-     1>c:\users\niofire\documents\github\deuterium\gameengine\example\rotatingcube\client_game_core.cpp(84): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\example\rotatingcube\client_game_core.cpp(87): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\example\rotatingcube\client_game_core.cpp(99): error C2039: 'bind_texture_to_sampler' : is not a member of 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\example\rotatingcube\client_game_core.cpp(100): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\example\rotatingcube\client_game_core.cpp(101): error C2039: 'bind_current_parameters' : is not a member of 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          Generating Code...
-     1>Done Building Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\RotatingCube.vcxproj" (Build target(s)) -- FAILED.
+     1>Done Building Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Example\RotatingCube\RotatingCube.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:02.69
+Time Elapsed 00:00:01.60

@@ -3,28 +3,24 @@
 
 namespace deuterium
 {
+	class ShaderTechnique;
 class ShaderParameterValueSettings
 {
-		struct ParameterAndValueNode
-	{
-		U32	_parameter_id;
-		ShaderParameter		_parameter;
-	};
-
 public:
 	ShaderParameterValueSettings();
 	~ShaderParameterValueSettings(void);
 
-	void		bind_values_to_shader(U32 shader_handle);
-	void		udpate_shader_parameter_declaration(U32 shader_handle);
+	//bind shader values to its associated pass
+	void		bind_pass(U32 pass_number, ShaderPass* pass);
 
-	bool		update_value(char* parameter_name, void* value);
-	bool		update_value(U32   parameter_id, void* value);
-	U32			parameter_id(char* parameter_name);
-	const char*	parameter_name(U32 parameter_id);
+	void		update_shader_parameter_declaration(ShaderTechnique* shader_technique);
+
+	bool		update_value(U32 pass_number,char* parameter_name, void* value);
+	bool		update_value(U32 pass_number, ShaderParameter::ShaderSemantic shader_semantic, void* value);
 
 private:
-	U32		last_bound_shader_handle;
-	std::vector<ParameterAndValueNode>	_shader_parameter_value_node_DA;
+	U32		_last_bound_shader_handle;
+	std::vector< std::vector<ShaderParameter::ShaderSemantic,U32> > _shader_semantic_mapping;
+	std::vector< std::vector<ShaderParameter> >	_shader_parameter_value_DA;
 };
 }

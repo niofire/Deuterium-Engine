@@ -16,9 +16,6 @@
     <Filter Include="Containers">
       <UniqueIdentifier>{4c3f6b50-0c23-4ac6-830a-f25b502e5021}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Events">
-      <UniqueIdentifier>{02cf2677-4d67-4252-a5b0-f19b0688deea}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Renderer\Material">
       <UniqueIdentifier>{376c3465-1354-4ccf-bafe-db8a6f874d60}</UniqueIdentifier>
     </Filter>
@@ -58,6 +55,12 @@
     <Filter Include="Renderer\Light">
       <UniqueIdentifier>{0be22681-d093-4d3d-8fce-f33def1dfb83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DeuteriumMarkup">
+      <UniqueIdentifier>{11d8f07e-253d-4779-8b5e-77beb97c7b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debugger\Events">
+      <UniqueIdentifier>{02cf2677-4d67-4252-a5b0-f19b0688deea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="index_buffer_container.cpp">
@@ -65,9 +68,6 @@
     </ClCompile>
     <ClCompile Include="vertex_buffer_container.cpp">
       <Filter>Containers\RenderingContainers</Filter>
-    </ClCompile>
-    <ClCompile Include="console.cpp">
-      <Filter>Debugger</Filter>
     </ClCompile>
     <ClCompile Include="game_core.cpp">
       <Filter>GameCore</Filter>
@@ -85,12 +85,6 @@
       <Filter>GameCore</Filter>
     </ClCompile>
     <ClCompile Include="shader_component.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="shader_effect.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="shader_manager.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="shader_parameter.cpp">
@@ -113,9 +107,6 @@
     </ClCompile>
     <ClCompile Include="profiler.cpp">
       <Filter>Statistics</Filter>
-    </ClCompile>
-    <ClCompile Include="file_stream.cpp">
-      <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="string_helper.cpp">
       <Filter>Utility</Filter>
@@ -144,15 +135,11 @@
     <ClCompile Include="shader.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="primitive_type_helper.cpp" />
-    <ClCompile Include="shader_parameter_DA.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="event_listener.cpp">
-      <Filter>Events</Filter>
+      <Filter>Debugger\Events</Filter>
     </ClCompile>
     <ClCompile Include="event_manager.cpp">
-      <Filter>Events</Filter>
+      <Filter>Debugger\Events</Filter>
     </ClCompile>
     <ClCompile Include="3rdParty\LodePNG\LodePNG.cpp">
       <Filter>3rdParty</Filter>
@@ -169,6 +156,36 @@
     <ClCompile Include="shader_parameter_value_settings.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
+    <ClCompile Include="shader_technique.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_pass.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="primitive_type_helper.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_technique_cache.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_component_cache.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer_settings.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="deuterium_markup_reader.cpp">
+      <Filter>DeuteriumMarkup</Filter>
+    </ClCompile>
+    <ClCompile Include="deuterium_markup.cpp">
+      <Filter>DeuteriumMarkup</Filter>
+    </ClCompile>
+    <ClCompile Include="deuterium_markup_loader.cpp">
+      <Filter>DeuteriumMarkup</Filter>
+    </ClCompile>
+    <ClCompile Include="deuterium_error_manager.cpp">
+      <Filter>Debugger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="buffer_container.h">
@@ -183,19 +200,10 @@
     <ClInclude Include="object_container.h">
       <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="console.h">
-      <Filter>Debugger</Filter>
-    </ClInclude>
     <ClInclude Include="game_core.h">
       <Filter>GameCore</Filter>
     </ClInclude>
     <ClInclude Include="shader_component.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="shader_effect.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="shader_manager.h">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="shader_parameter.h">
@@ -219,9 +227,6 @@
     <ClInclude Include="profiler.h">
       <Filter>Statistics</Filter>
     </ClInclude>
-    <ClInclude Include="file_stream.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
     <ClInclude Include="global_data.h">
       <Filter>Utility</Filter>
     </ClInclude>
@@ -240,15 +245,11 @@
     <ClInclude Include="shader.h">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="shader_parameter_DA.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="primitive_type_helper.h" />
     <ClInclude Include="event_listener.h">
-      <Filter>Events</Filter>
+      <Filter>Debugger\Events</Filter>
     </ClInclude>
     <ClInclude Include="event_manager.h">
-      <Filter>Events</Filter>
+      <Filter>Debugger\Events</Filter>
     </ClInclude>
     <ClInclude Include="3rdParty\LodePNG\LodePNG.h">
       <Filter>3rdParty</Filter>
@@ -264,6 +265,39 @@
     </ClInclude>
     <ClInclude Include="shader_parameter_value_settings.h">
       <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_technique.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_pass.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="primitive_type_helper.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_technique_cache.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_component_cache.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer_settings.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="deuterium_markup_reader.h">
+      <Filter>DeuteriumMarkup</Filter>
+    </ClInclude>
+    <ClInclude Include="deuterium_markup.h">
+      <Filter>DeuteriumMarkup</Filter>
+    </ClInclude>
+    <ClInclude Include="deuterium_markup_loader.h">
+      <Filter>DeuteriumMarkup</Filter>
+    </ClInclude>
+    <ClInclude Include="deuterium_error.h">
+      <Filter>Debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="deuterium_error_manager.h">
+      <Filter>Debugger</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

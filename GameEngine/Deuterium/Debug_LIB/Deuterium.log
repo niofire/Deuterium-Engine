@@ -1,195 +1,445 @@
-﻿Build started 19/05/2014 7:05:23 PM.
-     1>Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014-05-28 9:40:38 AM.
+     1>Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D DEUTERIUM_PC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug_LIB\\" /Fd"Debug_LIB\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt event_listener.cpp event_manager.cpp game_core.cpp game_core_event.cpp game_core_init.cpp game_core_render.cpp game_core_update.cpp mesh_manager.cpp renderer.cpp renderer_init.cpp renderer_render.cpp renderer_update.cpp shader.cpp shader_manager.cpp shader_parameter_DA.cpp shader_parameter_value_settings.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D DEUTERIUM_PC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug_LIB\\" /Fd"Debug_LIB\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt deuterium_markup_loader.cpp deuterium_markup_reader.cpp event_listener.cpp event_manager.cpp game_core.cpp game_core_event.cpp game_core_init.cpp game_core_render.cpp game_core_update.cpp mesh_manager.cpp renderer.cpp renderer_init.cpp renderer_render.cpp renderer_update.cpp shader.cpp shader_component.cpp shader_parameter_value_settings.cpp shader_pass.cpp shader_technique.cpp shader_technique_cache.cpp
+         shader_technique_cache.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(19): error C2653: 'ShaderParameter' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2653: 'ShaderParameter' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2238: unexpected token(s) preceding ';'
+         shader_technique.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(19): error C2653: 'ShaderParameter' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2653: 'ShaderParameter' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2238: unexpected token(s) preceding ';'
+         shader_pass.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_pass.cpp(2): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          shader_parameter_value_settings.cpp
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(11): error C2146: syntax error : missing ';' before identifier '_parameter'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C2039: 'vector' : is not a member of 'std'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C2143: syntax error : missing ';' before '<'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(28): error C2238: unexpected token(s) preceding ';'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(7): error C2511: 'deuterium::ShaderParameterValueSettings::ShaderParameterValueSettings(U32)' : overloaded member function not found in 'deuterium::ShaderParameterValueSettings'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(7) : see declaration of 'deuterium::ShaderParameterValueSettings'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(23): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(23): error C2228: left of '.size' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(25): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(25): error C2228: left of '._parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(25): error C2228: left of '.bind_parameter_to_bound_program' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(34): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(34): error C2228: left of '.size' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2059: syntax error : 'for'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2143: syntax error : missing ')' before ';'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2039: 'i' : is not a member of 'deuterium::ObjectContainer<T>'
-                 with
-                 [
-                     T=deuterium::ShaderParameter
-                 ]
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2039: 'new_shader' : is not a member of 'deuterium::ObjectContainer<T>'
-                 with
-                 [
-                     T=deuterium::ShaderParameter
-                 ]
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2039: '_shader_parameter_list' : is not a member of 'deuterium::ObjectContainer<T>'
-                 with
-                 [
-                     T=deuterium::ShaderParameter
-                 ]
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2228: left of '.size' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2065: 'i' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(40): error C2143: syntax error : missing ';' before ')'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(41): error C2143: syntax error : missing ';' before '{'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(45): error C2065: '_parameter_and_value_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(45): error C2228: left of '.clear' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(46): error C2065: '_shader_id' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(46): error C2065: 'i_ShaderId' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(47): error C2065: '_shader_id' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(57): error C2039: '_parameter' : is not a member of 'deuterium::ShaderParameterValueSettings::ParameterAndValueNode'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(9) : see declaration of 'deuterium::ShaderParameterValueSettings::ParameterAndValueNode'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(58): error C2065: '_parameter_and_value_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(58): error C2228: left of '.push_back' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(65): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(65): error C2228: left of '.size' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(67): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(67): error C2228: left of '._parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(67): error C2228: left of '.name' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(69): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(69): error C2228: left of '._parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(69): error C2228: left of '.update_cached_parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(79): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(79): error C2228: left of '._parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(79): error C2228: left of '.update_cached_parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(84): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(84): error C2228: left of '.size' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(86): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(86): error C2228: left of '._parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(86): error C2228: left of '.name' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(87): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(87): error C2228: left of '._parameter_id' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(93): error C2065: '_shader_parameter_value_node_DA' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(93): error C2228: left of '._parameter' must have class/struct/union
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.cpp(93): error C2228: left of '.name' must have class/struct/union
-         shader_parameter_DA.cpp
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(25): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(30): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(32): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(42): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(45): error C2039: 'update_parameter' : is not a member of 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(57): error C2039: 'update_parameter' : is not a member of 'deuterium::ShaderParameter'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter.h(9) : see declaration of 'deuterium::ShaderParameter'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2039: 'update_parameter' : is not a member of 'deuterium::ShaderParameterDA'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.h(13) : see declaration of 'deuterium::ShaderParameterDA'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2039: 'SemanticId' : is not a member of 'deuterium::ShaderParameter'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter.h(9) : see declaration of 'deuterium::ShaderParameter'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2065: 'SemanticId' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2146: syntax error : missing ')' before identifier 'i_ParamId'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2182: 'update_parameter' : illegal use of type 'void'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(63): error C2059: syntax error : ')'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(64): error C2143: syntax error : missing ';' before '{'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(64): error C2447: '{' : missing function header (old-style formal list?)
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(83): error C2248: 'deuterium::Shader::_shader_parameter_list' : cannot access private member declared in class 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(104) : see declaration of 'deuterium::Shader::_shader_parameter_list'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter_da.cpp(84): error C2039: 'update_parameter' : is not a member of 'deuterium::ShaderParameter'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_parameter.h(9) : see declaration of 'deuterium::ShaderParameter'
-         shader_manager.cpp
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(75): error C2065: '_iterator_position' : undeclared identifier
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(74) : while compiling class template member function 'deuterium::ObjectContainer<T>::ObjectContainer(void)'
-                 with
-                 [
-                     T=deuterium::Shader
-                 ]
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_manager.cpp(35) : see reference to function template instantiation 'deuterium::ObjectContainer<T>::ObjectContainer(void)' being compiled
-                 with
-                 [
-                     T=deuterium::Shader
-                 ]
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader_manager.h(26) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
-                 with
-                 [
-                     T=deuterium::Shader
-                 ]
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(14): error C2061: syntax error : identifier 'ShaderPass'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(19): error C2653: 'ShaderParameter' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2653: 'ShaderParameter' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(23): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_parameter_value_settings.h(24): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(6): fatal error C1083: Cannot open include file: 'shader_parameter': No such file or directory
+         shader_component.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(6): fatal error C1083: Cannot open include file: 'shader_parameter': No such file or directory
          shader.cpp
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(59): error C2039: 'update_parameter' : is not a member of 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(61): error C2065: '_shader_parameter_list' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(61): error C2228: left of '.reset_iterator' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(63): error C2065: '_shader_parameter_list' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(63): error C2228: left of '.iterator_next' must have class/struct/union
-                 type is ''unknown-type''
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.cpp(63): fatal error C1903: unable to recover from previous error(s); stopping compilation
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(6): fatal error C1083: Cannot open include file: 'shader_parameter': No such file or directory
          renderer_update.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          renderer_render.cpp
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\renderer_render.cpp(100): error C2039: 'bind_current_parameters' : is not a member of 'deuterium::Shader'
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\shader.h(25) : see declaration of 'deuterium::Shader'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          renderer_init.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          renderer.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          mesh_manager.cpp
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(75): error C2065: '_iterator_position' : undeclared identifier
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(74) : while compiling class template member function 'deuterium::ObjectContainer<T>::ObjectContainer(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(50): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
                  with
                  [
                      T=deuterium::MeshData
                  ]
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(9) : see reference to function template instantiation 'deuterium::ObjectContainer<T>::ObjectContainer(void)' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(52): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
                  with
                  [
                      T=deuterium::MeshData
                  ]
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.h(38) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
-                 with
-                 [
-                     T=deuterium::MeshData
-                 ]
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(176): error C2065: '_iterator_position' : undeclared identifier
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(174) : while compiling class template member function 'deuterium::MeshData *deuterium::ObjectContainer<T>::iterator_next(void)'
-                 with
-                 [
-                     T=deuterium::MeshData
-                 ]
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(52) : see reference to function template instantiation 'deuterium::MeshData *deuterium::ObjectContainer<T>::iterator_next(void)' being compiled
-                 with
-                 [
-                     T=deuterium::MeshData
-                 ]
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(178): error C2065: '_iterator_position' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(180): error C2065: '_iterator_position' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(183): error C2065: '_iterator_position' : undeclared identifier
-     1>c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(169): error C2065: '_iterator_position' : undeclared identifier
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\object_container.h(168) : while compiling class template member function 'void deuterium::ObjectContainer<T>::reset_iterator(void)'
-                 with
-                 [
-                     T=deuterium::MeshData
-                 ]
-                 c:\users\niofire\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(50) : see reference to function template instantiation 'void deuterium::ObjectContainer<T>::reset_iterator(void)' being compiled
-                 with
-                 [
-                     T=deuterium::MeshData
-                 ]
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(52): fatal error C1903: unable to recover from previous error(s); stopping compilation
          game_core_update.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          game_core_render.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          game_core_init.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          game_core_event.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          game_core.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          event_manager.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
          event_listener.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C2146: syntax error : missing ';' before identifier 'get_iterator'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(70) : see reference to class template instantiation 'deuterium::ObjectContainer<T>' being compiled
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(38): warning C4183: 'get_iterator': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(171): error C2039: 'reset_iterator' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(185): error C2039: 'iterator_next' : is not a member of 'deuterium::ObjectContainer<T>'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(207): error C2244: 'deuterium::ObjectContainer<T>::Iterator::peek_next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(47) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::peek_next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::peek_next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(220): error C2244: 'deuterium::ObjectContainer<T>::Iterator::next' : unable to match function definition to an existing declaration
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\object_container.h(46) : see declaration of 'deuterium::ObjectContainer<T>::Iterator::next'
+                 definition
+                 'T deuterium::ObjectContainer<T>::Iterator::next(void)'
+                 existing declarations
+                 'T *deuterium::ObjectContainer<T>::Iterator::next(void)'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.h(13): fatal error C1083: Cannot open include file: 'shader_manager.h': No such file or directory
+         deuterium_markup_loader.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(18): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(29): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(30): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(32): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(30) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(33): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(35): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(33) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(30) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(36): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(38): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(36) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(33) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(30) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(39): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(41): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(39) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(36) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(33) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(30) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(42): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(44): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(42) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(39) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(36) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(33) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(30) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(45): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(26) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(53): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(53): error C2228: left of '.size' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(55): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(55): error C2227: left of '->type' must point to class/struct/union/generic type
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(61): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(65): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(66): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(66): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(69): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(66) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(70): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(70): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(72): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(70) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(66) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(73): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(73): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(75): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(73) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(70) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(66) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(76): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(76): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(78): error C2360: initialization of 'node' is skipped by 'case' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(76) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(73) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(70) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(66) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(79): error C2371: 'node' : redefinition; different basic types
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(79): error C2065: 'node_list' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(81): error C2361: initialization of 'node' is skipped by 'default' label
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(79) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(76) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(73) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(70) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(66) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(62) : see declaration of 'node'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(58) : see declaration of 'node'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(126): error C2065: 'settings_filename' : undeclared identifier
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(128): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(130): error C2039: 'load_node' : is not a member of 'deuterium::DeuteriumMarkupLoader'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.h(10) : see declaration of 'deuterium::DeuteriumMarkupLoader'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\deuterium_markup_loader.cpp(133): warning C4018: '<' : signed/unsigned mismatch
          Generating Code...
-     1>Done Building Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" (Build target(s)) -- FAILED.
+         Compiling...
+         deuterium_markup_reader.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:17.11
+Time Elapsed 00:00:11.92

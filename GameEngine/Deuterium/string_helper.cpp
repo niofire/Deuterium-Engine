@@ -1,6 +1,9 @@
 #include "string_helper.h"
 #include <iostream>
 #include <vector>
+#include <string>
+#include <fstream>
+
 
 namespace deuterium
 {
@@ -85,4 +88,5 @@ std::vector<std::string> StringHelper::split(char* i_string,char delimiter)
 
 		return returnVec;
 	}
+
 }

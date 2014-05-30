@@ -75,7 +75,12 @@ namespace deuterium
 	DEUTERIUM_DOUBLE1 ,
 	DEUTERIUM_UNKNOWN,
 };
-
+		
+	enum ShaderSemantic
+	{
+		WORLD_VIEW_PROJ = 0,
+		NUMBER_OF_SEMANTIC
+	};
 //------------------------------------------------------------------------
 //					GlobalData class
 //------------------------------------------------------------------------
