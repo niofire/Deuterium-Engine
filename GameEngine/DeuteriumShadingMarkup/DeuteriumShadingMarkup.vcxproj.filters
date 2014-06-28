@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="node.cpp" />
     <ClCompile Include="test_main.cpp" />
+    <ClCompile Include="render_pipe.cpp" />
+    <ClCompile Include="loader.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="dsm_error.cpp" />
+    <ClCompile Include="node.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="render_pipe.h" />
+    <ClInclude Include="loader.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="dsm_error.h" />
     <ClInclude Include="node.h" />
   </ItemGroup>
 </Project>

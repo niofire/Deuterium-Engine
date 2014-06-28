@@ -78,11 +78,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dsm_error.cpp" />
+    <ClCompile Include="loader.cpp" />
     <ClCompile Include="node.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="render_pipe.cpp" />
     <ClCompile Include="test_main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dsm_error.h" />
+    <ClInclude Include="loader.h" />
     <ClInclude Include="node.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="render_pipe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

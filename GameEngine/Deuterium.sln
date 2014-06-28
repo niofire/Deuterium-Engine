@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RotatingCube", "Example\Rot
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeuteriumShadingMarkup", "DeuteriumShadingMarkup\DeuteriumShadingMarkup.vcxproj", "{462C4CBA-A656-4630-97CA-7ABD1075968A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeuteriumMemory", "DeuteriumMemory\DeuteriumMemory.vcxproj", "{43E26324-C1BF-4DEB-A9EF-092711206AB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -28,6 +30,10 @@ Global
 		{462C4CBA-A656-4630-97CA-7ABD1075968A}.Debug|Win32.Build.0 = Debug|Win32
 		{462C4CBA-A656-4630-97CA-7ABD1075968A}.Release|Win32.ActiveCfg = Release|Win32
 		{462C4CBA-A656-4630-97CA-7ABD1075968A}.Release|Win32.Build.0 = Release|Win32
+		{43E26324-C1BF-4DEB-A9EF-092711206AB9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43E26324-C1BF-4DEB-A9EF-092711206AB9}.Debug|Win32.Build.0 = Debug|Win32
+		{43E26324-C1BF-4DEB-A9EF-092711206AB9}.Release|Win32.ActiveCfg = Release|Win32
+		{43E26324-C1BF-4DEB-A9EF-092711206AB9}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

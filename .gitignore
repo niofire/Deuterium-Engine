@@ -1,2 +1,8 @@
 *.obj
 *.obj
+*.tlog
+*.log
+*.obj
+*.tlog
+*.log
+*.log
