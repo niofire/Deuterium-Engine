@@ -299,5 +299,8 @@
     <ClInclude Include="deuterium_error_manager.h">
       <Filter>Debugger</Filter>
     </ClInclude>
+    <ClInclude Include="d_ptr.h">
+      <Filter>Renderer\Memory</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

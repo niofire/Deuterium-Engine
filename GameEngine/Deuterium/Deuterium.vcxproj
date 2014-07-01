@@ -19,6 +19,7 @@
     <ClInclude Include="deuterium_markup_reader.h" />
     <ClInclude Include="deuterium_error.h" />
     <ClInclude Include="deuterium_error_manager.h" />
+    <ClInclude Include="d_ptr.h" />
     <ClInclude Include="event_listener.h" />
     <ClInclude Include="event_manager.h" />
     <ClInclude Include="game_core.h" />

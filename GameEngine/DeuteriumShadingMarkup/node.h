@@ -1,10 +1,12 @@
 #pragma once
 #include <string>
 #include <vector>
-namespace DSM
+#include "../Deuterium/d_ptr.h"
+namespace dsm
 {
 class Node
 {
+public:
 	enum NodeType
 	{
 		SHADER,
@@ -37,11 +39,17 @@ public:
 	~Node(void);
 
 	void add_content(std::string);
+	void add_child(d_ptr<Node>);
+
+	std::vector< d_ptr<Node> >& get_child_nodes() {return _child_nodes; }
 	void clear();
+
+
+	
 private:
 	NodeType _type;
 	std::vector<std::string> _node_content;
-	std::vector<Node*> _child_nodes;
+	std::vector<d_ptr<Node> > _child_nodes;
 };
 }
 

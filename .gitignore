@@ -6,3 +6,5 @@
 *.tlog
 *.log
 *.log
+*.tlog
+*.obj
