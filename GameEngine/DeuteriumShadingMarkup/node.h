@@ -40,6 +40,8 @@ public:
 
 	void add_content(std::string);
 	void add_child(d_ptr<Node>);
+	NodeType type() {return _type;}
+
 
 	std::vector< d_ptr<Node> >& get_child_nodes() {return _child_nodes; }
 	void clear();

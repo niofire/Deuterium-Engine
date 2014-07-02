@@ -1,17 +1,75 @@
-﻿Build started 2014-06-27 1:55:35 PM.
-     1>Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\DeuteriumShadingMarkup\DeuteriumShadingMarkup.vcxproj" on node 3 (Build target(s)).
+﻿Build started 01/07/2014 11:41:39 AM.
+     1>Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\DeuteriumShadingMarkup\DeuteriumShadingMarkup.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt dsm_error.cpp loader.cpp node.cpp parser.cpp render_pipe.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D DEUTERIUM_PC /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt dsm_error_stack.cpp loader.cpp node.cpp parser.cpp render_pipe.cpp test_main.cpp
+         test_main.cpp
          render_pipe.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\render_pipe.cpp(4): error C2653: 'render_pipe' : is not a class or namespace name
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\render_pipe.cpp(5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\render_pipe.cpp(6): warning C4508: 'render_pipe' : function should return a value; 'void' return type assumed
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\render_pipe.cpp(9): error C2653: 'render_pipe' : is not a class or namespace name
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\render_pipe.cpp(9): fatal error C1903: unable to recover from previous error(s); stopping compilation
          parser.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\parser.h(16): error C2143: syntax error : missing ')' before '}'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\parser.h(16): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\parser.cpp(4): error C2653: 'parser' : is not a class or namespace name
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\parser.cpp(5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\parser.cpp(6): warning C4508: 'parser' : function should return a value; 'void' return type assumed
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\parser.cpp(9): error C2653: 'parser' : is not a class or namespace name
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\parser.cpp(9): fatal error C1903: unable to recover from previous error(s); stopping compilation
          node.cpp
-     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(13): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(16): error C2059: syntax error : '}'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6): error C2653: 'Node' : is not a class or namespace name
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6): error C2065: 'NodeType' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6): error C2146: syntax error : missing ')' before identifier 'type'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6): error C2059: syntax error : ')'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(7): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(7): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(11): warning C4091: '' : ignored on left of 'int' when no variable is declared
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(11): error C2143: syntax error : missing ';' before '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(11): error C2059: syntax error : '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(11): error C2061: syntax error : identifier 'Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(12): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(12): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(15): error C2825: 'DSM::Node': must be a class or namespace when followed by '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(15): error C2061: syntax error : identifier 'Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(15): error C2143: syntax error : missing ';' before '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(15): error C2182: 'Node' : illegal use of type 'void'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(15): error C2086: 'int DSM::Node' : redefinition
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6) : see declaration of 'DSM::Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(16): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(16): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(20): error C2825: 'DSM::Node': must be a class or namespace when followed by '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(20): error C2061: syntax error : identifier 'Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(20): error C2143: syntax error : missing ';' before '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(20): error C2182: 'Node' : illegal use of type 'void'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(20): error C2086: 'int DSM::Node' : redefinition
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6) : see declaration of 'DSM::Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(21): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(21): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(26): error C2825: 'DSM::Node': must be a class or namespace when followed by '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(26): error C2061: syntax error : identifier 'Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(26): error C2143: syntax error : missing ';' before '::'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(26): error C2182: 'Node' : illegal use of type 'void'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(26): error C2086: 'int DSM::Node' : redefinition
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6) : see declaration of 'DSM::Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(26): error C2923: 'd_ptr' : 'DSM::Node' is not a valid template type argument for parameter 'T'
+                 c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(6) : see declaration of 'DSM::Node'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(27): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\node.cpp(27): error C2447: '{' : missing function header (old-style formal list?)
          loader.cpp
-         dsm_error.cpp
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\loader.h(29): error C2146: syntax error : missing ';' before identifier '_error_stack'
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\loader.h(29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\loader.cpp(17): error C2065: '_error_stack' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\loader.cpp(17): error C2228: left of '.empty' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\loader.cpp(20): error C2065: '_error_stack' : undeclared identifier
+     1>c:\users\niofire\documents\github\deuterium\gameengine\deuteriumshadingmarkup\loader.cpp(20): error C2228: left of '.pop' must have class/struct/union
+                 type is ''unknown-type''
+         dsm_error_stack.cpp
          Generating Code...
-     1>Done Building Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\DeuteriumShadingMarkup\DeuteriumShadingMarkup.vcxproj" (Build target(s)) -- FAILED.
+     1>Done Building Project "C:\Users\Niofire\Documents\GitHub\Deuterium\GameEngine\DeuteriumShadingMarkup\DeuteriumShadingMarkup.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.81
+Time Elapsed 00:00:05.13
