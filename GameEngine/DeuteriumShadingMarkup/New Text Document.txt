@@ -1,0 +1,7 @@
+<render_assets_package>
+    <relative>
+        "Resource/Shaders/default.shader_source"
+        "Resource/Shaders/common.shader_extension"
+        "Resource/Shaders/some_file.shader_source"
+    </relative>
+</render_assets_package>

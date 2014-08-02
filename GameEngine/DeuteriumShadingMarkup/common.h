@@ -23,3 +23,4 @@ typedef int16_t 	S16;
 typedef	uint8_t		U8;
 typedef int8_t		S8;
 #endif	// _MCVS2012_
+

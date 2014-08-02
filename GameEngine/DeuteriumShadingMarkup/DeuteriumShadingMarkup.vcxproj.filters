@@ -5,16 +5,66 @@
     <ClCompile Include="render_pipe.cpp" />
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="parser.cpp" />
-    <ClCompile Include="node.cpp" />
     <ClCompile Include="dsm_error_stack.cpp" />
+    <ClCompile Include="node.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="uniform_type.cpp" />
+    <ClCompile Include="include_node.cpp">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="name_node.cpp">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_node.cpp">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="source_node.cpp">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="type_node.cpp">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="uniform_buffer_node.cpp">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="render_pipe.h" />
     <ClInclude Include="loader.h" />
     <ClInclude Include="parser.h" />
-    <ClInclude Include="node.h" />
     <ClInclude Include="..\Deuterium\d_ptr.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="dsm_error_stack.h" />
+    <ClInclude Include="node.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="uniform_type.h" />
+    <ClInclude Include="include_node.h">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="name_node.h">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_node.h">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="source_node.h">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="type_node.h">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="uniform_buffer_node.h">
+      <Filter>Node\ShaderNodes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Node">
+      <UniqueIdentifier>{23739521-97e9-40a2-8618-889d12e4c506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Node\ShaderNodes">
+      <UniqueIdentifier>{337fa346-a5ab-4c33-9bb8-7ebd50fa5b26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

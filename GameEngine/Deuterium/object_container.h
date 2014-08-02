@@ -31,36 +31,13 @@ public:
 	T*							get_at(U32 id);
 	bool						replace_at(U32 i_ID,T object);
 	bool						validate_id(U32 object_id);
-
-	//--------------------------------------------------------------
-	//					Iterator
-	//--------------------------------------------------------------
-	Iterator					get_iterator() {return Iterator;}
-
-	class Iterator
-	{
-	public:
-		Iterator();
-		~Iterator();
-		bool	has_next();
-		T*		next();
-		T*		peek_next();
-		void	remove();
-		void	reset();
-		U32		get_current_index();
-	private:
-		U32 _iterator_position;
-	};
-		
-
-
-	
+	inline U32					size(){ return _object_list.size(); };
 private:
 
 	//--------------------------------------------------------------
 	//					helper function
 	//--------------------------------------------------------------
-	inline U32					size(){ return _object_list.size(); };
+
 private:
 
 	std::vector<T>			_object_list;
@@ -162,85 +139,6 @@ T*	ObjectContainer<T>::get_at(U32 object_id)
 		return NULL;
 	}
 	return &_object_list[object_id - 1];
-}
-
-template <class T>
-void ObjectContainer<T>::reset_iterator()
-{
-	_iterator_position = 0;
-}
-
-template<class T>
-T* ObjectContainer<T>::iterator_next()
-{
-
-	if(_iterator_position > this->size() - 1)
-		return NULL;
-	if(!validate_id(_iterator_position + 1))
-	{
-		_iterator_position++;
-		return iterator_next();
-	}
-	return &_object_list[_iterator_position++];
-}
-
-
-template<class T>
-bool	ObjectContainer<T>::Iterator::has_next()
-{
-	if(peek_next() == NULL)
-		return false;
-	return true;
-}
-
-template<class T>
-T	ObjectContainer<T>::Iterator::peek_next()
-{
-	if(_iterator_position > this->size() - 1)
-		return NULL;
-	if(!validate_id(_iterator_position + 1))
-	{
-		_iterator_position++;
-		return peek_next();
-	}
-	return &_object_list[_iterator_position];
-}
-
-template<class T>
-T	ObjectContainer<T>::Iterator::next()
-{
-	if(_iterator_position > this->size() - 1)
-		return NULL;
-	if(!validate_id(_iterator_position + 1))
-	{
-		_iterator_position++;
-		return next();
-	}
-	return &_object_list[_iterator_position++];
-}
-
-template<class T>
-void	ObjectContainer<T>::Iterator::remove()
-{
-	if(_iterator_position > this->size() - 1)
-		return;
-	if(!validate_id(_iterator_position + 1))
-	{
-		return;
-	}
-	remove_at(_iterator_position);
-}
-
-template<class T>
-void	ObjectContainer<T>::Iterator::reset()
-{
-	_iterator_position = 0;
-}
-
-template<class T>
-U32	ObjectContainer<T>::Iterator::get_current_index()
-{
-	return _iterator_position;
 }
 
 }

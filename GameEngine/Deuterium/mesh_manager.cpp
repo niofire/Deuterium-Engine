@@ -46,13 +46,14 @@ void	MeshManager::remove_mesh(const U32& i_Id)
 
 MeshData* MeshManager::mesh_data_by_name(const char* i_sMeshName)
 {
-	
-	_mesh_container.reset_iterator();
 	MeshData* l_MeshDataTemp;
-	while(l_MeshDataTemp = _mesh_container.iterator_next())
+	for(int i = 0; i < _mesh_container.size(); ++i)
 	{
+		if(_mesh_container.get_at(i) != NULL)
+		{
 		if(StringHelper::is_identical_string(l_MeshDataTemp->name(),i_sMeshName))
 			return l_MeshDataTemp;
+		}
 	}
 	return NULL;
 }

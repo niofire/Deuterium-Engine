@@ -19,3 +19,8 @@
 *.exe
 *.out
 *.app
+*.tlog
+*.tlog
+*.pdb
+*.log
+*.lastbuildstate

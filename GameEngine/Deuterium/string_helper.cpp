@@ -29,27 +29,6 @@ void	StringHelper::trim(std::string& l_String)
 }
 
 
-DeuteriumPrimitiveType StringHelper::parse_string_for_type(std::string l_String)
-{
-	if(l_String.find("vec4") != std::string::npos)
-		return DEUTERIUM_FLOAT4;
-	else if(l_String.find("vec3") != std::string::npos)
-		return DEUTERIUM_FLOAT3;
-	else if(l_String.find("vec2") != std::string::npos)
-		return DEUTERIUM_FLOAT2;
-	else if(l_String.find("float") != std::string::npos)
-		return DEUTERIUM_FLOAT1;
-	else if(l_String.find("int") != std::string::npos)
-		return DEUTERIUM_INT1;
-	else if(l_String.find("mat4") != std::string::npos)
-		return DEUTERIUM_MAT4;
-	else if(l_String.find("mat3") != std::string::npos)
-		return DEUTERIUM_MAT3;
-	
-	return DEUTERIUM_UNKNOWN;
-}
-
-
 bool	StringHelper::is_identical_string(std::string s1, std::string s2)
 {
 	return !(s1.compare(s2));
@@ -88,5 +67,18 @@ std::vector<std::string> StringHelper::split(char* i_string,char delimiter)
 
 		return returnVec;
 	}
+
+void StringHelper::remove_all_char(std::string& str, char c)
+{
+	for(U32 i = 0; i < str.size(); ++i)
+	{
+		if(str[i] == c)
+		{
+			str = str.substr(0,i) + str.substr(i + 1);
+			i--;
+		}
+		
+	}
+}
 
 }

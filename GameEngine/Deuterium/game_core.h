@@ -3,7 +3,6 @@
 #include "global_data.h"
 #include "renderer.h"
 #include "mesh_manager.h"
-#include "shader_manager.h"
 //#include "ShaderParameterAndValueArray_L.h"
 
 

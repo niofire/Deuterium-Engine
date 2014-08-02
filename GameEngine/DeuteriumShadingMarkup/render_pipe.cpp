@@ -1,11 +1,14 @@
 #include "render_pipe.h"
 
-
-render_pipe::render_pipe(void)
+namespace dsm
+{
+RenderPipe::RenderPipe(void)
 {
 }
 
 
-render_pipe::~render_pipe(void)
+RenderPipe::~RenderPipe(void)
 {
+}
+
 }

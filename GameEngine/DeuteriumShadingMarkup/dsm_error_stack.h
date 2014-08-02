@@ -1,5 +1,6 @@
 #pragma once
 #include <stack>
+#define DSM_ERROR_MSG(filename, line_number,error_msg) "Filename:" + filename + " at line number " + line_number + ":" + error_msg
 namespace dsm
 {
 
@@ -8,7 +9,7 @@ namespace dsm
 	public:
 		DsmError(const char* msg) { _msg = msg;}
 		DsmError(std::string msg) { _msg = msg.c_str();}
-		~DsmError(void);
+		~DsmError(void) {};
 	
 		const char* get_message() { return _msg;}
 	private:

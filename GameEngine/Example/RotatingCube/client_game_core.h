@@ -2,7 +2,7 @@
 #include"game_core.h"
 #include "global_data.h"
 #include "texture.h"
-#include "shader_parameter_DA.h"
+
 class ClientGameCore : public deuterium::GameCore
 {
 public:
@@ -23,8 +23,6 @@ private:
 	deuterium::Camera cam;
 	deuterium::Texture	_texture;
 
-	deuterium::ShaderParameterDA plane_par;
-	deuterium::ShaderParameterDA obj_par;
 
 };
 

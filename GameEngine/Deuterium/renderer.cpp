@@ -35,6 +35,8 @@ void Renderer::clear_color_and_depth_buffer()
 }
 
 
+
+
 Mat4x4 Renderer::perspective_projection_matrix(float left, float right, float bottom, float top, float near, float far)
 {
 	//Load matrix

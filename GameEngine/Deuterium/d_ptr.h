@@ -8,6 +8,7 @@
  *
 */
 
+#define D_PTR_CAST(Type,var) *((d_ptr<Type>*)&var);
 template <class T>
 class d_ptr
 	{
@@ -18,7 +19,7 @@ class d_ptr
 		d_ptr(T* ptr);
 
 		//copy constructor
-		d_ptr(d_ptr&);
+		d_ptr(const d_ptr&);
 
 		//removes all references and update the number of handles
 		~d_ptr(void);
@@ -26,9 +27,13 @@ class d_ptr
 		//Allocate a memory location to the d_ptr.
 		void alloc(T* ptr);
 
+		//Debug function
+		//int* get_num_handle_ptr() { return _num_handles_allocated_ptr;}
+
 		//Clears the pointer's reference and updates the number of handles
 		void clear();
 
+		bool is_null() { return _ptr == NULL;}
 		int num_handles() { return _num_handles_allocated_ptr == NULL ?  0 :  *_num_handles_allocated_ptr;}
 		//------------------------------------------------
 		//			Operators
@@ -43,9 +48,18 @@ class d_ptr
 			return *this;
 		};
 
+		T& value() 
+		{
+			return *_ptr;
+		}
+
+
+
+
 		T*	operator->() const  {
 			return _ptr;
 		};
+
 
 	private:
 		void delete_unused_memory();
@@ -71,7 +85,7 @@ d_ptr<T>::d_ptr(T* ptr)
 	alloc(ptr);
 }
 template <class T>
-d_ptr<T>::d_ptr(d_ptr& ptr)
+d_ptr<T>::d_ptr(const d_ptr& ptr)
 {
 	this->_ptr = NULL;
 	this->_num_handles_allocated_ptr = NULL;
@@ -117,7 +131,8 @@ void d_ptr<T>::clear()
 template <class T>
 void d_ptr<T>::add_handle()
 {
-	*_num_handles_allocated_ptr = *_num_handles_allocated_ptr + 1;
+	if(_num_handles_allocated_ptr != NULL)
+		*_num_handles_allocated_ptr = *_num_handles_allocated_ptr + 1;
 }
 
 template <class T>

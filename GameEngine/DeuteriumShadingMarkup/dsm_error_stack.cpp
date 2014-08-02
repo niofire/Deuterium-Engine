@@ -3,6 +3,8 @@
 
 namespace dsm
 {
+	DsmErrorStack DsmErrorStack::_stack;
+
 	DsmErrorStack::DsmErrorStack()
 	{
 

@@ -1,25 +1,19 @@
 #include "node.h"
 
 
-namespace DSM
+namespace dsm
 {
 	Node::Node(NodeType type)
 	{
-
+		this->_type = type;
 	}
 
 	Node::~Node()
 	{
-	}
-
-	void Node::add_content(std::string content)
-	{
-		_node_content.push_back(content);
-	}
-
+	}\
 	void Node::clear()
 	{
-		_node_content.clear();
+		_node_data._content.clear();
 		_child_nodes.clear();
 	}
 

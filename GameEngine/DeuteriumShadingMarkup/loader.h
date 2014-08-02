@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include "parser.h"
 namespace dsm
 {
 	class Loader
@@ -15,7 +16,6 @@ namespace dsm
 
 		d_ptr<RenderPipe> load_rendering_pipeline(std::string render_pipe_filename, std::string render_assets_package_filename);
 	
-		const char* get_error();
 	private:
 
 		d_ptr<Node> load_render_pipe(std::string filename);
@@ -23,12 +23,8 @@ namespace dsm
 		//returns a list of shader, technique and pass nodes
 		std::vector< d_ptr<Node> > load_assets_package(std::string filename);
 
-		d_ptr<Node> load_shader_data(std::string filename);
+		std::vector<d_ptr<Node>> load_shader_data(std::string filename);
 		d_ptr<Node> load_shader_extension(std::string filename);
-
-
-
-		DsmErrorStack _error_stack;
 	
 	};
 

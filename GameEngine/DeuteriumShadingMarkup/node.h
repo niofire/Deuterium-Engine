@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "../Deuterium/d_ptr.h"
+
 namespace dsm
 {
 class Node
@@ -33,12 +34,39 @@ public:
 		RENDER_PIPE,
 		INPUT,
 		OUTPUT,
+		NUMBER_OF_TAGS_NULL,
+	};
+	
+	class NodeData
+	{
+	public:
+		NodeData()
+		{
+			_filename = "";
+			_content_starting_index = 0;
+		}
+
+		NodeData(const NodeData& n)
+		{
+			this->_filename = n._filename;
+			this->_content = n._content;
+			this->_content_starting_index = n._content_starting_index;
+		}
+		
+		~NodeData()
+		{
+
+		}
+
+		std::vector<std::string> _content;
+		std::string _filename;
+		int _content_starting_index;
 	};
 public:
 	Node(NodeType type);
-	~Node(void);
+	virtual ~Node(void);
 
-	void add_content(std::string);
+	virtual bool load_content(NodeData& data) = 0;
 	void add_child(d_ptr<Node>);
 	NodeType type() {return _type;}
 
@@ -48,9 +76,9 @@ public:
 
 
 	
-private:
+protected:
 	NodeType _type;
-	std::vector<std::string> _node_content;
+	NodeData _node_data;
 	std::vector<d_ptr<Node> > _child_nodes;
 };
 }

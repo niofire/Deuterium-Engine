@@ -1,4 +1,7 @@
 #pragma once
+#include "d_ptr.h"
+#include "deuterium_error_stack.h"
+#include "void_d_ptr.h"
 #ifdef DEUTERIUM_PC
 #include "3rdParty/Glew/Include/glew.h"
 typedef unsigned	__int32	U32;
@@ -33,7 +36,7 @@ typedef int16_t 	S16;
 typedef	uint8_t		U8;
 typedef int8_t		S8;
 #endif	// _MCVS2012_
-
+#include <vector>
 namespace deuterium
 {
 	class GameCore;
@@ -43,7 +46,8 @@ namespace deuterium
 	class PrimitiveTypeHelper;
 	class EventManager;
 
-
+	
+	
 	enum StreamType
 	{
 		POSITION0	= 1,
@@ -63,24 +67,10 @@ namespace deuterium
 	};
 
 
-	enum DeuteriumPrimitiveType
-{
-	DEUTERIUM_INT1 = 1,
-	DEUTERIUM_FLOAT1,
-	DEUTERIUM_FLOAT2,
-	DEUTERIUM_FLOAT3,
-	DEUTERIUM_FLOAT4,
-	DEUTERIUM_MAT3	,
-	DEUTERIUM_MAT4	,
-	DEUTERIUM_DOUBLE1 ,
-	DEUTERIUM_UNKNOWN,
-};
-		
-	enum ShaderSemantic
-	{
-		WORLD_VIEW_PROJ = 0,
-		NUMBER_OF_SEMANTIC
-	};
+
+
+
+	
 //------------------------------------------------------------------------
 //					GlobalData class
 //------------------------------------------------------------------------

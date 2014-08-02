@@ -21,8 +21,10 @@ bool ClientGameCore::init()
 	//Initializes all managers
 	GameCore::init();
 
+	return true;
+}
 	
-	
+	/*
 	//----------------------------------------------------
 	//			Load Model
 	//----------------------------------------------------
@@ -72,7 +74,7 @@ void ClientGameCore::update()
 {
 	using namespace deuterium;
 	GameCore::update();
-	deuterium::Shader s = deuterium::g_data._shader_manager_ptr->GetShader(_shader_handle);
+	//deuterium::Shader s = deuterium::g_data._shader_manager_ptr->GetShader(_shader_handle);
 	cam.update_lookat_matrix();
 	
 	
@@ -116,6 +118,25 @@ void ClientGameCore::update()
 	r2->ZValue = 0;
 	r2->ShaderParamArray = &plane_par;
 	//ADD_DRAWREQUEST(r2);
+	*/
+
+void ClientGameCore::exit()
+{
+}
+
+void ClientGameCore::render()
+{
+
+}
+
+void ClientGameCore::reset()
+{
+
+}
+
+void ClientGameCore::update()
+{
+
 }
 
 void ClientGameCore::on_event()

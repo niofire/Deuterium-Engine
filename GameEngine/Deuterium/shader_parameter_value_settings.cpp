@@ -1,11 +1,9 @@
 #include "shader_parameter_value_settings.h"
-#include "shader.h"
-#include "shader_technique.h"
 namespace deuterium
 {
 ShaderParameterValueSettings::ShaderParameterValueSettings(void)
 {
-
+	_pass_id = 0;
 }
 
 
@@ -13,7 +11,7 @@ ShaderParameterValueSettings::~ShaderParameterValueSettings(void)
 {
 }
 
-
+/*
 void	ShaderParameterValueSettings::bind_values_to_shader(U32 shader_handle)
 {
 	if(_last_bound_shader_handle != shader_handle) 
@@ -25,8 +23,8 @@ void	ShaderParameterValueSettings::bind_values_to_shader(U32 shader_handle)
 		_shader_parameter_value_node_DA[i].bind_parameter_to_bound_program();
 	}
 	glUseProgram(0);
-}
-
+}*/
+/*
 void ShaderParameterValueSettings::update_shader_parameter_declaration(ShaderTechnique* shader_technique)
 {
 	for(int i = 0; i < shader_technique->total_number_of_pass(); ++i)
@@ -141,7 +139,7 @@ bool	ShaderParameterValueSettings::update_value(char* parameter_name, void* valu
 			return "";
 		return _shader_parameter_value_node_DA[ index ] .name();
 	}
-
+*/
 
 
 }

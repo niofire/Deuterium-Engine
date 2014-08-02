@@ -55,11 +55,14 @@
     <Filter Include="Renderer\Light">
       <UniqueIdentifier>{0be22681-d093-4d3d-8fce-f33def1dfb83}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DeuteriumMarkup">
-      <UniqueIdentifier>{11d8f07e-253d-4779-8b5e-77beb97c7b44}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Debugger\Events">
       <UniqueIdentifier>{02cf2677-4d67-4252-a5b0-f19b0688deea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Generation">
+      <UniqueIdentifier>{75ed2b51-4db9-4df2-b09e-1630b061b5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Types">
+      <UniqueIdentifier>{5a77317b-ac8a-4923-94b4-c15ff5585282}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -132,9 +135,6 @@
     <ClCompile Include="camera.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="shader.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="event_listener.cpp">
       <Filter>Debugger\Events</Filter>
     </ClCompile>
@@ -156,35 +156,38 @@
     <ClCompile Include="shader_parameter_value_settings.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="shader_technique.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="shader_pass.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="primitive_type_helper.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="shader_technique_cache.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="shader_component_cache.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="renderer_settings.cpp">
       <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="deuterium_markup_reader.cpp">
-      <Filter>DeuteriumMarkup</Filter>
+    <ClCompile Include="uniform_buffer.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="deuterium_markup.cpp">
-      <Filter>DeuteriumMarkup</Filter>
+    <ClCompile Include="void_d_ptr.cpp">
+      <Filter>Renderer\Memory</Filter>
     </ClCompile>
-    <ClCompile Include="deuterium_markup_loader.cpp">
-      <Filter>DeuteriumMarkup</Filter>
+    <ClCompile Include="render_pipe.cpp">
+      <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="deuterium_error_manager.cpp">
+    <ClCompile Include="deuterium_error_stack.cpp">
       <Filter>Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_loader.cpp">
+      <Filter>Resource Generation</Filter>
+    </ClCompile>
+    <ClCompile Include="json_parser.cpp">
+      <Filter>Resource Generation</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_extension.cpp">
+      <Filter>Resource Generation</Filter>
+    </ClCompile>
+    <ClCompile Include="uniform_type_handler.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="stream_data.cpp">
+      <Filter>Scene\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,9 +245,6 @@
     <ClInclude Include="camera.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="shader.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="event_listener.h">
       <Filter>Debugger\Events</Filter>
     </ClInclude>
@@ -266,41 +266,44 @@
     <ClInclude Include="shader_parameter_value_settings.h">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="shader_technique.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="shader_pass.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="primitive_type_helper.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="shader_technique_cache.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="shader_component_cache.h">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="renderer_settings.h">
       <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="deuterium_markup_reader.h">
-      <Filter>DeuteriumMarkup</Filter>
-    </ClInclude>
-    <ClInclude Include="deuterium_markup.h">
-      <Filter>DeuteriumMarkup</Filter>
-    </ClInclude>
-    <ClInclude Include="deuterium_markup_loader.h">
-      <Filter>DeuteriumMarkup</Filter>
-    </ClInclude>
-    <ClInclude Include="deuterium_error.h">
-      <Filter>Debugger</Filter>
-    </ClInclude>
-    <ClInclude Include="deuterium_error_manager.h">
-      <Filter>Debugger</Filter>
-    </ClInclude>
     <ClInclude Include="d_ptr.h">
       <Filter>Renderer\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="uniform_buffer.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="void_d_ptr.h">
+      <Filter>Renderer\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="render_pipe.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="deuterium_error_stack.h">
+      <Filter>Debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_loader.h">
+      <Filter>Resource Generation</Filter>
+    </ClInclude>
+    <ClInclude Include="json_parser.h">
+      <Filter>Resource Generation</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_extension.h">
+      <Filter>Resource Generation</Filter>
+    </ClInclude>
+    <ClInclude Include="assets.h">
+      <Filter>Resource Generation</Filter>
+    </ClInclude>
+    <ClInclude Include="uniform_type_handler.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="stream_data.h">
+      <Filter>Scene\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

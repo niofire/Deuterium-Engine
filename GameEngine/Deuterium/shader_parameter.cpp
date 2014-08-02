@@ -1,6 +1,5 @@
 #include "shader_parameter.h"
 #include "string_helper.h"
-#include "primitive_type_helper.h"
 #include "memory_manager.h"
 #include <iostream>
 
@@ -9,9 +8,10 @@ namespace deuterium
 
 ShaderParameter::ShaderParameter()
 {
-	_has_cached_value = false;
+	_num_of_values = 1;
 	_name = "";
-	_type = DEUTERIUM_UNKNOWN;
+	_value = void_d_ptr();
+	_type = D_UNKNOWN_UNIFORM_TYPE;
 	_uniform_location = -1;
 }
 ShaderParameter::~ShaderParameter()
@@ -22,46 +22,57 @@ ShaderParameter::~ShaderParameter()
 ShaderParameter::ShaderParameter(const ShaderParameter& param)
 {	
 	_name = param._name;
-		
 	_type = param._type;
-
 	_uniform_location = param._uniform_location;
-	_value = MemoryManager::alloc_memory(_type,1);
-	this->update_cached_parameter(param._value);
+	_value = void_d_ptr();
+	_num_of_values = param._num_of_values;
+	void_d_ptr temp = param._value;
+	if(temp.is_null())
+		return;
+
+	this->allocate_cache_memory();
+	this->update_cached_parameter(temp.get_void_ptr());
+
 }
 
-ShaderParameter::ShaderParameter(std::string i_Parameter_type, std::string i_Parameter_name, GLint i_uniform_location)
+ShaderParameter::ShaderParameter(DeuteriumUniformType type, U32 num_of_values, std::string name)
 {
-	_name = i_Parameter_name;
-		
-	_type = StringHelper::parse_string_for_type(i_Parameter_type);
-	
-	_value = MemoryManager::alloc_memory(_type,1);
-	_uniform_location = i_uniform_location;
+	_name = name;
+	_type = type;
+	_num_of_values = num_of_values;
+}
+bool ShaderParameter::is_identical(const ShaderParameter& param)
+{
+	return StringHelper::is_identical_string(_name,param._name) 
+		&& _type == param._type;
 }
 
-void	ShaderParameter::update_cached_parameter(void* i__value)
+void	ShaderParameter::update_cached_parameter(const void* i__value)
 {
+	if(_value.is_null())
+		allocate_cache_memory();
 	//Store given data inside the void* value pointer
-	if(PrimitiveTypeHelper::is_float_derived(_type))
+	if(UniformTypeHandler::is_float_derived(_type))
 	{
-		for(U32 i = 0; i < PrimitiveTypeHelper::num_of_values(_type); ++i)
-			((float*)_value)[i] = ((float*)i__value)[i];
+		for(U32 i = 0; i < UniformTypeHandler::num_of_values(_type); ++i)
+			((float*)_value.get_void_ptr())[i] = ((float*)i__value)[i];
 	}
 
-	else if(PrimitiveTypeHelper::is_integer_derived(_type))
+	else if(UniformTypeHandler::is_integer_derived(_type))
 	{
-		for(U32 i = 0; i < PrimitiveTypeHelper::num_of_values(_type); ++i)
-			((int*)_value)[i] = ((int*)i__value)[i];
+		for(U32 i = 0; i < UniformTypeHandler::num_of_values(_type); ++i)
+			((int*)_value.get_void_ptr())[i] = ((int*)i__value)[i];
 	}
+	
 
-	else if(PrimitiveTypeHelper::is_double_derived(_type))
+}
+
+void ShaderParameter::allocate_cache_memory()
+{
+	if(this->_value.is_null())
 	{
-		for(U32 i = 0; i < PrimitiveTypeHelper::num_of_values(_type); ++i)
-			((double*)_value)[i] = ((double*)i__value)[i];
+		_value = UniformTypeHandler::alloc_memory(_type,_num_of_values);
 	}
-	_has_cached_value = true;
-
 }
 
 void ShaderParameter::bind_parameter_to_bound_program()
@@ -69,40 +80,36 @@ void ShaderParameter::bind_parameter_to_bound_program()
 	//Check if parameter is currently used in the shader
 	if( _uniform_location == -1)
 		return;
+	void* val = _value.get_void_ptr();
 	switch( _type)
 	{
 
-	case DEUTERIUM_INT1:
-		glUniform1i( _uniform_location,*(U32*) _value);
+	case D_INT:
+		glUniform1i( _uniform_location,*(U32*) val);
 		break;
-	case DEUTERIUM_FLOAT1:
-		glUniform1fv( _uniform_location,1,(float*) _value);
+	case D_FLOAT:
+		glUniform1fv( _uniform_location,1,(float*) val);
 		break;
-	case DEUTERIUM_FLOAT2:
-		glUniform2fv( _uniform_location,1,(float*) _value);
+	case D_VEC2:
+		glUniform2fv( _uniform_location,1,(float*) val);
 		break;
-	case DEUTERIUM_FLOAT3:
-		glUniform3fv( _uniform_location,1,(float*) _value);
+	case D_VEC3:
+		glUniform3fv( _uniform_location,1,(float*) val);
 		break;
-	case DEUTERIUM_FLOAT4:
-		glUniform4fv( _uniform_location,1,(float*) _value);
+	case D_VEC4:
+		glUniform4fv( _uniform_location,1,(float*) val);
 		break;
-	case DEUTERIUM_MAT3:
-		glUniformMatrix3fv( _uniform_location,1,GL_FALSE,(float*) _value);
+	case D_MAT3:
+		glUniformMatrix3fv( _uniform_location,1,GL_FALSE,(float*) val);
 		break;
-	case DEUTERIUM_MAT4:
+	case D_MAT4:
 		for(int i = 0; i < 4; ++i)
 		{
-			std::cout << ((float*) _value)[i * 4] << " " << ((float*) _value)[i*4 + 1] << " " << ((float*) _value)[i*4 + 2] << " " << ((float*) _value)[i * 4 + 3] << std::endl;
+			std::cout << ((float*) val)[i * 4] << " " << ((float*) val)[i*4 + 1] << " " << ((float*) val)[i*4 + 2] << " " << ((float*) val)[i * 4 + 3] << std::endl;
 
 		}
 		std::cout << std::endl;
-		glUniformMatrix4fv( _uniform_location,1,GL_FALSE,(float*) _value);
-		break;
-	case DEUTERIUM_DOUBLE1:
-#ifndef EMSCRIPTEN
-		glUniform1dv( _uniform_location,1,(double*) _value);
-#endif
+		glUniformMatrix4fv( _uniform_location,1,GL_FALSE,(float*) val);
 		break;
 	}
 

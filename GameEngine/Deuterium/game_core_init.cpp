@@ -1,5 +1,4 @@
 #include "game_core.h"
-#include "primitive_type_helper.h"
 #include "texture.h"
 #include "event_listener.h"
 #include "event_manager.h"
@@ -34,7 +33,7 @@ bool GameCore::init()
 	g_data._mesh_manager_ptr = new MeshManager();
 	
 	//ShaderManager Init START
-	g_data._shader_manager_ptr = new ShaderManager();
+	//g_data._shader_manager_ptr = new ShaderManager();
 	//ShaderManager Init END
 
 	//EventManager Init START

@@ -10,9 +10,7 @@
 
 #include "global_data.h"
 #include "mesh_manager.h"
-#include "shader_manager.h"
-#include "shader.h"
-#include "primitive_type_helper.h"
+
 #include "math.h"
 #include "Camera.h"
 #include <vector>
@@ -22,8 +20,6 @@
 
 namespace deuterium
 {
-	
-	class ShaderParameterDA;
 
 struct DrawRequest
 {
@@ -31,7 +27,7 @@ struct DrawRequest
 	U32			MeshId;
 	S32			ZValue;
 	bool		IsTransparent;
-	ShaderParameterDA* ShaderParamArray;
+	
 };
 
 class Renderer
