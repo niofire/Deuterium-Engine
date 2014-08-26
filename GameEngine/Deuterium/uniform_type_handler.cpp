@@ -23,9 +23,9 @@ namespace deuterium
 	
 
 
-void_d_ptr UniformTypeHandler::alloc_memory(DeuteriumUniformType type,const U32& num)
+void_dPtr UniformTypeHandler::alloc_memory(DeuteriumUniformType type,const U32& num)
 {
-	return void_d_ptr(malloc(num * UniformTypeHandler::size_of(type) * UniformTypeHandler::num_of_values(type))); 
+	return void_dPtr(malloc(num * UniformTypeHandler::size_of(type) * UniformTypeHandler::num_of_values(type))); 
 
 }
 std::string UniformTypeHandler::to_string(DeuteriumUniformType type)

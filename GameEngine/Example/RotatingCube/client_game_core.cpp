@@ -14,12 +14,11 @@ ClientGameCore::~ClientGameCore(void)
 bool ClientGameCore::init()
 {
 	using namespace deuterium;
-
-	
-	
-	
 	//Initializes all managers
 	GameCore::init();
+	g_data._mesh_manager_ptr->add_and_load_new_mesh(_mesh_handle, "Square", "Resources/Models/Square.obj");
+	//TODO Redesign draw request class + processing
+
 
 	return true;
 }

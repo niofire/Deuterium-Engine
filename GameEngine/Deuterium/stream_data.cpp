@@ -141,7 +141,7 @@ namespace deuterium
 	{
 		U32 i = 0;
 		U32 t = type;
-		if(type > StreamType::NULL0)
+		if(type >= StreamType::NULL0)
 			return -1;
 		while(t)
 		{
@@ -165,7 +165,7 @@ namespace deuterium
 		}
 		return StreamType::NULL0;
 	}
-
+	
 	const char* StreamData::to_string(StreamType type)
 	{
 		switch(type)
@@ -196,6 +196,41 @@ namespace deuterium
 			return "TEXCOORD6";
 		case TEXCOORD7	:
 			return "TEXCOORD7";
+		default: 
+			return "UNKNOWN";
+		}
+	}
+	
+	const char* StreamData::get_primitive_glsl_type_string(StreamType type)
+	{
+		switch(type)
+		{
+		case POSITION0	:
+			return "vec3";
+		case POSITION1	:	
+			return "vec3";
+		case COLOR		:
+			return "vec3";
+		case NORMAL		:
+			return "vec3";
+		case TANGENT	:
+			return "vec3";
+		case TEXCOORD0	:
+			return "vec2";
+		case TEXCOORD1	:
+			return "vec2";
+		case TEXCOORD2	:
+			return "vec2";
+		case TEXCOORD3	:
+			return "vec2";
+		case TEXCOORD4	:
+			return "vec2";
+		case TEXCOORD5	:
+			return "vec2";
+		case TEXCOORD6	:
+			return "vec2";
+		case TEXCOORD7	:
+			return "vec2";
 		default: 
 			return "UNKNOWN";
 		}

@@ -1,4 +1,5 @@
 #include "renderer.h"
+#include "resource_loader.h"
 namespace deuterium
 {
 void Renderer::init(int width, int height)
@@ -9,7 +10,66 @@ void Renderer::init(int width, int height)
 	resize_window(width,height);
 
 	this->_debug_camera.set_name("MainCamera");
+
+	if(!this->load_render_pipe())
+	{
+		while(!DeuteriumErrorStack::get_instance().empty())
+		{
+			std::cout << DeuteriumErrorStack::get_instance().pop() << std::endl;
+		}
+	}
 	
+	//Compile all render pipe assets
+	this->_render_pipe.compile_render_pipe();
+	
+}
+
+bool Renderer::load_render_pipe()
+{
+	//Fetch render_settings file
+	std::ifstream file_in(s_render_settings_config_filepath);
+
+	if(!file_in)
+	{
+		DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("Could not open render_settings.config file located at path:" + std::string(s_render_settings_config_filepath))));
+		return false;
+	}
+
+	std::vector<std::string> file_content;
+	while(!file_in.eof())
+	{
+		std::string line;
+
+		std::getline(file_in,line);
+		file_content.push_back(line);
+	}
+
+	std::string render_pipe_macro = "#RENDER_PIPE";
+	std::string render_pipe_filepath = "";
+	ResourceLoader loader;
+	for(int i = 0; i < file_content.size(); ++i)
+	{
+		if(file_content[i].find(render_pipe_macro) != std::string::npos)
+		{
+
+			//---------------------------------------
+			//			Load Render Pipe Resources
+			//---------------------------------------
+
+			//Get Render pipe filepath
+			std::string render_pipe_filepath = file_content[i];
+			render_pipe_filepath = render_pipe_filepath.substr( render_pipe_filepath.find(render_pipe_macro) + render_pipe_macro.size());
+			StringHelper::trim(render_pipe_filepath);
+
+			if(!_render_pipe.load_render_pipe(render_pipe_filepath.c_str()))
+			{
+				D_ERROR("The .render_pipe file did not load correctly!");
+				return false;
+			}
+		}
+	}
+
+	return true;
 }
 
 

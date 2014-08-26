@@ -4,8 +4,7 @@ namespace deuterium
 
 GameCore::GameCore()
 {
-	_is_game_core_running = true;
-	
+	_is_game_core_running = false;
 }
 
 
@@ -39,12 +38,12 @@ void GameCore::main_loop()
 }
 
 
-int GameCore::execute(GameCore* gPtr)
+bool GameCore::execute(GameCore* gPtr)
 {
-	if(!s_game_core)
-		s_game_core = gPtr;
+	if(s_game_core.is_null())
+		s_game_core = dPtr<GameCore>(gPtr);
 	else
-		return 1;
+		return false;
 
 	//Javascript tracing
 	#ifdef EMSCRIPTEN
@@ -78,7 +77,7 @@ int GameCore::execute(GameCore* gPtr)
 	emscripten_set_main_loop(s_game_core->MainLoop,60,true);
 #endif
 
-	return 0;
+	return true;
 
 }
 

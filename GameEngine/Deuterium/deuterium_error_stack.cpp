@@ -28,9 +28,9 @@ namespace deuterium
 		return _error_stack.empty();
 	}
 
-	const char* DeuteriumErrorStack::pop()
+	std::string DeuteriumErrorStack::pop()
 	{
-		const char* msg = _error_stack.top().get_message();
+		std::string msg = _error_stack.top().get_message();
 		_error_stack.pop();
 		return msg;
 	}

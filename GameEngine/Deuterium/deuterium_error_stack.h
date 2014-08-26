@@ -7,13 +7,17 @@ namespace deuterium
 	class DeuteriumError
 	{
 	public:
-		DeuteriumError(const char* msg) { _msg = msg;}
-		DeuteriumError(std::string msg) { _msg = msg.c_str();}
+		DeuteriumError(const char* msg) {
+			_msg = std::string(msg);
+		}
+		DeuteriumError(std::string msg) { 
+			_msg = msg;
+		}
 		~DeuteriumError(void) {};
 	
-		const char* get_message() { return _msg;}
+		const char* get_message() { return _msg.c_str();}
 	private:
-		const char* _msg;
+		std::string _msg;
 	};
 
 
@@ -25,9 +29,9 @@ namespace deuterium
 		static DeuteriumErrorStack& get_instance() { return _stack;}
 		bool empty();
 		void clear();
-		const char* pop();
+		std::string pop();
 		void push(DeuteriumError err);
-
+		
 	private:
 		static DeuteriumErrorStack _stack;
 		std::stack<DeuteriumError> _error_stack;

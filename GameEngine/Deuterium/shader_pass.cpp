@@ -30,13 +30,13 @@ void ShaderPass::update_uniform_declaration()
 {
 	this->_uniform_buffer.clear_uniform_buffer();
 
-//	this->_uniform_buffer.load_uniform_buffer(_components._vertex_shader.get_uniform_buffer());
-	//this->_uniform_buffer.load_uniform_buffer(_components._fragment_shader.get_uniform_buffer());
+	this->_uniform_buffer.load_uniform_buffer(this->_components._vertex_shader.get_dynamic_uniform_buffer().value());
+	this->_uniform_buffer.load_uniform_buffer(this->_components._fragment_shader.get_dynamic_uniform_buffer().value());
 	this->_uniform_buffer.set_name(this->name() + "_uBuffer");
 
 }
 
-bool ShaderPass::update_parameters(d_ptr<ShaderParameterValueSettings> param_val_ptr)
+bool ShaderPass::update_parameters(dPtr<ShaderParameterValueSettings> param_val_ptr)
 {
 	if(param_val_ptr->pass_id() != this->_shader_handle)
 		return false;
@@ -46,22 +46,25 @@ bool ShaderPass::update_parameters(d_ptr<ShaderParameterValueSettings> param_val
 	return true;
 }
 
-void ShaderPass::compile_components()
+bool ShaderPass::compile_components()
 {
 	this->update_uniform_declaration();
 
-	//_components._vertex_shader.assign_uniform_buffer(this->_uniform_buffer);
-	//_components._fragment_shader.assign_uniform_buffer(this->_uniform_buffer);
+	_components._vertex_shader.get_dynamic_uniform_buffer()->clear_uniform_buffer();
+	_components._vertex_shader.get_dynamic_uniform_buffer()->load_uniform_buffer(this->_uniform_buffer);
 
+	_components._fragment_shader.get_dynamic_uniform_buffer()->clear_uniform_buffer();
+	_components._fragment_shader.get_dynamic_uniform_buffer()->load_uniform_buffer(this->_uniform_buffer);
+	
 	//compile components
 	_components._vertex_shader.compile();
 	_components._fragment_shader.compile();
-
+	return true;
 }
-void ShaderPass::compile_pass()
+bool ShaderPass::compile_pass()
 {
 	if(_shader_state == COMPILED)
-		return;
+		return false;
 
 	//compile the components we an updated uniform buffer
 	this->compile_components();
@@ -79,39 +82,21 @@ void ShaderPass::compile_pass()
 		//Attach the fragment shader
 		glAttachShader(_shader_handle,_components._fragment_shader.component_handle());
 
-		//Link the program and delete sub-programs
-		update_shader_attribute_binding();
+		//Link the program and DELETE/TODO sub-programs
+		this->_components._vertex_shader.bind_shader_attribute(this->_shader_handle);
 		
 		glLinkProgram(_shader_handle);
 
 		_shader_state = COMPILED;
-	
+	return true;
 }
 
 
-void ShaderPass::update_shader_attribute_binding()
-{
-	
-	glBindAttribLocation(_shader_handle,0,"position0");
-	glBindAttribLocation(_shader_handle,1,"position1");
-	glBindAttribLocation(_shader_handle,2,"color");
-	glBindAttribLocation(_shader_handle,3,"normal");
-	glBindAttribLocation(_shader_handle,4,"tangent");
-	glBindAttribLocation(_shader_handle,5,"texcoord0");
-	glBindAttribLocation(_shader_handle,6,"texcoord1");
-	glBindAttribLocation(_shader_handle,7,"texcoord2");
-	glBindAttribLocation(_shader_handle,8,"texcoord3");
-	glBindAttribLocation(_shader_handle,9,"texcoord4");
-	glBindAttribLocation(_shader_handle,10,"texcoord5");
-	glBindAttribLocation(_shader_handle,11,"texcoord6");
-	glBindAttribLocation(_shader_handle,11,"texcoord7");
-
-}
 
 
-d_ptr<ShaderParameterValueSettings> ShaderPass::get_parameter_and_value_setting()
+dPtr<ShaderParameterValueSettings> ShaderPass::get_parameter_and_value_setting()
 {	
-	d_ptr<ShaderParameterValueSettings> param_and_value_arr;
+	dPtr<ShaderParameterValueSettings> param_and_value_arr;
 	if(_shader_state == COMPILED)
 	{
 		param_and_value_arr;

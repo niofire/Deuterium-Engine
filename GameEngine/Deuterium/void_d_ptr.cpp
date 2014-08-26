@@ -1,10 +1,10 @@
-#include "void_d_ptr.h"
+#include "void_dPtr.h"
 
 namespace deuterium
 {
 
 	
-void_d_ptr::void_d_ptr()
+void_dPtr::void_dPtr()
 {
 	_num_handles_allocated = NULL;
 	_ptr = NULL;
@@ -12,7 +12,7 @@ void_d_ptr::void_d_ptr()
 }
 
 
-void_d_ptr::void_d_ptr(void* ptr)
+void_dPtr::void_dPtr(void* ptr)
 {
 	_num_handles_allocated = NULL;
 	_ptr = NULL;
@@ -20,7 +20,7 @@ void_d_ptr::void_d_ptr(void* ptr)
 	alloc(ptr);
 }
 
-void_d_ptr::void_d_ptr(const void_d_ptr& ptr)
+void_dPtr::void_dPtr(const void_dPtr& ptr)
 {
 	this->_ptr = NULL;
 	this->_num_handles_allocated = NULL;
@@ -33,13 +33,13 @@ void_d_ptr::void_d_ptr(const void_d_ptr& ptr)
 }
 
 
-void_d_ptr::~void_d_ptr()
+void_dPtr::~void_dPtr()
 {
 	this->clear();
 }
 
 
-void void_d_ptr::alloc(void* ptr)
+void void_dPtr::alloc(void* ptr)
 {
 	//clear previous reference
 	this->clear();
@@ -49,7 +49,7 @@ void void_d_ptr::alloc(void* ptr)
 	_ptr = ptr;
 }
 
-void void_d_ptr::clear()
+void void_dPtr::clear()
 {
 	if(this->_num_handles_allocated != NULL)
 	{
@@ -62,14 +62,14 @@ void void_d_ptr::clear()
 }
 
 
-void void_d_ptr::add_handle()
+void void_dPtr::add_handle()
 {
 	if(_num_handles_allocated != NULL)
 		*_num_handles_allocated = *_num_handles_allocated + 1;
 }
 
 
-void void_d_ptr::delete_unused_memory()
+void void_dPtr::delete_unused_memory()
 {
 	if(*_num_handles_allocated == 0)
 	{

@@ -13,12 +13,12 @@ class ShaderComponent
 {
 	struct AttributeLocation
 	{
-		AttributeLocation(U32 attrib_location, std::string attrib_name)
+		AttributeLocation(U32 attrib_stream_type, std::string attrib_name)
 		{
-			_attrib_location = attrib_location;
+			_attrib_stream_type = attrib_stream_type;
 			_attrib_name = attrib_name;
 		}
-			U32 _attrib_location;
+			U32 _attrib_stream_type;
 			std::string _attrib_name;
 	};
 
@@ -26,10 +26,10 @@ class ShaderComponent
 	{
 		GLenum _shader_type;
 		std::string _shader_content;
-		std::vector<d_ptr<ShaderExtension>> _shader_extensions_DA;
-		std::vector<d_ptr<UniformBuffer> > _constant_uniform_buffer_DA;
-		d_ptr<UniformBuffer>  _dynamic_uniform_buffer;
-		std::vector<AttributeLocation> _attribute_location;
+		std::vector<dPtr<ShaderExtension>> _shader_extension_DA;
+		std::vector<dPtr<UniformBuffer> > _constant_uniform_buffer_DA;
+		dPtr<UniformBuffer>  _dynamic_uniform_buffer;
+		std::vector<AttributeLocation> _attribute_location_DA;
 		std::string _name;
 		
 		
@@ -51,13 +51,13 @@ public:
 	void set_source(std::string str) { _data._shader_content = str;}
 	std::string name() { return _data._name;}
 
-	void add_constant_uniform_buffer(const d_ptr<UniformBuffer>& buffer) { _data._constant_uniform_buffer_DA.push_back(buffer);}
-	void set_dynamic_uniform_buffer(d_ptr<UniformBuffer>& buffer) { _data._dynamic_uniform_buffer = buffer;}
-	void add_source_extension(const d_ptr<ShaderExtension>& ext) { _data._shader_extensions_DA.push_back(ext);}
+	void add_constant_uniform_buffer(const dPtr<UniformBuffer>& buffer) { _data._constant_uniform_buffer_DA.push_back(buffer);}
+	void set_dynamic_uniform_buffer(dPtr<UniformBuffer>& buffer) { _data._dynamic_uniform_buffer = buffer;}
+	void add_extension_source(const dPtr<ShaderExtension>& ext) { _data._shader_extension_DA.push_back(ext);}
 	void add_attribute_location(StreamType type, const char* name);
-
-	std::vector<d_ptr<UniformBuffer> >& get_constant_uniform_buffer() {return _data._constant_uniform_buffer_DA;}
-	d_ptr<UniformBuffer> get_dynamic_uniform_buffer() {return _data._dynamic_uniform_buffer;}
+	void bind_shader_attribute(U32 shader_handle);
+	std::vector<dPtr<UniformBuffer> >& get_constant_uniform_buffer() {return _data._constant_uniform_buffer_DA;}
+	dPtr<UniformBuffer> get_dynamic_uniform_buffer() {return _data._dynamic_uniform_buffer;}
 
 
 private:

@@ -47,7 +47,7 @@ namespace deuterium
 
 	public:
 
-		static void_d_ptr alloc_memory(DeuteriumUniformType type,const U32& num);
+		static void_dPtr alloc_memory(DeuteriumUniformType type,const U32& num);
 		static std::string to_string(DeuteriumUniformType type);
 		static DeuteriumUniformType to_enum(const std::string& str);
 		static const U32&		num_of_values(DeuteriumUniformType type);

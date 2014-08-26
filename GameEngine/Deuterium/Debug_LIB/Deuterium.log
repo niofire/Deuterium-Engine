@@ -1,71 +1,141 @@
-﻿Build started 2014-08-02 3:53:14 PM.
+﻿Build started 2014-08-13 7:04:10 PM.
      1>Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D DEUTERIUM_PC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug_LIB\\" /Fd"Debug_LIB\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt resource_loader.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D DEUTERIUM_PC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug_LIB\\" /Fd"Debug_LIB\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt camera.cpp event_listener.cpp event_manager.cpp game_core.cpp game_core_event.cpp game_core_init.cpp game_core_render.cpp game_core_update.cpp index_buffer_container.cpp json_parser.cpp memory_manager.cpp mesh.cpp mesh_manager.cpp renderer.cpp renderer_init.cpp renderer_render.cpp renderer_update.cpp render_pipe.cpp render_target.cpp resource_loader.cpp scene_object.cpp shader_component.cpp shader_parameter.cpp shader_parameter_value_settings.cpp shader_pass.cpp stream_data.cpp string_helper.cpp texture.cpp uniform_buffer.cpp uniform_type_handler.cpp vertex_buffer_container.cpp void_d_ptr.cpp
+         void_d_ptr.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\void_d_ptr.cpp(1): fatal error C1083: Cannot open include file: 'void_dPtr.h': No such file or directory
+         uniform_type_handler.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\uniform_type_handler.cpp(49): warning C4018: '>=' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\uniform_type_handler.cpp(50): warning C4172: returning address of local variable or temporary
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\uniform_type_handler.cpp(55): warning C4018: '>=' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\uniform_type_handler.cpp(56): warning C4172: returning address of local variable or temporary
+         shader_pass.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(57): error C2061: syntax error : identifier 'StreamType'
+         shader_parameter.cpp
+         scene_object.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\scene_object.cpp(4): error C2653: 'scene_object' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\scene_object.cpp(5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\scene_object.cpp(6): warning C4508: 'scene_object' : function should return a value; 'void' return type assumed
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\scene_object.cpp(9): error C2653: 'scene_object' : is not a class or namespace name
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\scene_object.cpp(9): fatal error C1903: unable to recover from previous error(s); stopping compilation
          resource_loader.cpp
-     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\resource_loader.cpp(170): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\resource_loader.cpp(219): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\assets.h(35): warning C4018: '<' : signed/unsigned mismatch
-                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\assets.h(34) : while compiling class template member function 'd_ptr<T> deuterium::Assets<T>::get_asset(std::string)'
-                 with
-                 [
-                     T=deuterium::UniformBuffer
-                 ]
-                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\resource_loader.cpp(76) : see reference to function template instantiation 'd_ptr<T> deuterium::Assets<T>::get_asset(std::string)' being compiled
-                 with
-                 [
-                     T=deuterium::UniformBuffer
-                 ]
-                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\resource_loader.h(23) : see reference to class template instantiation 'deuterium::Assets<T>' being compiled
-                 with
-                 [
-                     T=deuterium::UniformBuffer
-                 ]
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Debug_LIB\Deuterium.lib" /LIBPATH:C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\3rdParty /NOLOGO Debug_LIB\LodePNG.obj
-         Debug_LIB\camera.obj
-         Debug_LIB\draw_request.obj
-         Debug_LIB\deuterium_error_stack.obj
-         Debug_LIB\event_listener.obj
-         Debug_LIB\event_manager.obj
-         Debug_LIB\game_core.obj
-         Debug_LIB\game_core_event.obj
-         Debug_LIB\game_core_init.obj
-         Debug_LIB\game_core_render.obj
-         Debug_LIB\game_core_update.obj
-         Debug_LIB\index_buffer_container.obj
-         Debug_LIB\deuterium_math.obj
-         Debug_LIB\json_parser.obj
-         Debug_LIB\memory_manager.obj
-         Debug_LIB\mesh.obj
-         Debug_LIB\mesh_manager.obj
-         Debug_LIB\model_space_transform.obj
-         Debug_LIB\node.obj
-         Debug_LIB\profiler.obj
-         Debug_LIB\renderer.obj
-         Debug_LIB\renderer_init.obj
-         Debug_LIB\renderer_render.obj
-         Debug_LIB\renderer_settings.obj
-         Debug_LIB\renderer_update.obj
-         Debug_LIB\render_pipe.obj
-         Debug_LIB\render_target.obj
-         Debug_LIB\resource_loader.obj
-         Debug_LIB\shader_component.obj
-         Debug_LIB\shader_extension.obj
-         Debug_LIB\shader_parameter.obj
-         Debug_LIB\shader_parameter_value_settings.obj
-         Debug_LIB\shader_pass.obj
-         Debug_LIB\stream_data.obj
-         Debug_LIB\string_helper.obj
-         Debug_LIB\texture.obj
-         Debug_LIB\uniform_buffer.obj
-         Debug_LIB\uniform_type_handler.obj
-         Debug_LIB\vertex_buffer_container.obj
-         Debug_LIB\viewport.obj
-         Debug_LIB\void_d_ptr.obj
-         Deuterium.vcxproj -> C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Debug_LIB\Deuterium.lib
-     1>Done Building Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" (Build target(s)).
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(57): error C2061: syntax error : identifier 'StreamType'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\resource_loader.cpp(157): error C2660: 'deuterium::ShaderComponent::add_attribute_location' : function does not take 2 arguments
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\resource_loader.cpp(190): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\resource_loader.cpp(248): warning C4018: '<' : signed/unsigned mismatch
+         render_pipe.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(57): error C2061: syntax error : identifier 'StreamType'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.cpp(84): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.cpp(101): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.cpp(119): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.cpp(143): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.cpp(164): warning C4114: same type qualifier used more than once
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.cpp(168): error C2039: '_' : is not a member of 'deuterium::RenderPass'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(12) : see declaration of 'deuterium::RenderPass'
+         renderer_render.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer_render.cpp(26): error C2039: 'ShaderId' : is not a member of 'deuterium::DrawRequest'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\draw_request.h(10) : see declaration of 'deuterium::DrawRequest'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer_render.cpp(29): error C2039: 'ShaderId' : is not a member of 'deuterium::DrawRequest'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\draw_request.h(10) : see declaration of 'deuterium::DrawRequest'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\draw_request.h(10) : see declaration of 'deuterium::DrawRequest'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer_render.cpp(83): error C2039: 'MeshId' : is not a member of 'deuterium::DrawRequest'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\draw_request.h(10) : see declaration of 'deuterium::DrawRequest'
+         renderer.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(80): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(82): error C2039: 'U32' : is not a member of 'deuterium::RenderPipe'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.h(17) : see declaration of 'deuterium::RenderPipe'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(82): error C2146: syntax error : missing ')' before identifier 'w'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(82): error C2761: 'void deuterium::Renderer::resize_window(U32,U32)' : member function redeclaration not allowed
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(82): error C2059: syntax error : ')'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(83): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(83): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(91): error C2039: 'DrawRequest' : is not a member of 'deuterium::RenderPipe'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.h(17) : see declaration of 'deuterium::RenderPipe'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(91): error C2039: 'request' : is not a member of 'deuterium::RenderPipe'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pipe.h(17) : see declaration of 'deuterium::RenderPipe'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer.cpp(92): error C2448: 'deuterium::Renderer::add_draw_request' : function-style initializer appears to be a function definition
+         game_core_init.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         game_core.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         Generating Code...
+         Compiling...
+         vertex_buffer_container.cpp
+         uniform_buffer.cpp
+         texture.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\texture.cpp(63): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+         string_helper.cpp
+         stream_data.cpp
+         shader_parameter_value_settings.cpp
+         shader_component.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(57): error C2061: syntax error : identifier 'StreamType'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.cpp(29): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.cpp(35): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.cpp(44): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.cpp(91): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.cpp(101): error C2511: 'void deuterium::ShaderComponent::add_attribute_location(deuterium::StreamType,const char *)' : overloaded member function not found in 'deuterium::ShaderComponent'
+                 c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\shader_component.h(13) : see declaration of 'deuterium::ShaderComponent'
+         render_target.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         renderer_update.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         renderer_init.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\renderer_init.cpp(50): warning C4018: '<' : signed/unsigned mismatch
+         mesh_manager.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(50): warning C4018: '<' : signed/unsigned mismatch
+         mesh.cpp
+         memory_manager.cpp
+         json_parser.cpp
+         index_buffer_container.cpp
+         game_core_update.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         game_core_render.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         game_core_event.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         event_manager.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         event_listener.cpp
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2059: syntax error : '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2143: syntax error : missing ';' before '}'
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\render_pass.h(27): error C2238: unexpected token(s) preceding ';'
+         Generating Code...
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\mesh_manager.cpp(54): warning C4700: uninitialized local variable 'l_MeshDataTemp' used
+     1>c:\users\mathieu\documents\github\deuterium\gameengine\deuterium\stream_data.cpp(153): warning C4715: 'deuterium::StreamData::get_attribute_index' : not all control paths return a value
+         Compiling...
+         camera.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\Mathieu\Documents\GitHub\Deuterium\GameEngine\Deuterium\Deuterium.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.11
+Time Elapsed 00:00:19.56

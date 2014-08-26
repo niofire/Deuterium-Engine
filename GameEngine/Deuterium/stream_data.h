@@ -2,7 +2,24 @@
 #include "global_data.h"
 namespace deuterium
 {
-	
+		enum StreamType
+	{
+		POSITION0	= 1,
+		POSITION1	= 2,
+		COLOR		= 4,
+		NORMAL		= 8,
+		TANGENT		= 16,
+		TEXCOORD0	= 32,
+		TEXCOORD1	= 64,
+		TEXCOORD2	= 128,
+		TEXCOORD3	= 256,
+		TEXCOORD4	= 512,
+		TEXCOORD5	= 1024,
+		TEXCOORD6	= 2048,
+		TEXCOORD7	= 4096,
+		NULL0		= 8192,
+	};
+
 class StreamData
 	{
 	public:
@@ -37,6 +54,7 @@ class StreamData
 		static StreamType to_enum(const char* str);
 		static const char* to_string(StreamType type);
 		static U32 get_attribute_index(StreamType type);
+		static const char* get_primitive_glsl_type_string(StreamType type);
 	private:
 		void**		_data_ptr;
 		U32			_buffer_byte_size;

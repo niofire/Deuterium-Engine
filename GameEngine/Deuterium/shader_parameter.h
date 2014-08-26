@@ -32,7 +32,7 @@ public:
 	void						set_name(const char* name) { _name = name;}
 	DeuteriumUniformType		type()	{return _type;}
 	void						set_type(DeuteriumUniformType type) { _type = type;}
-	void*						value()	{return	_value.get_void_ptr();}
+	void*						value()	{return	_value.get_voidPtr();}
 	S32							uniform_location()	{return _uniform_location;	}
 	bool						is_identical(const ShaderParameter& param);
 	void						set_uniform_location(S32 uniform_location) { _uniform_location = uniform_location;}
@@ -40,7 +40,7 @@ private:
 	std::string				_name;
 	DeuteriumUniformType	_type;
 	U32						_num_of_values;
-	void_d_ptr				_value;
+	void_dPtr				_value;
 	S32						_uniform_location;
 };
 }

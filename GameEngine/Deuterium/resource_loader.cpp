@@ -26,20 +26,26 @@ namespace deuterium
 		//			Shader Components
 		//--------------------------------------------------------------
 		////////////////////////////////////////////////////////////////
-		JSON_HAS_MEMBER(json_shader_data,"shader",shader_data_filename)
-			const Value& shaders = json_shader_data["shader"];
-		JSON_IS_ARRAY(shaders,"shader",shader_data_filename);
+
+		if(!JsonParser::has_member(json_shader_data,"shader",shader_data_filename))
+			return false;
+		const Value& shaders = json_shader_data["shader"];
+
+		if(!JsonParser::is_array(shaders,"shader",shader_data_filename))
+			return false;
 
 		//cycle through all shader data
 		for(U32 i = 0; i < shaders.Size(); ++i)
 		{
-			d_ptr<ShaderComponent> component(new ShaderComponent);
+			dPtr<ShaderComponent> component(new ShaderComponent);
 			//---------------------------------------------
 			//				Shader Name
 			//---------------------------------------------
-			JSON_HAS_MEMBER(shaders[i],"name",shader_data_filename)
-				const Value& json_shader_name = shaders[i]["name"];
-			JSON_IS_STRING(json_shader_name,"name",shader_data_filename);
+			if(!JsonParser::has_member(shaders[i],"name",shader_data_filename))
+				return false;
+			const Value& json_shader_name = shaders[i]["name"];
+			if(!JsonParser::is_string(json_shader_name,"name",shader_data_filename))
+				return false;
 			component->set_name(std::string(json_shader_name.GetString()));
 
 
@@ -47,17 +53,22 @@ namespace deuterium
 			//				Shader Extension Includes
 			//---------------------------------------------
 			const char* include_source_str = "include_source";
-			JSON_HAS_MEMBER(shaders[i],include_source_str,shader_data_filename)
-				const Value& json_include_array = shaders[i][include_source_str];
-			JSON_IS_ARRAY(json_include_array, include_source_str,shader_data_filename)
+			if(!JsonParser::has_member(shaders[i],include_source_str,shader_data_filename))
+				return false;
+			const Value& json_include_array = shaders[i][include_source_str];
+			if(!JsonParser::is_array(json_include_array,include_source_str,shader_data_filename))
+				return false;
+
 
 			for(U32 j = 0; j < json_include_array.Size(); ++j)
 			{
-				JSON_IS_STRING(json_include_array[j],include_source_str, shader_data_filename)
+				if(!JsonParser::is_string(json_include_array[j],include_source_str,shader_data_filename))
+					return false;
+
 				std::string shader_extension_name = json_include_array[j].GetString();
-				d_ptr<ShaderExtension> ext = this->_rendering_resources._shader_extension_assets.get_asset(shader_extension_name);
+				dPtr<ShaderExtension> ext = this->_rendering_resources._shader_extension_assets.get_asset(shader_extension_name);
 				if(!ext.is_null())
-					component->add_source_extension(ext);
+					component->add_extension_source(ext);
 			}
 
 			//---------------------------------------------
@@ -66,14 +77,17 @@ namespace deuterium
 			const char* include_ubuffer_str = "include_ubuffer";
 			if(shaders[i].HasMember(include_ubuffer_str))
 			{
-					const Value& json_include_ubuffer_array = shaders[i][include_ubuffer_str];
-				JSON_IS_ARRAY(json_include_ubuffer_array, include_ubuffer_str,shader_data_filename)
+				const Value& json_include_ubuffer_array = shaders[i][include_ubuffer_str];
+				if(!JsonParser::is_array(json_include_ubuffer_array,include_ubuffer_str,shader_data_filename))
+					return false;
+
 
 				for(U32 j = 0; j < json_include_ubuffer_array.Size(); ++j)
 				{
-					JSON_IS_STRING(json_include_ubuffer_array[j],include_ubuffer_str, shader_data_filename)
+					if(!JsonParser::is_string(json_include_ubuffer_array[j],include_ubuffer_str,shader_data_filename))
+						return false;
 					std::string shader_extension_name = json_include_ubuffer_array[j].GetString();
-					d_ptr<UniformBuffer> ubuffer_ext = this->_rendering_resources._uniform_buffer_assets.get_asset(shader_extension_name);
+					dPtr<UniformBuffer> ubuffer_ext = this->_rendering_resources._uniform_buffer_assets.get_asset(shader_extension_name);
 					if(!ubuffer_ext.is_null())
 						component->add_constant_uniform_buffer(ubuffer_ext);
 				}
@@ -83,9 +97,11 @@ namespace deuterium
 			//				Shader Type
 			//---------------------------------------------
 			const char* type_str = "type";
-			JSON_HAS_MEMBER(shaders[i],type_str,shader_data_filename);
+			if(!JsonParser::has_member(shaders[i],type_str,shader_data_filename))
+				return false;
 			const Value& json_shader_type = shaders[i][type_str];
-			JSON_IS_STRING(json_shader_type,type_str,shader_data_filename);
+			if(!JsonParser::is_string(json_shader_type,type_str,shader_data_filename))
+				return false;
 
 			std::string type = json_shader_type.GetString();
 
@@ -99,7 +115,7 @@ namespace deuterium
 			}
 			else
 			{
-				D_ERROR("In file " + std::string(shader_data_filename) + " in shader named " + component->name() + ": No type valid type entered");
+				//D_ERROR("In file " + shader_data_filename) + " in shader named " + component->name() + ": No type valid type entered");
 				return false;
 			}
 
@@ -114,12 +130,12 @@ namespace deuterium
 				if(json_ubuffer.IsArray())
 				{
 					D_ERROR("Only one uniform buffer can be declared dynamically");
-					
+
 				}
 				else
 				{
 					if(!this->load_uniform_buffer(json_ubuffer,shader_data_filename,(component->name() +"_ubuffer").c_str()))
-							return false;
+						return false;
 					component->set_dynamic_uniform_buffer(_rendering_resources._uniform_buffer_assets.get_asset((component->name() +"_ubuffer").c_str()));
 				}
 			}
@@ -130,7 +146,8 @@ namespace deuterium
 			if(component->type() == GL_VERTEX_SHADER)
 			{
 				const char* attribute_str = "attribute";
-				JSON_HAS_MEMBER(shaders[i],attribute_str,shader_data_filename);
+				if(!JsonParser::has_member(shaders[i],attribute_str,shader_data_filename))
+					return false;
 				const Value& json_attrib = shaders[i][attribute_str];
 				for(int i = 1; i < StreamType::NULL0; i = i << 1)
 				{
@@ -145,9 +162,11 @@ namespace deuterium
 			//---------------------------------------------
 			//				Shader Source
 			//---------------------------------------------
-			JSON_HAS_MEMBER(shaders[i],"source",shader_data_filename);
+			if(!JsonParser::has_member(shaders[i],"source",shader_data_filename))
+				return false;
 			const Value& json_shader_source = shaders[i]["source"];
-			JSON_IS_STRING(json_shader_source,"source",shader_data_filename);
+			if(!JsonParser::is_string(json_shader_source,"source",shader_data_filename))
+				return false;
 			component->set_source(json_shader_source.GetString());
 			if(!_rendering_resources._shader_component_assets.exists(component->name().c_str()))
 			{
@@ -166,32 +185,40 @@ namespace deuterium
 		if(json_shader_data.HasMember("pass"))
 		{
 			const Value& json_pass_array = json_shader_data["pass"];
-			JSON_IS_ARRAY(json_pass_array,"pass",shader_data_filename);
+			if(!JsonParser::is_array(json_pass_array,"pass",shader_data_filename))
+				return false;
 			for(int i = 0; i  < json_pass_array.Size(); ++i)
 			{
-				
+
 				const Value& json_pass = json_pass_array[i];
-				
-				JSON_HAS_MEMBER(json_pass,"fragment",shader_data_filename);
+
+				if(!JsonParser::has_member(json_pass,"fragment",shader_data_filename))
+					return false;
 				const Value& json_pass_fragment_name = json_pass["fragment"];
-				JSON_IS_STRING(json_pass_fragment_name,"fragment",shader_data_filename);
-				
-				JSON_HAS_MEMBER(json_pass,"vertex",shader_data_filename);
+				if(!JsonParser::is_string(json_pass_fragment_name,"fragment",shader_data_filename))
+					return false;
+
+				if(!JsonParser::has_member(json_pass,"vertex",shader_data_filename))
+					return false;
 				const Value& json_pass_vertex_name = json_pass["vertex"];
-				JSON_IS_STRING(json_pass_vertex_name,"vertex",shader_data_filename);
+				if(!JsonParser::is_string(json_pass_vertex_name,"vertex",shader_data_filename))
+					return false;
 
 
-				d_ptr<ShaderComponent> fragment_shader = _rendering_resources._shader_component_assets.get_asset(json_pass_fragment_name.GetString());
-				d_ptr<ShaderComponent> vertex_shader = _rendering_resources._shader_component_assets.get_asset(json_pass_vertex_name.GetString());
+
+				dPtr<ShaderComponent> fragment_shader = _rendering_resources._shader_component_assets.get_asset(json_pass_fragment_name.GetString());
+				dPtr<ShaderComponent> vertex_shader = _rendering_resources._shader_component_assets.get_asset(json_pass_vertex_name.GetString());
 				if(fragment_shader.is_null() || vertex_shader.is_null())
 					return false;
-				d_ptr<ShaderPass> pass(new ShaderPass(vertex_shader.value(),fragment_shader.value()));
+				dPtr<ShaderPass> pass(new ShaderPass(vertex_shader.value(),fragment_shader.value()));
 
-				
-				
-				JSON_HAS_MEMBER(json_pass,"name",shader_data_filename);
+
+
+				if(!JsonParser::has_member(json_pass,"name",shader_data_filename))
+					return false;
 				const Value& json_pass_name = json_pass["name"];
-				JSON_IS_STRING(json_pass_name,"name",shader_data_filename);
+				if(!JsonParser::is_string(json_pass_name,"name",shader_data_filename))
+					return false;
 				pass->set_name(json_pass_name.GetString());
 				U32 id;
 				this->_rendering_resources._shader_pass_assets.add_asset(id,pass,pass->name().c_str());
@@ -199,7 +226,7 @@ namespace deuterium
 		}
 
 		return true;
-		
+
 	}
 	bool ResourceLoader::load_shader_extension(const char* filename)
 	{
@@ -210,26 +237,33 @@ namespace deuterium
 		{
 			return false;
 		}
-		
-		JSON_HAS_MEMBER(json_parser,"shader_extension",filename);
+
+		if(!JsonParser::has_member(json_parser,"shader_extension",filename))
+			return false;
 		const Value& json_shader_ext = json_parser["shader_extension"];
 
-		JSON_IS_ARRAY(json_shader_ext,"shader_extension",filename);
+		if(!JsonParser::is_array(json_shader_ext,"shader_extension",filename))
+			return false;
 
 		for(int i = 0; i < json_shader_ext.Size(); ++i)
 		{
-			d_ptr<ShaderExtension> ext(new ShaderExtension);
+			dPtr<ShaderExtension> ext(new ShaderExtension);
 
 			//Fetch extension name
-			JSON_HAS_MEMBER(json_shader_ext[i],"name",filename);
+			if(!JsonParser::has_member(json_shader_ext[i],"name",filename))
+				return false;
 			const Value& json_ext_name = json_shader_ext[i]["name"];
-			JSON_IS_STRING(json_ext_name,"name",filename);
+			if(!JsonParser::is_string(json_ext_name,"name",filename))
+				return false;
 			ext->set_name(json_ext_name.GetString());
 
 			//Fetch extension source
-			JSON_HAS_MEMBER(json_shader_ext[i],"source",filename);
+			if(!JsonParser::has_member(json_shader_ext[i],"source",filename))
+				return false;
 			const Value& json_ext_source = json_shader_ext[i]["source"];
-			JSON_IS_STRING(json_ext_source,"source",filename);
+			if(!JsonParser::is_string(json_ext_source,"source",filename))
+				return false;
+
 			ext->set_extension(json_ext_source.GetString());
 
 
@@ -258,18 +292,35 @@ namespace deuterium
 		//			Resources
 		//
 		////////////////////////////////////////////////////////
-		JSON_HAS_MEMBER(parser,"rendering_resources", filename);
+		if(!JsonParser::has_member(parser,"rendering_resources",filename))
+			return false;
+		const Value& json_rendering_resources = parser["rendering_resources"];
+
+
+		//--------------------------------------------
+		//		Render Targets
+		//--------------------------------------------
+
+		//Load in the back_buffer
+		dPtr<RenderTarget> back_buffer_rt(new RenderTarget(true));
+		U32 rt_id;
+		_rendering_resources._render_target_assets.add_asset(rt_id,back_buffer_rt, back_buffer_rt->name());
+
+
+
 
 
 		//--------------------------------------------
 		//		Predefined Uniform Buffer
 		//--------------------------------------------
-		const Value& json_rendering_resources = parser["rendering_resources"];
+
 		//Predefined Uniform Buffer parsed here
 		if(json_rendering_resources.HasMember("uniform_buffer"))
 		{
 			const Value& json_uniform_buffer_array = json_rendering_resources["uniform_buffer"];
-			JSON_IS_ARRAY(json_uniform_buffer_array,"uniform_buffer",filename);
+			if(!JsonParser::is_array(json_uniform_buffer_array,"uniform_buffer",filename))
+				return false;
+
 
 			for(U32 i = 0; i < json_uniform_buffer_array.Size(); ++i)
 			{
@@ -285,84 +336,56 @@ namespace deuterium
 		//			Shader Assets
 		//
 		////////////////////////////////////////////////////////
-		JSON_HAS_MEMBER(parser,"shader_assets",filename);
+		if(!JsonParser::has_member(parser,"shader_assets",filename))
+			return false;
+
 
 		const Value& json_render_assets_package = parser["shader_assets"];
 
 		//---------------------------------------------
-		//		Absolute file paths
+		//		include file paths
 		//---------------------------------------------
-		std::vector<std::string> abs_filepaths_DA;
-
-		if(json_render_assets_package.HasMember("absolute"))
+		std::vector<std::string> inc_filepaths_DA;
+		const char* include_str = "include";
+		if(json_render_assets_package.HasMember(include_str))
 		{
-			const Value& json_absolute_filepaths = json_render_assets_package["absolute"];
-			JSON_IS_ARRAY(json_absolute_filepaths,"absolute",filename);
+			const Value& json_include_filepaths = json_render_assets_package[include_str];
 
-			for(U32 i = 0; i < json_absolute_filepaths.Size(); ++i)
+			if(!JsonParser::is_array(json_include_filepaths,include_str,filename))
+				return false;
+
+			for(U32 i = 0; i < json_include_filepaths.Size(); ++i)
 			{
-				const Value& json_abs_filepath = json_absolute_filepaths[i];
-				JSON_IS_STRING(json_abs_filepath,"absolute",filename);
-				abs_filepaths_DA.push_back(json_abs_filepath.GetString());
+				const Value& json_inc_filepath = json_include_filepaths[i];
+				if(!JsonParser::is_string(json_inc_filepath,include_str,filename))
+					return false;
+				inc_filepaths_DA.push_back(json_inc_filepath.GetString());
 			}
 		}
 
-		for(U32 i = 0 ; i < abs_filepaths_DA.size(); ++i)
+		for(U32 i = 0 ; i < inc_filepaths_DA.size(); ++i)
 		{
-			std::string filepath = abs_filepaths_DA[i];
+			std::string filepath = inc_filepaths_DA[i];
 			if(filepath.find(".shader_data") != std::string::npos)
 			{
 				if(!this->load_shader_data(filepath.c_str())) {
-					D_ERROR("In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly.");
+					DeuteriumErrorStack::get_instance().push(DeuteriumError(
+						"In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly."));
 				}
 			}
 			else if(filepath.find(".shader_extension") != std::string::npos)
 			{
 				if(!this->load_shader_extension(filepath.c_str())) {
-					D_ERROR("In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly.");
+					DeuteriumErrorStack::get_instance().push(DeuteriumError(
+						"In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly."));
 				}
 			}
 			else {
-				D_ERROR("In the render_assets_package file: " + std::string(filename) + ": Filepath " + filepath + " is not supported.");
+				DeuteriumErrorStack::get_instance().push(DeuteriumError(
+					"In the render_assets_package file: " + std::string(filename) + ": Filepath " + filepath + " is not supported."));
 			}
 		}
 
-
-		//-------------------------------------------------------
-		//		Relative file paths
-		//-------------------------------------------------------
-		std::vector<std::string> rel_filepaths_DA;
-
-		if(json_render_assets_package.HasMember("relative"))
-		{
-			const Value& json_relative_filepaths = json_render_assets_package["relative"];
-			JSON_IS_ARRAY(json_relative_filepaths,"relative",filename);
-			for(U32 i = 0; i < json_relative_filepaths.Size(); ++i)
-			{
-				const Value& json_rel_filepath = json_relative_filepaths[i];
-				JSON_IS_STRING(json_rel_filepath,"relative",filename);
-				rel_filepaths_DA.push_back(json_rel_filepath.GetString());
-			}
-		}
-
-		for(U32 i = 0 ; i < rel_filepaths_DA.size(); ++i)
-		{
-			std::string filepath = rel_filepaths_DA[i];
-			if(filepath.find(".shader_data") != std::string::npos)
-			{
-				if(!this->load_shader_data(filepath.c_str())) {
-					D_ERROR("In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly.");
-				}
-			}
-			else if(filepath.find(".shader_extension") != std::string::npos) {
-				if(!this->load_shader_extension(filepath.c_str())) {
-					D_ERROR("In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly.");
-				}
-			}
-			else {
-				D_ERROR("In the render_assets_package file: " + std::string(filename) + ": Filepath " + filepath + " not supported.");
-			}
-		}
 
 		return true;
 	}
@@ -370,7 +393,7 @@ namespace deuterium
 	bool ResourceLoader::load_uniform_buffer(const rapidjson::Value& json_element, const char* filename, const char* ubuffer_name)
 	{
 		using namespace rapidjson;
-		d_ptr<UniformBuffer> u_buffer(new UniformBuffer);
+		dPtr<UniformBuffer> u_buffer(new UniformBuffer);
 		u_buffer->set_name(ubuffer_name);
 		for(U32 k = 0; k < UniformTypeHandler::num_of_uniform_types(); ++k)
 		{
@@ -381,12 +404,15 @@ namespace deuterium
 			{
 				//Get all of the uniform names for this particular type
 				const Value& json_uniform_type = json_element[type_name.c_str()];
-				JSON_IS_ARRAY(json_uniform_type,type_name, filename)
-					for(U32 j = 0 ;j < json_uniform_type.Size(); ++j)
-					{
-						JSON_IS_STRING(json_uniform_type[j],type_name,filename);
-						u_buffer->add_uniform((DeuteriumUniformType)k,json_uniform_type[j].GetString());
-					}
+				if(!JsonParser::is_array(json_uniform_type,type_name.c_str(),filename))
+					return false;
+
+				for(U32 j = 0 ;j < json_uniform_type.Size(); ++j)
+				{
+					if(!JsonParser::is_string(json_uniform_type[j],type_name.c_str(),filename))
+						return false;
+					u_buffer->add_uniform((DeuteriumUniformType)k,json_uniform_type[j].GetString());
+				}
 			}
 		}
 		U32 id;
@@ -396,13 +422,15 @@ namespace deuterium
 	bool ResourceLoader::load_uniform_buffer(const rapidjson::Value& json_element,const char* filename)
 	{
 		using namespace rapidjson;
-		
+
 		//Fetch name
-		JSON_HAS_MEMBER(json_element,"name",filename);
-		JSON_IS_STRING(json_element["name"],"name",filename);
+		if(!JsonParser::has_member(json_element,"name",filename))
+			return false;
+		if(!JsonParser::is_string(json_element["name"],"name",filename))
+			return false;
 
 		return load_uniform_buffer(json_element,filename,json_element["name"].GetString());
-		
+
 	}
 
 	bool ResourceLoader::load_render_targets(const rapidjson::Value& json_element)

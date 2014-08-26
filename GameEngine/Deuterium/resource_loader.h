@@ -32,6 +32,7 @@ public:
 
 	RenderingResources get_rendering_resouces() { return _rendering_resources;}
 	
+	
 
 private:
 

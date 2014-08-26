@@ -29,7 +29,7 @@ namespace deuterium
 			std::string err_str =  GetParseError_En(err_code);
 			int err_offset = d.GetErrorOffset();
 			err_str =  err_str + "Error located at: " + str.substr(err_offset,20);
-			DeuteriumErrorStack::get_instance().push(DeuteriumError("Json Parsing error" + err_str));
+			DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("Json Parsing error" + err_str).c_str()));
 			return false;
 		}
 		return true;
@@ -79,5 +79,35 @@ namespace deuterium
 		return json_string;
 	}
 
+	bool JsonParser::has_member(const rapidjson::Value& value, const char* member, const char* filename)
+	{
+		if(!value.HasMember(member))
+		{
+			std::string str = "The file " + std::string(filename) + " with member " + std::string(member) + ": Member not found.";
+			DeuteriumErrorStack::get_instance().push(DeuteriumError(str));
+			return false;
+		}
+		return true;
+	}
+
+	bool JsonParser::is_string(const rapidjson::Value& value, const char* member, const char* filename)
+	{
+		if(!value.IsString())
+		{
+			DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("The file " + std::string(filename) + " with member " + member + ": Member is not a string.")));
+			return false;
+		}
+		return true;
+	}
+
+	bool JsonParser::is_array(const rapidjson::Value& value, const char* member, const char* filename)
+	{
+		if(!value.IsArray())
+		{
+			DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("The file " + std::string(filename) + " with member " + member + ": Member is not an array.")));
+			return false;
+		}
+		return true;
+	}
 
 }

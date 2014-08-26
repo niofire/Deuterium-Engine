@@ -16,7 +16,7 @@ namespace deuterium
 
 	//The currently rendering shader
 	U32 l_CurrentRenderingShaderId = 0;
-
+	
 	DrawRequest *l_DrawRequestTemp;
 
 	U32 l_CurrentIndex = 0;

@@ -10,7 +10,7 @@ ShaderParameter::ShaderParameter()
 {
 	_num_of_values = 1;
 	_name = "";
-	_value = void_d_ptr();
+	_value = void_dPtr();
 	_type = D_UNKNOWN_UNIFORM_TYPE;
 	_uniform_location = -1;
 }
@@ -24,14 +24,14 @@ ShaderParameter::ShaderParameter(const ShaderParameter& param)
 	_name = param._name;
 	_type = param._type;
 	_uniform_location = param._uniform_location;
-	_value = void_d_ptr();
+	_value = void_dPtr();
 	_num_of_values = param._num_of_values;
-	void_d_ptr temp = param._value;
+	void_dPtr temp = param._value;
 	if(temp.is_null())
 		return;
 
 	this->allocate_cache_memory();
-	this->update_cached_parameter(temp.get_void_ptr());
+	this->update_cached_parameter(temp.get_voidPtr());
 
 }
 
@@ -55,13 +55,13 @@ void	ShaderParameter::update_cached_parameter(const void* i__value)
 	if(UniformTypeHandler::is_float_derived(_type))
 	{
 		for(U32 i = 0; i < UniformTypeHandler::num_of_values(_type); ++i)
-			((float*)_value.get_void_ptr())[i] = ((float*)i__value)[i];
+			((float*)_value.get_voidPtr())[i] = ((float*)i__value)[i];
 	}
 
 	else if(UniformTypeHandler::is_integer_derived(_type))
 	{
 		for(U32 i = 0; i < UniformTypeHandler::num_of_values(_type); ++i)
-			((int*)_value.get_void_ptr())[i] = ((int*)i__value)[i];
+			((int*)_value.get_voidPtr())[i] = ((int*)i__value)[i];
 	}
 	
 
@@ -80,7 +80,7 @@ void ShaderParameter::bind_parameter_to_bound_program()
 	//Check if parameter is currently used in the shader
 	if( _uniform_location == -1)
 		return;
-	void* val = _value.get_void_ptr();
+	void* val = _value.get_voidPtr();
 	switch( _type)
 	{
 

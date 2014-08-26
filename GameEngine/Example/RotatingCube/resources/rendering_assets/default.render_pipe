@@ -1,0 +1,23 @@
+{
+	"rendering_assets":
+	{ 
+		 "include" : ["resources\\rendering_assets\\default.rendering_assets"]
+	},
+	"render_pipe":
+	{
+		"pass":
+		[
+			{
+				"name":"default",
+				"input":["render_target1","render_target2"],
+				"output": "back_buffer"
+			},	
+			{
+				"name":"default",
+				"input":["render_target1","render_target2"],
+				"output": "back_buffer"
+			}				
+		]
+	}
+}
+	

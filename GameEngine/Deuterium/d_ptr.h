@@ -1,47 +1,47 @@
 #pragma once
 #define NULL 0
 #include <iostream>
-/* The d_ptr class
+/* The dPtr class
  *
  *
  *
  *
 */
 
-#define D_PTR_CAST(Type,var) *((d_ptr<Type>*)&var);
+#define dPtr_CAST(Type,var) *((dPtr<Type>*)&var);
 template <class T>
-class d_ptr
+class dPtr
 	{
 	public:
-		d_ptr(void);
+		dPtr(void);
 
 		//constructor + allocate memory
-		d_ptr(T* ptr);
+		dPtr(T* ptr);
 
 		//copy constructor
-		d_ptr(const d_ptr&);
+		dPtr(const dPtr&);
 
 		//removes all references and update the number of handles
-		~d_ptr(void);
+		~dPtr(void);
 
-		//Allocate a memory location to the d_ptr.
+		//Allocate a memory location to the dPtr.
 		void alloc(T* ptr);
 
 		//Debug function
-		//int* get_num_handle_ptr() { return _num_handles_allocated_ptr;}
+		//int* get_num_handle_ptr() { return _num_handles_allocatedPtr;}
 
 		//Clears the pointer's reference and updates the number of handles
 		void clear();
 
 		bool is_null() { return _ptr == NULL;}
-		int num_handles() { return _num_handles_allocated_ptr == NULL ?  0 :  *_num_handles_allocated_ptr;}
+		int num_handles() { return _num_handles_allocatedPtr == NULL ?  0 :  *_num_handles_allocatedPtr;}
 		//------------------------------------------------
 		//			Operators
 		//------------------------------------------------
-		d_ptr	&operator=(d_ptr &ptr) {	
+		dPtr	&operator=(dPtr &ptr) {	
 			this->clear();
 			//update the num of allocated handles
-			this->_num_handles_allocated_ptr = ptr._num_handles_allocated_ptr;
+			this->_num_handles_allocatedPtr = ptr._num_handles_allocatedPtr;
 			this->add_handle();
 	
 			this->_ptr = ptr._ptr;
@@ -64,86 +64,86 @@ class d_ptr
 	private:
 		void delete_unused_memory();
 		void add_handle();
-		int* _num_handles_allocated_ptr;
+		int* _num_handles_allocatedPtr;
 		T* _ptr;
 };
 
 template <class T>
-d_ptr<T>::d_ptr()
+dPtr<T>::dPtr()
 {
-	_num_handles_allocated_ptr = NULL;
+	_num_handles_allocatedPtr = NULL;
 	_ptr = NULL;
 
 }
 
 template <class T>
-d_ptr<T>::d_ptr(T* ptr)
+dPtr<T>::dPtr(T* ptr)
 {
-	_num_handles_allocated_ptr = NULL;
+	_num_handles_allocatedPtr = NULL;
 	_ptr = NULL;
 
 	alloc(ptr);
 }
 template <class T>
-d_ptr<T>::d_ptr(const d_ptr& ptr)
+dPtr<T>::dPtr(const dPtr& ptr)
 {
 	this->_ptr = NULL;
-	this->_num_handles_allocated_ptr = NULL;
+	this->_num_handles_allocatedPtr = NULL;
 
 	//update the num of allocated handles
-	this->_num_handles_allocated_ptr = ptr._num_handles_allocated_ptr;
+	this->_num_handles_allocatedPtr = ptr._num_handles_allocatedPtr;
 	this->add_handle();
 	
 	this->_ptr = ptr._ptr;
 }
 
 template <class T>
-d_ptr<T>::~d_ptr()
+dPtr<T>::~dPtr()
 {
 	this->clear();
 }
 
 template <class T>
-void d_ptr<T>::alloc(T* ptr)
+void dPtr<T>::alloc(T* ptr)
 {
 	//clear previous reference
 	this->clear();
 
 	//store the newly allocated pointer
-	_num_handles_allocated_ptr = new int(1);
+	_num_handles_allocatedPtr = new int(1);
 	_ptr = ptr;
 }
 
 
 template <class T>
-void d_ptr<T>::clear()
+void dPtr<T>::clear()
 {
-	if(this->_num_handles_allocated_ptr != NULL)
+	if(this->_num_handles_allocatedPtr != NULL)
 	{
-		*_num_handles_allocated_ptr = *_num_handles_allocated_ptr - 1;
+		*_num_handles_allocatedPtr = *_num_handles_allocatedPtr - 1;
 		this->delete_unused_memory();
 	}
 
 	this->_ptr = NULL;
-	this->_num_handles_allocated_ptr = NULL;
+	this->_num_handles_allocatedPtr = NULL;
 }
 
 template <class T>
-void d_ptr<T>::add_handle()
+void dPtr<T>::add_handle()
 {
-	if(_num_handles_allocated_ptr != NULL)
-		*_num_handles_allocated_ptr = *_num_handles_allocated_ptr + 1;
+	if(_num_handles_allocatedPtr != NULL)
+		*_num_handles_allocatedPtr = *_num_handles_allocatedPtr + 1;
 }
 
 template <class T>
-void d_ptr<T>::delete_unused_memory()
+void dPtr<T>::delete_unused_memory()
 {
-	if(*_num_handles_allocated_ptr == 0)
+	if(*_num_handles_allocatedPtr == 0)
 	{
 		delete _ptr;
 		_ptr = NULL;
 
-		delete _num_handles_allocated_ptr;
-		_num_handles_allocated_ptr = NULL;
+		delete _num_handles_allocatedPtr;
+		_num_handles_allocatedPtr = NULL;
 	}
 }

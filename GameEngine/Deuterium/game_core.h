@@ -29,7 +29,7 @@ public:
 	//---------------------------------------------------
 	//				Game Loop
 	//---------------------------------------------------
-	static int execute(GameCore*);
+	static bool execute(GameCore*);
 	static void main_loop();
 
 
@@ -57,7 +57,7 @@ protected:
 	//---------------------------------------------------
 	
 	//static pointer to GameEngine instance used
-	static GameCore* s_game_core;
+	static dPtr<GameCore> s_game_core;
 
 	//---------------------------------------------------
 	//				Member Variable Declaration
@@ -65,7 +65,6 @@ protected:
 
 	//holds whether the Game core is currently running
 	bool		_is_game_core_running;
-
 
 	//---------------------------------------------------
 	//				Test variables

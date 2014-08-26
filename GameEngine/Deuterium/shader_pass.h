@@ -33,13 +33,13 @@ public:
 	void update_uniform_declaration();
 
 	//
-	bool update_parameters(d_ptr<ShaderParameterValueSettings> param_val_ptr);
+	bool update_parameters(dPtr<ShaderParameterValueSettings> param_val_ptr);
 	
-	void compile_pass();
-	void compile_components();
+	bool compile_pass();
+	bool compile_components();
 	
 	//returns a ShaderParameterValueSettings instance only if the pass is compiled.
-	d_ptr<ShaderParameterValueSettings> get_parameter_and_value_setting();
+	dPtr<ShaderParameterValueSettings> get_parameter_and_value_setting();
 	
 	void set_sampler_state_flags(U32 sampler_states);
 	
@@ -52,7 +52,6 @@ public:
 	void set_name(std::string name) { _pass_name = name;}
 	
 private:
-	void update_shader_attribute_binding();
 	U32 _id;
 	ShaderComponents _components;
 	UniformBuffer _uniform_buffer;

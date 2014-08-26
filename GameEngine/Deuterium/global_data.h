@@ -1,7 +1,7 @@
 #pragma once
-#include "d_ptr.h"
+#include "d_Ptr.h"
 #include "deuterium_error_stack.h"
-#include "void_d_ptr.h"
+#include "void_d_Ptr.h"
 #ifdef DEUTERIUM_PC
 #include "3rdParty/Glew/Include/glew.h"
 typedef unsigned	__int32	U32;
@@ -37,8 +37,17 @@ typedef	uint8_t		U8;
 typedef int8_t		S8;
 #endif	// _MCVS2012_
 #include <vector>
+#include "d_enum.h"
+#include "render_pass.h"
+#define ADD_RENDER_PASS_TYPE(enum_name,int_value,str_value) const dEnum RenderPass::RenderPassType::enum_name = dEnum(int_value,#str_value);
+#define AAA(X,Y) _pass_value_name_DA.push_back(RenderPass::Pair(X,Y));
 namespace deuterium
 {
+	ADD_RENDER_PASS_TYPE(MESH,0,"mesh");
+	ADD_RENDER_PASS_TYPE(POST_PROCESS,1,"post_process");
+
+
+
 	class GameCore;
 	class Renderer;
 	class MeshManager;
@@ -48,25 +57,9 @@ namespace deuterium
 
 	
 	
-	enum StreamType
-	{
-		POSITION0	= 1,
-		POSITION1	= 2,
-		COLOR		= 4,
-		NORMAL		= 8,
-		TANGENT		= 16,
-		TEXCOORD0	= 32,
-		TEXCOORD1	= 64,
-		TEXCOORD2	= 128,
-		TEXCOORD3	= 256,
-		TEXCOORD4	= 512,
-		TEXCOORD5	= 1024,
-		TEXCOORD6	= 2048,
-		TEXCOORD7	= 4096,
-		NULL0		= 8192,
-	};
 
 
+	
 
 
 
@@ -78,11 +71,12 @@ namespace deuterium
 struct GlobalData
 {
 public:	
-	GameCore*				_game_core_ptr;
-	MeshManager*			_mesh_manager_ptr;
-	Renderer*				_renderer_ptr;
-	ShaderManager*			_shader_manager_ptr;
-	EventManager*			_event_manager_ptr;
+	dPtr<GameCore>			_game_core_ptr;
+	dPtr<MeshManager>		_mesh_manager_ptr;
+	dPtr<Renderer>			_renderer_ptr;
+	dPtr<ShaderManager>	_shader_manager_ptr;
+	dPtr<EventManager>		_event_manager_ptr;
 };
 	extern GlobalData g_data;
+	
 }

@@ -189,6 +189,9 @@
     <ClCompile Include="stream_data.cpp">
       <Filter>Scene\Object</Filter>
     </ClCompile>
+    <ClCompile Include="scene_object.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="buffer_container.h">
@@ -304,6 +307,14 @@
     </ClInclude>
     <ClInclude Include="stream_data.h">
       <Filter>Scene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_object.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_request.h" />
+    <ClInclude Include="render_pass.h" />
+    <ClInclude Include="d_enum.h">
+      <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

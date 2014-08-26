@@ -6,6 +6,7 @@
 
 namespace deuterium
 {
+	const char* Renderer::s_render_settings_config_filepath = "resources\\rendering_assets\\render_settings.config";
 Renderer::Renderer()
 {
 
@@ -68,12 +69,22 @@ Mat4x4 Renderer::perspective_projection_matrix(float FOV, float AspectRatio, flo
 	return perspective_projection_matrix(-size,size,-size,size * AspectRatio,zNear,zFar);
 }
 
+U32 Renderer::get_render_pass_id(const std::string& pass_name)
+{
+
+}
+
+const std::string& Renderer::get_render_pass_name(U32 id)
+{
+	this->_render_pipe.
+}
 
 void Renderer::resize_window(U32 w, U32 h)
 {
 #if defined DEUTERIUM_PC
 	SDL_SetWindowSize(this->_sdl_display_window,w,h);
 #endif
+	_window_size = Vec2f(w,h);
 }
 
 

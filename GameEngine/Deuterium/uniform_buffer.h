@@ -37,7 +37,7 @@ public:
 
 
 	//TODO
-	std::string to_shader_content_string(std::string block_name) {return block_name;}
+	std::string to_shader_code() {return "";}
 
 
 	void set_name(std::string name) { _name = name;}
