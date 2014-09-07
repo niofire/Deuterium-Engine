@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "string_helper.h"
+#include "d_error_stack.h"
 #include "3rdParty\rapidjson\stringbuffer.h"
 #include "3rdParty\rapidjson\document.h"
 #include "3rdParty\rapidjson\writer.h"
@@ -24,6 +25,8 @@ public:
 	static bool is_string(const rapidjson::Value& value, const char* member, const char* filename);
 	static bool is_array(const rapidjson::Value& value, const char* member, const char* filename);
 
+	static bool fetch_string(const rapidjson::Value& json_parser, std::string& str,const char* member_name, const char* filename);
+	static bool fetch_string_DA(const rapidjson::Value& json_parser, std::vector<std::string>& str_DA, const char* member_name, const char* filename);
 
 
 private:

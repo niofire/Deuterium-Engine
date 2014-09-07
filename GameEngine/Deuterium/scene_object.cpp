@@ -1,11 +1,13 @@
 #include "scene_object.h"
 
-
-scene_object::scene_object(void)
+namespace deuterium
+{
+	SceneObject::SceneObject()
 {
 }
 
 
-scene_object::~scene_object(void)
+SceneObject::~SceneObject(void)
 {
+}
 }

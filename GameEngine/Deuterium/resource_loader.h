@@ -28,11 +28,7 @@ public:
 	ResourceLoader(void);
 	~ResourceLoader(void);
 
-	bool load_render_assets(const char* filename);
-
-	RenderingResources get_rendering_resouces() { return _rendering_resources;}
-	
-	
+	bool load_render_assets(const char* filename);	
 
 private:
 
@@ -44,7 +40,7 @@ private:
 	bool load_render_targets(const rapidjson::Value& json_element);
 	bool load_shader_component(const rapidjson::Value& json_element);
 
-	RenderingResources _rendering_resources;
+	static RenderingResources _rendering_resources;
 
 
 	

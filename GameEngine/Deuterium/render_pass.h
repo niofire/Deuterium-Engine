@@ -1,15 +1,14 @@
 #pragma once
-#include "global_data.h"
-#include "shader_pass.h"
-#include "draw_request.h"
-#include "render_target.h"
-
-
 namespace deuterium
 {
-	
+	class ShaderPass;
+	class RenderTarget;
+	class DrawRequest;
 	struct RenderPass
 	{
+		/*	
+		 *
+		 */
 		enum RenderPassType
 		{
 			MESH,

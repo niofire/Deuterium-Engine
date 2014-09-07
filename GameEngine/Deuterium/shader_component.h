@@ -6,6 +6,7 @@
 #include "uniform_buffer.h"
 #include "shader_extension.h"
 #include "shader_parameter.h"
+#include "stream_data.h"
 
 namespace deuterium
 {
@@ -26,14 +27,13 @@ class ShaderComponent
 	{
 		GLenum _shader_type;
 		std::string _shader_content;
-		std::vector<dPtr<ShaderExtension>> _shader_extension_DA;
-		std::vector<dPtr<UniformBuffer> > _constant_uniform_buffer_DA;
-		dPtr<UniformBuffer>  _dynamic_uniform_buffer;
-		std::vector<AttributeLocation> _attribute_location_DA;
-		std::string _name;
-		
-		
+		std::vector<dPtr<ShaderExtension>>	_shader_extension_DA;
+		std::vector<dPtr<UniformBuffer>>	_constant_uniform_buffer_DA;
+		dPtr<UniformBuffer>					_dynamic_uniform_buffer;
+		std::vector<AttributeLocation>		_attribute_location_DA;
+		std::string							_name;		
 	};
+
 public:
 	ShaderComponent();
 	~ShaderComponent(void);
@@ -53,7 +53,7 @@ public:
 
 	void add_constant_uniform_buffer(const dPtr<UniformBuffer>& buffer) { _data._constant_uniform_buffer_DA.push_back(buffer);}
 	void set_dynamic_uniform_buffer(dPtr<UniformBuffer>& buffer) { _data._dynamic_uniform_buffer = buffer;}
-	void add_extension_source(const dPtr<ShaderExtension>& ext) { _data._shader_extension_DA.push_back(ext);}
+	void add_shader_extension(const dPtr<ShaderExtension>& ext) { _data._shader_extension_DA.push_back(ext);}
 	void add_attribute_location(StreamType type, const char* name);
 	void bind_shader_attribute(U32 shader_handle);
 	std::vector<dPtr<UniformBuffer> >& get_constant_uniform_buffer() {return _data._constant_uniform_buffer_DA;}
@@ -61,11 +61,7 @@ public:
 
 
 private:
-	
-	
-	
 	ShaderComponentData _data;
-	
 	bool	_is_compiled;
 	U32	_component_handle;
 

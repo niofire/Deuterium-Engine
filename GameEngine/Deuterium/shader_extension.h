@@ -14,7 +14,7 @@ public:
 	void set_name(const std::string& name) {_name = name;}
 	const std::string& extension() {return _extension;}
 
-	bool is_identical_extension(ShaderExtension& ext);
+	bool is_equal(ShaderExtension& ext);
 private:
 	std::string _name;
 	std::string _extension;

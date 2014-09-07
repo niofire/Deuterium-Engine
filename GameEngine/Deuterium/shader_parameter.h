@@ -25,6 +25,7 @@ public:
 	void						update_cached_parameter(const void* i_Value);
 	void						bind_parameter_to_bound_program();
 	void						allocate_cache_memory();
+
 	//----------------------------------------------------
 	//				Accessors
 	//----------------------------------------------------

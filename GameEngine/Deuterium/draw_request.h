@@ -1,14 +1,21 @@
 #pragma once
-#include "global_data.h"
+#include "d_typedef.h"
 #include "shader_pass.h"
+#include "mesh.h"
 #include "scene_object.h"
-
 namespace deuterium
 {
-
 	struct DrawRequest
 	{
-		U32  _render_pass_id;
-		dPtr<SceneObject> _obj; //contains mesh data, 
+		enum ShadingStage {
+			G_BUFFER,
+			DEFERRED,
+			POST_PROCESS,
+		};
+		ShadingStage _stage;
+		ShaderPass& _pass;
+		Mesh& _mesh;
+		bool _is_transparent;
+		UniformBuffer& _buffer;
 	};
 }

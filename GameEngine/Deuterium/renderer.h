@@ -17,11 +17,13 @@
 #include "render_pipe.h"
 
 #include "scene_object.h"
+#include "g_buffer.h"
+
+#include "draw_request.h"
 
 
-
-#define ADD_DRAWREQUEST(draw_request)	deuterium::g_data._renderer_ptr->add_draw_request(draw_request)
-#define ADD_RENDER_PASS_TYPE(enum_name, render_pass_name) 
+//#define ADD_DRAWREQUEST(draw_request)	deuterium::g_data._renderer_ptr->add_draw_request(draw_request)/////...
+//#define ADD_RENDER_PASS_TYPE(enum_name, render_pass_name) 
 namespace deuterium
 {
 
@@ -48,7 +50,7 @@ public:
 	//					Rendering Function
 	//---------------------------------------------------------
 
-	void			add_draw_request(DrawRequest* i_Request);
+	void			add_draw_request(dPtr<DrawRequest> i_Request);
 	void			swap_buffer();
 	void			render_draw_request(DrawRequest* i_DrawRequest);
 	void			flush_draw_requests();
@@ -90,7 +92,6 @@ private:
 	Vec2f _window_size;
 	Camera			_debug_camera;
 	bool			_is_depth_priority;
-	std::vector< DrawRequest* >		_draw_request_DA;
-	RenderPipe _render_pipe;
+	std::vector<dPtr<DrawRequest> > _draw_request_DA;
 };
 }

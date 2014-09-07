@@ -1,0 +1,47 @@
+{
+	"shader_extension":[]
+	"shader" : [
+	{
+		"name" : "gBuffer_populate_vs",
+		"include_ubuffer" : ["model_buffer"], 
+		"type" : "vertex",
+		"attribute": 
+		{
+			"POSITION0":"vsPos",
+			"NORMAL": "vsNormal",
+			"TEXCOORD0": "vsTexcoord"
+		},		
+		"source":[[	
+			out vec2 fs_texcoord ;
+			out vec3 fs_normal ;
+			void main()
+			{	
+				fs_normal = vsNormal;
+				fs_texcoord = vsTexcoord;
+				gl_Position = vec4(vsPos,1);
+			
+			}
+		]]
+	},
+	{
+		"name" : "gBuffer_populate_fs",
+		"include_source" : ["common"],
+		"include_ubuffer" : ["model_buffer"],
+		"type" : "fragment",
+		"source":[[
+			void main()
+			{
+				gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+			}
+		]]
+	}],
+	
+	"pass" : [
+		{
+			"name": "gBuffer_populate",
+			"fragment" : "gBuffer_populate_fs",
+			"vertex" : "gBuffer_populate_vs",
+			"render_state" : []
+		}
+	]
+}

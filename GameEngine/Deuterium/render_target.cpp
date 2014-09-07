@@ -65,4 +65,9 @@ void RenderTarget::bind()
 {
 	glBindFramebuffer(GL_FRAMEBUFFER,_rt_handle);
 }
+
+void RenderTarget::set_format(const std::string& format)
+{
+
+}
 }

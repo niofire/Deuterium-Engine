@@ -4,24 +4,25 @@ namespace deuterium
 {
 void Renderer::init(int width, int height)
 {
+	//Create the gl_context and sets the default back_buffer settings
 	init_gl_context(width,height);
 
 	glViewport(0,0,width,height);
 	resize_window(width,height);
 
 	this->_debug_camera.set_name("MainCamera");
-
+	/*
 	if(!this->load_render_pipe())
 	{
-		while(!DeuteriumErrorStack::get_instance().empty())
+		while(!dErrorStack::get_instance().empty())
 		{
-			std::cout << DeuteriumErrorStack::get_instance().pop() << std::endl;
+			std::cout << dErrorStack::get_instance().pop() << std::endl;
 		}
 	}
 	
 	//Compile all render pipe assets
 	this->_render_pipe.compile_render_pipe();
-	
+	*/
 }
 
 bool Renderer::load_render_pipe()
@@ -31,7 +32,7 @@ bool Renderer::load_render_pipe()
 
 	if(!file_in)
 	{
-		DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("Could not open render_settings.config file located at path:" + std::string(s_render_settings_config_filepath))));
+		dErrorStack::get_instance().push(std::string("Could not open render_settings.config file located at path:" + std::string(s_render_settings_config_filepath)));
 		return false;
 	}
 
@@ -61,11 +62,11 @@ bool Renderer::load_render_pipe()
 			render_pipe_filepath = render_pipe_filepath.substr( render_pipe_filepath.find(render_pipe_macro) + render_pipe_macro.size());
 			StringHelper::trim(render_pipe_filepath);
 
-			if(!_render_pipe.load_render_pipe(render_pipe_filepath.c_str()))
+			/*if(!_render_pipe.load_render_pipe(render_pipe_filepath.c_str()))
 			{
 				D_ERROR("The .render_pipe file did not load correctly!");
 				return false;
-			}
+			}*/
 		}
 	}
 

@@ -1,8 +1,5 @@
-
-
-#if defined(DEUTERIUM_PC)
 #include "renderer.h"
-#endif
+
 
 namespace deuterium
 {
@@ -16,9 +13,6 @@ Renderer::~Renderer()
 {
 
 }
-
-
-
 
 void Renderer::clear_color_buffer()
 {
@@ -34,9 +28,6 @@ void Renderer::clear_color_and_depth_buffer()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
-
-
-
 
 Mat4x4 Renderer::perspective_projection_matrix(float left, float right, float bottom, float top, float near, float far)
 {
@@ -71,12 +62,13 @@ Mat4x4 Renderer::perspective_projection_matrix(float FOV, float AspectRatio, flo
 
 U32 Renderer::get_render_pass_id(const std::string& pass_name)
 {
-
+	//TODO
+	return 0;
 }
 
 const std::string& Renderer::get_render_pass_name(U32 id)
 {
-	this->_render_pipe.
+	return "TODO";
 }
 
 void Renderer::resize_window(U32 w, U32 h)
@@ -88,7 +80,7 @@ void Renderer::resize_window(U32 w, U32 h)
 }
 
 
-void Renderer::add_draw_request(DrawRequest* request)
+void Renderer::add_draw_request(dPtr<DrawRequest> request)
 {
 	_draw_request_DA.push_back(request);
 }

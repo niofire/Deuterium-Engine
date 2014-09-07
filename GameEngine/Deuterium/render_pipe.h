@@ -41,5 +41,4 @@ private:
 	std::vector<ShaderComponent> _shader_components;
 
 };
-
 }

@@ -25,7 +25,7 @@ namespace deuterium
 
 	bool RenderPipe::load_render_pipe(const char* render_pipe_filename)
 	{
-		
+		/*
 		ResourceLoader loader;
 		
 		using namespace rapidjson;
@@ -70,11 +70,15 @@ namespace deuterium
 				return false;
 		}
 
-		//Load render passses
+		//-------------------------------------------
+		//		Load the render passes
+		//-------------------------------------------
 			if(!JsonParser::has_member(json_parser,"render_pipe",render_pipe_filename))
 			return false;
 		const Value& json_render_pipe = json_parser["render_pipe"];
 
+		//Iterate through each render pass type
+		
 		if(!JsonParser::has_member(json_render_pipe,"pass",render_pipe_filename))
 			return false;
 		const Value& json_pass = json_render_pipe["pass"];
@@ -89,7 +93,7 @@ namespace deuterium
 			return false;
 
 			RenderPass r_pass;
-			dPtr<ShaderPass> shader_pass_ptr = loader.get_rendering_resouces()._shader_pass_assets.get_asset(json_pass[i]["name"].GetString());
+			dPtr<ShaderPass> shader_pass_ptr = ResourceLoader::s_rendering_resources._shader_pass_assets.get_asset(json_pass[i]["name"].GetString());
 			
 			if(shader_pass_ptr.is_null())
 				continue;
@@ -134,7 +138,7 @@ namespace deuterium
 
 			this->_render_pass_DA.push_back(r_pass);
 		}
-
+		*/
 		return true;
 	}
 
@@ -165,7 +169,7 @@ namespace deuterium
 	{
 		if(pass_id < _render_pass_DA.size())
 		{
-			return _render_pass_DA[pass_id]._;
+			return _render_pass_DA[pass_id]._pass->name();
 		}
 	}
 

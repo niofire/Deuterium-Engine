@@ -17,6 +17,10 @@ public:
 
 	const Vec2f& size() { return _size;}
 	const std::string& name() {return _name;}
+	void set_name(const std::string& name) { _name = name; }
+	void set_format(U32 format) { _format = format; }
+	void set_format(const std::string& format_str);
+	void set_size(Vec2f size) { _size = size; }
 	void initialize();
 	void bind();
 	bool is_back_buffer() { return _is_backbuffer;}
@@ -25,6 +29,7 @@ private:
 	Vec2f _size;
 	std::string _name;
 	U32 _rt_handle;
+	U32 _format;
 };
 
 }

@@ -10,7 +10,9 @@ namespace deuterium
 	this->clear_color_and_depth_buffer();
 	glEnable(GL_DEPTH_TEST);
 	
+	
 
+	/*
 	//---------------------------------------------------
 	//	Draw Call sorting
 
@@ -41,7 +43,7 @@ namespace deuterium
 		}
 		l_CurrentIndex++;
 	}
-	U32 l_CurrentShaderId = 0;
+	U32 l_CurrentShaderId = 0;*/
 	/*for(U32 i =0 ;i < _draw_request_DA.size();++i)
 	{
 		//Change Shader
@@ -68,18 +70,18 @@ namespace deuterium
 	this->swap_buffer();
 
 	//Free the DrawRequest memory
-	for(U32 i = 0; i < _draw_request_DA.size();++i)
+	/*for(U32 i = 0; i < _draw_request_DA.size();++i)
 	{
 		delete _draw_request_DA[i];
 		_draw_request_DA[i] = NULL;
-	}
+	}*/
 	
-	//Clear the drawRequest structure
-	_draw_request_DA.clear();
+
 	
 }
 void Renderer::render_draw_request(DrawRequest* i_DrawRequest)
 {
+	/*
 	Mesh*		l_Mesh		= g_data._mesh_manager_ptr->mesh_by_id(i_DrawRequest->MeshId);
 
 	VertexBufferContainer*		l_Vbo	= l_Mesh->vertex_buffer_ptr();
@@ -107,7 +109,7 @@ void Renderer::render_draw_request(DrawRequest* i_DrawRequest)
 	l_Ibo->end_render();
 	
 	//l_Shader.end_render();
-	
+	*/
 	
 }
 

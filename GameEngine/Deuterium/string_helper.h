@@ -1,8 +1,7 @@
 #pragma once
-#include "global_data.h"
 #include <vector>
 #include <string>
-
+#define STR(X) #X
 namespace deuterium
 {
 class StringHelper

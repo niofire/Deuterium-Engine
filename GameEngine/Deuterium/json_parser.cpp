@@ -1,5 +1,5 @@
 #include "json_parser.h"
-
+#include "d_typedef.h"
 namespace deuterium
 {
 	JsonParser::JsonParser(void)
@@ -29,7 +29,7 @@ namespace deuterium
 			std::string err_str =  GetParseError_En(err_code);
 			int err_offset = d.GetErrorOffset();
 			err_str =  err_str + "Error located at: " + str.substr(err_offset,20);
-			DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("Json Parsing error" + err_str).c_str()));
+			dErrorStack::get_instance().push(std::string("Json Parsing error: " + err_str));
 			return false;
 		}
 		return true;
@@ -75,7 +75,6 @@ namespace deuterium
 		}
 
 		StringHelper::remove_all_char(json_string,'\t');
-		
 		return json_string;
 	}
 
@@ -84,7 +83,7 @@ namespace deuterium
 		if(!value.HasMember(member))
 		{
 			std::string str = "The file " + std::string(filename) + " with member " + std::string(member) + ": Member not found.";
-			DeuteriumErrorStack::get_instance().push(DeuteriumError(str));
+			dErrorStack::get_instance().push(str);
 			return false;
 		}
 		return true;
@@ -94,7 +93,7 @@ namespace deuterium
 	{
 		if(!value.IsString())
 		{
-			DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("The file " + std::string(filename) + " with member " + member + ": Member is not a string.")));
+			dErrorStack::get_instance().push(std::string("The file " + std::string(filename) + " with member " + member + ": Member is not a string."));
 			return false;
 		}
 		return true;
@@ -104,10 +103,38 @@ namespace deuterium
 	{
 		if(!value.IsArray())
 		{
-			DeuteriumErrorStack::get_instance().push(DeuteriumError(std::string("The file " + std::string(filename) + " with member " + member + ": Member is not an array.")));
+			dErrorStack::get_instance().push(std::string("The file " + std::string(filename) + " with member " + member + ": Member is not an array."));
 			return false;
 		}
 		return true;
+	}
+
+	bool JsonParser::fetch_string(const rapidjson::Value& json_parser, std::string& str, const char* member_name, const char* filename)
+	{
+		if(!JsonParser::has_member(json_parser,member_name, filename)
+			|| !JsonParser::is_string(json_parser,member_name,filename))
+			return false;
+		str = json_parser[member_name].GetString();
+		return true;
+	}
+
+	bool JsonParser::fetch_string_DA(const rapidjson::Value& json_parser, std::vector<std::string>& str_DA, const char* member_name, const char* filename)
+	{
+		using namespace rapidjson;
+		if(!JsonParser::has_member(json_parser,member_name,filename)
+			|| !JsonParser::is_array(json_parser,member_name,filename))
+			return false;
+		const Value& json_array_parser = json_parser[member_name];
+
+		for(U32 i = 0; i < json_array_parser.Size(); ++i)
+		{
+			if(!JsonParser::is_string(json_array_parser[i],member_name,filename))
+				return false;
+			str_DA.push_back(json_array_parser[i].GetString());
+		}
+		return true;
+
+
 	}
 
 }

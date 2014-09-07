@@ -101,9 +101,11 @@ void ShaderComponent::add_attribute_location(StreamType type, const char* name)
 {
 	U32 attrib_index = StreamData::get_attribute_index(type);
 	if(attrib_index == -1)
+	{
+		dErrorStack::get_instance().push(dError("Attribute"));
 		return;
-	//TODO error
-	DeuteriumErrorStack::get_instance().push(DeuteriumError("Attribute"));
+	}
+	
 	this->_data._attribute_location_DA.push_back(AttributeLocation(type,name));
 }
 

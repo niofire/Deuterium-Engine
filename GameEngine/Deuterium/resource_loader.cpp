@@ -12,7 +12,6 @@ namespace deuterium
 	{
 	}
 
-
 	bool ResourceLoader::load_shader_data(const char* shader_data_filename)
 	{
 		using namespace rapidjson;
@@ -66,7 +65,7 @@ namespace deuterium
 					return false;
 
 				std::string shader_extension_name = json_include_array[j].GetString();
-				dPtr<ShaderExtension> ext = this->_rendering_resources._shader_extension_assets.get_asset(shader_extension_name);
+				dPtr<ShaderExtension> ext = _rendering_resources._shader_extension_assets.get_asset(shader_extension_name);
 				if(!ext.is_null())
 					component->add_extension_source(ext);
 			}
@@ -87,7 +86,7 @@ namespace deuterium
 					if(!JsonParser::is_string(json_include_ubuffer_array[j],include_ubuffer_str,shader_data_filename))
 						return false;
 					std::string shader_extension_name = json_include_ubuffer_array[j].GetString();
-					dPtr<UniformBuffer> ubuffer_ext = this->_rendering_resources._uniform_buffer_assets.get_asset(shader_extension_name);
+					dPtr<UniformBuffer> ubuffer_ext = _rendering_resources._uniform_buffer_assets.get_asset(shader_extension_name);
 					if(!ubuffer_ext.is_null())
 						component->add_constant_uniform_buffer(ubuffer_ext);
 				}
@@ -329,8 +328,6 @@ namespace deuterium
 			}
 		}
 
-
-
 		////////////////////////////////////////////////////////
 		//			
 		//			Shader Assets
@@ -369,20 +366,20 @@ namespace deuterium
 			if(filepath.find(".shader_data") != std::string::npos)
 			{
 				if(!this->load_shader_data(filepath.c_str())) {
-					DeuteriumErrorStack::get_instance().push(DeuteriumError(
-						"In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly."));
+					dErrorStack::get_instance().push(
+						"In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly.");
 				}
 			}
 			else if(filepath.find(".shader_extension") != std::string::npos)
 			{
 				if(!this->load_shader_extension(filepath.c_str())) {
-					DeuteriumErrorStack::get_instance().push(DeuteriumError(
-						"In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly."));
+					dErrorStack::get_instance().push(
+						"In the render_assets_package_file: " + std::string(filename) + ": The file " + filepath + " did not load properly.");
 				}
 			}
 			else {
-				DeuteriumErrorStack::get_instance().push(DeuteriumError(
-					"In the render_assets_package file: " + std::string(filename) + ": Filepath " + filepath + " is not supported."));
+				dErrorStack::get_instance().push(
+					"In the render_assets_package file: " + std::string(filename) + ": Filepath " + filepath + " is not supported.");
 			}
 		}
 

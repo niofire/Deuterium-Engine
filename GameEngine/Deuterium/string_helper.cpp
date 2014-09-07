@@ -1,8 +1,7 @@
 #include "string_helper.h"
-#include <iostream>
-#include <vector>
-#include <string>
+#include "d_typedef.h"
 #include <fstream>
+
 
 
 namespace deuterium

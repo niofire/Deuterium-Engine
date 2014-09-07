@@ -61,8 +61,8 @@
     <Filter Include="Resource Generation">
       <UniqueIdentifier>{75ed2b51-4db9-4df2-b09e-1630b061b5ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Renderer\Types">
-      <UniqueIdentifier>{5a77317b-ac8a-4923-94b4-c15ff5585282}</UniqueIdentifier>
+    <Filter Include="Resource Generation\RenderingResources">
+      <UniqueIdentifier>{6f575522-79ee-4130-a3a5-2d07c5e3c9a2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,12 +150,6 @@
     <ClCompile Include="deuterium_math.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
-    <ClCompile Include="node.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="shader_parameter_value_settings.cpp">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="shader_pass.cpp">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClCompile>
@@ -170,9 +164,6 @@
     </ClCompile>
     <ClCompile Include="render_pipe.cpp">
       <Filter>Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="deuterium_error_stack.cpp">
-      <Filter>Debugger</Filter>
     </ClCompile>
     <ClCompile Include="resource_loader.cpp">
       <Filter>Resource Generation</Filter>
@@ -191,6 +182,16 @@
     </ClCompile>
     <ClCompile Include="scene_object.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="d_error_stack.cpp">
+      <Filter>Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="g_buffer.cpp">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="render_pass_library.cpp" />
+    <ClCompile Include="rendering_resource.cpp">
+      <Filter>Resource Generation\RenderingResources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -263,12 +264,6 @@
     <ClInclude Include="deuterium_math.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="node.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="shader_parameter_value_settings.h">
-      <Filter>Renderer\Material\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="shader_pass.h">
       <Filter>Renderer\Material\Shaders</Filter>
     </ClInclude>
@@ -286,9 +281,6 @@
     </ClInclude>
     <ClInclude Include="render_pipe.h">
       <Filter>Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="deuterium_error_stack.h">
-      <Filter>Debugger</Filter>
     </ClInclude>
     <ClInclude Include="resource_loader.h">
       <Filter>Resource Generation</Filter>
@@ -316,5 +308,16 @@
     <ClInclude Include="d_enum.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="d_typedef.h" />
+    <ClInclude Include="d_error_stack.h">
+      <Filter>Debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="g_buffer.h">
+      <Filter>Renderer\Material\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering_resource.h">
+      <Filter>Resource Generation\RenderingResources</Filter>
+    </ClInclude>
+    <ClInclude Include="render_pass_library.h" />
   </ItemGroup>
 </Project>

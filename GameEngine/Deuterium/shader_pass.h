@@ -2,7 +2,6 @@
 #include "global_data.h"
 #include "uniform_buffer.h"
 #include "shader_component.h"
-#include "shader_parameter_value_settings.h"
 //Takes in two shader components and various sampler states settings
 namespace deuterium
 {
