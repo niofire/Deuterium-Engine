@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="buffer_container.h" />
+    <ClInclude Include="d_error_stack.h" />
+    <ClInclude Include="draw_request.h" />
+    <ClInclude Include="index_buffer_container.h" />
+    <ClInclude Include="mesh.h" />
+    <ClInclude Include="mesh_manager.h" />
+    <ClInclude Include="object_container.h" />
+    <ClInclude Include="render_pass.h" />
+    <ClInclude Include="render_pass_library.h" />
+    <ClInclude Include="render_pipe.h" />
+    <ClInclude Include="render_target.h" />
+    <ClInclude Include="renderer_settings.h" />
+    <ClInclude Include="rendering_resource.h" />
+    <ClInclude Include="resource_loader.h" />
+    <ClInclude Include="shader_component.h" />
+    <ClInclude Include="shader_extension.h" />
+    <ClInclude Include="shader_parameter.h" />
+    <ClInclude Include="shader_pass.h" />
+    <ClInclude Include="stream_data.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="uniform_buffer.h" />
+    <ClInclude Include="uniform_type_handler.h" />
+    <ClInclude Include="vertex_buffer_container.h" />
+    <ClInclude Include="renderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="d_error_stack.cpp" />
+    <ClCompile Include="draw_request.cpp" />
+    <ClCompile Include="index_buffer_container.cpp" />
+    <ClCompile Include="mesh.cpp" />
+    <ClCompile Include="mesh_manager.cpp" />
+    <ClCompile Include="render_pass_library.cpp" />
+    <ClCompile Include="render_pipe.cpp" />
+    <ClCompile Include="render_target.cpp" />
+    <ClCompile Include="renderer_settings.cpp" />
+    <ClCompile Include="rendering_resource.cpp" />
+    <ClCompile Include="resource_loader.cpp" />
+    <ClCompile Include="shader_component.cpp" />
+    <ClCompile Include="shader_extension.cpp" />
+    <ClCompile Include="shader_parameter.cpp" />
+    <ClCompile Include="shader_pass.cpp" />
+    <ClCompile Include="stream_data.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="uniform_buffer.cpp" />
+    <ClCompile Include="uniform_type_handler.cpp" />
+    <ClCompile Include="vertex_buffer_container.cpp" />
+    <ClCompile Include="renderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer_init.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer_render.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer_update.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{b91c2a59-a08b-4083-9ffc-dc942a791037}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

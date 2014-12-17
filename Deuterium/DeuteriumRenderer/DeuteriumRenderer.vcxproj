@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugStaticPC|Win32">
+      <Configuration>DebugStaticPC</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{87F4ECAA-BC9E-4774-B6F1-8510D2F6F5DE}</ProjectGuid>
+    <RootNamespace>DeuteriumRenderer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStaticPC|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugStaticPC|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStaticPC|Win32'">
+    <OutDir>$(SolutionDir)Library</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugStaticPC|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Common\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;DEUTERIUM_PC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="buffer_container.h" />
+    <ClInclude Include="draw_request.h" />
+    <ClInclude Include="d_error_stack.h" />
+    <ClInclude Include="index_buffer_container.h" />
+    <ClInclude Include="mesh.h" />
+    <ClInclude Include="mesh_manager.h" />
+    <ClInclude Include="object_container.h" />
+    <ClInclude Include="renderer.h" />
+    <ClInclude Include="renderer_settings.h" />
+    <ClInclude Include="rendering_resource.h" />
+    <ClInclude Include="render_pass.h" />
+    <ClInclude Include="render_pass_library.h" />
+    <ClInclude Include="render_pipe.h" />
+    <ClInclude Include="render_target.h" />
+    <ClInclude Include="resource_loader.h" />
+    <ClInclude Include="shader_component.h" />
+    <ClInclude Include="shader_extension.h" />
+    <ClInclude Include="shader_parameter.h" />
+    <ClInclude Include="shader_pass.h" />
+    <ClInclude Include="stream_data.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="uniform_buffer.h" />
+    <ClInclude Include="uniform_type_handler.h" />
+    <ClInclude Include="vertex_buffer_container.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="draw_request.cpp" />
+    <ClCompile Include="d_error_stack.cpp" />
+    <ClCompile Include="index_buffer_container.cpp" />
+    <ClCompile Include="mesh.cpp" />
+    <ClCompile Include="mesh_manager.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="renderer_init.cpp" />
+    <ClCompile Include="renderer_render.cpp" />
+    <ClCompile Include="renderer_settings.cpp" />
+    <ClCompile Include="renderer_update.cpp" />
+    <ClCompile Include="rendering_resource.cpp" />
+    <ClCompile Include="render_pass_library.cpp" />
+    <ClCompile Include="render_pipe.cpp" />
+    <ClCompile Include="render_target.cpp" />
+    <ClCompile Include="resource_loader.cpp" />
+    <ClCompile Include="shader_component.cpp" />
+    <ClCompile Include="shader_extension.cpp" />
+    <ClCompile Include="shader_parameter.cpp" />
+    <ClCompile Include="shader_pass.cpp" />
+    <ClCompile Include="stream_data.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="uniform_buffer.cpp" />
+    <ClCompile Include="uniform_type_handler.cpp" />
+    <ClCompile Include="vertex_buffer_container.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
