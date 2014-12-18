@@ -1,14 +1,10 @@
 #pragma once
 #include "d_Ptr.h"
-#include "d_error_stack.h"
 #include "void_d_Ptr.h"
 #include "d_typedef.h"
 #ifdef DEUTERIUM_PC
 #include "3rdParty/Glew/Include/glew.h"
-#pragma comment(lib, "SDL2/lib/SDL2main.lib")
-#pragma comment(lib, "SDL2/lib/SDL2.lib")
-#pragma comment(lib, "Glew/lib/glew32.lib")
-#pragma comment(lib, "opengl32.lib")
+
 #elif defined(EMSCRIPTEN)
 #include <stdint.h>
 #include <emscripten.h>

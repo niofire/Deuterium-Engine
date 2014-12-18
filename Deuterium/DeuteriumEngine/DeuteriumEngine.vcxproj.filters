@@ -16,19 +16,30 @@
     <ClCompile Include="game_core.cpp">
       <Filter>GameCore</Filter>
     </ClCompile>
-    <ClCompile Include="render_context.cpp" />
-    <ClCompile Include="game_window.cpp" />
+    <ClCompile Include="render_context.cpp">
+      <Filter>WindowHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="game_window.cpp">
+      <Filter>WindowHandling</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameCore">
       <UniqueIdentifier>{96e27cb0-f3b4-4e23-844f-d91d8a005c25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindowHandling">
+      <UniqueIdentifier>{750a021d-10b0-4c4d-894f-79c7e8b1cbdb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_core.h">
       <Filter>GameCore</Filter>
     </ClInclude>
-    <ClInclude Include="render_context.h" />
-    <ClInclude Include="game_window.h" />
+    <ClInclude Include="render_context.h">
+      <Filter>WindowHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="game_window.h">
+      <Filter>WindowHandling</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 #pragma once
 #include "d_ptr.h"
 #include "global_data.h"
+#include "render_context.h"
+#include "game_window.h"
 //------------------------------------------------------
 //			Game Engine Class
 //------------------------------------------------------
@@ -43,20 +45,15 @@ public:
 	bool			init_render_content(int w, int h);
 protected:
 	
-	//---------------------------------------------------
-	//				static variables
-	//---------------------------------------------------
-	
-	//static pointer to GameEngine instance used
-	static dPtr<GameCore> s_game_core;
+	GameWindow _game_window;
+	RenderContext _render_context;
+
 
 	//holds whether the Game core is currently running
 	bool		_is_game_core_running;
 
 
 private:
-
-	void init_render_context(const int& x, const int& y);
 	
 };
 }

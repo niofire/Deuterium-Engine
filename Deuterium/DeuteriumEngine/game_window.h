@@ -1,5 +1,6 @@
 #pragma once
 #include "3rdParty\SDL2\include\SDL.h"
+#include "render_context.h"
 class GameWindow
 {
 public:
@@ -15,8 +16,8 @@ public:
 	~GameWindow(void);
 
 	
-	void create_window();
-	void create_window(int w, int h);
+	void create_window(RenderContext& c);
+	void create_window(RenderContext& c, int w, int h);
 
 	//---------------------------------------
 	//			Window Parameters
@@ -24,13 +25,18 @@ public:
 	void set_name(const char* name);
 
 	//---------------------------------------
-	//			Window Handling function
+	//			Window Handling functions
 	//---------------------------------------
 	void resize(int w, int h);
 	void hide();
 	void show();
+
+	//---------------------------------------
+	//			Window State functions
+	//---------------------------------------
 	void set_state(WindowState state);
 	WindowState get_state() {return _state; }
+	bool is_valid() const { return _handle != nullptr; }
 
 private:
 	const char* _name;

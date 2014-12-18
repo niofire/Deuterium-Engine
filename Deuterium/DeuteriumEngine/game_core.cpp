@@ -1,6 +1,14 @@
 #include "game_core.h"
+
+#pragma comment(lib,	"SDL2/lib/x86/SDL2main.lib")
+#pragma comment(lib,	"SDL2/lib/x86/SDL2.lib")
+#pragma comment(lib,	"Glew/lib/glew32.lib")
+#pragma comment(lib,	"opengl32.lib")
+
 namespace deuterium
 {
+
+
 
 GameCore::GameCore()
 {
@@ -30,12 +38,8 @@ void GameCore::main_loop()
 }
 
 
-bool GameCore::execute(GameCore* gPtr)
-{
-	if(!s_game_core.is_null())
-		return false;
-	s_game_core.alloc(gPtr);
-	
+bool GameCore::execute(GameCore* core)
+{	
 	//Javascript tracing
 	#ifdef EMSCRIPTEN
 	 EM_ASM(
@@ -43,7 +47,7 @@ bool GameCore::execute(GameCore* gPtr)
 	);
 	#endif
 
-	s_game_core->init();
+	core->init();
 
 	//Javascript tracing
 	#ifdef EMSCRIPTEN
@@ -57,17 +61,22 @@ bool GameCore::execute(GameCore* gPtr)
 	//			Native App entry point
 	//---------------------------------------------------
 #ifdef DEUTERIUM_PC
-	while(s_game_core->is_running())
-		s_game_core->main_loop();
+	while (core->is_running())
+		core->main_loop();
 #endif
 
 	//---------------------------------------------------
 	//			Web Browser entry point
 	//---------------------------------------------------
 #ifdef EMSCRIPTEN
-	emscripten_set_main_loop(s_game_core->MainLoop,60,true);
+	emscripten_set_main_loop(core->MainLoop,60,true);
 #endif
 	return true;
 }
 
+}
+
+int main(int argc, char* argv[])
+{
+	return deuterium::GameCore::execute(new deuterium::GameCore());
 }

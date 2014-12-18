@@ -25,57 +25,51 @@ void RenderContext::set_default_settings()
 
 }
 
-void RenderContext::create_context(SDL_Window* window)
+void RenderContext::bind_context_attributes()
 {
-		
+	//opengl framebuffer settings
+	SDL_GL_SetAttribute(SDL_GL_RED_SIZE, _settings.red);
+	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, _settings.green);
+	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, _settings.blue);
+	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, _settings.alpha);
+
+	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
+	SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
+
+	SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE, 8);
+	SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE, 8);
+	SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE, 8);
+	SDL_GL_SetAttribute(SDL_GL_ACCUM_ALPHA_SIZE, 8);
+
+	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 2);
+}
+
+void RenderContext::init_SDL()
+{
 	//Init the SDL environment
 #ifdef EMSCRIPTEN
-	if(SDL_Init(SDL_INIT_VIDEO) != 0)
+	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
 		std::cout << "SDL_init Error:" << SDL_GetError() << std::endl;
 	}
 #elif DEUTERIUM_PC
-	if(SDL_Init(SDL_INIT_EVERYTHING) != 0)
+	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
 		std::cout << "SDL_init Error:" << SDL_GetError() << std::endl;
 	}
 #endif
+}
+void RenderContext::setup_context()
+{
+	init_SDL();
 
+	bind_context_attributes();
+}
 
-	//opengl framebuffer settings
-	SDL_GL_SetAttribute(SDL_GL_RED_SIZE,        _settings.red);
-	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,      _settings.green);
-	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE,       _settings.blue);
-	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE,      _settings.alpha);
-
-	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE,      16);
-	SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE,        32);
-
-	SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE,    8);
-	SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE,    8);
-	SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE,    8);
-	SDL_GL_SetAttribute(SDL_GL_ACCUM_ALPHA_SIZE,    8);
-
-	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS,  1);
-	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES,  2);
-
-
-#ifdef EMSCRIPTEN
-	l_DisplayScreen = SDL_SetVideoMode(
-		width, height, 32,
-		  SDL_ANYFORMAT | SDL_OPENGL);
-#elif DEUTERIUM_PC
-
-	if(window == nullptr)
-	{
-		std::cout << "SDL_CreateWindow Error:" << SDL_GetError() << std::endl;
-	}
-
-	_context = SDL_GL_CreateContext(window);
-	
-	GLenum err = glewInit();
-#endif
-
+void RenderContext::create_context(SDL_Window* window)
+{
+	_context = SDL_GL_CreateContext(window);	
 }
 
 
