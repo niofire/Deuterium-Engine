@@ -1,9 +1,12 @@
 #include "renderer.h"
 
+#pragma comment(lib,	"Glew/lib/glew32.lib")
+#pragma comment(lib,	"opengl32.lib")
 
 namespace deuterium
 {
-	const char* Renderer::s_render_settings_config_filepath = "resources\\rendering_assets\\render_settings.config";
+	dPtr<Renderer> Renderer::s_renderer;
+
 Renderer::Renderer()
 {
 
@@ -13,6 +16,8 @@ Renderer::~Renderer()
 {
 
 }
+
+
 
 void Renderer::clear_color_buffer()
 {
@@ -60,16 +65,14 @@ Mat4x4 Renderer::perspective_projection_matrix(float FOV, float AspectRatio, flo
 	return perspective_projection_matrix(-size,size,-size,size * AspectRatio,zNear,zFar);
 }
 
-void Renderer::resize_window(U32 w, U32 h)
+Renderer& Renderer::get_instance()
 {
-#if defined DEUTERIUM_PC
-	SDL_SetWindowSize(this->_sdl_display_window,w,h);
-#endif
-	_window_size = Vec2f(w,h);
+	if(s_renderer.is_null())
+		s_renderer.alloc(new Renderer());
+	return s_renderer.value();
 }
 
-
-void Renderer::add_draw_request(dPtr<DrawRequest> request)
+void Renderer::add_draw_request(DrawRequest request)
 {
 	_draw_request_DA.push_back(request);
 }

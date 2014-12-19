@@ -2,7 +2,7 @@
 
 namespace deuterium
 {
-	void Renderer::update(float i_fDeltaTime)
+	void Renderer::update()
 	{
 	
 	}

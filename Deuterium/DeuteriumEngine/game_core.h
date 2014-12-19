@@ -3,6 +3,7 @@
 #include "global_data.h"
 #include "render_context.h"
 #include "game_window.h"
+#include "renderer.h"
 //------------------------------------------------------
 //			Game Engine Class
 //------------------------------------------------------
@@ -51,10 +52,10 @@ protected:
 
 	//holds whether the Game core is currently running
 	bool		_is_game_core_running;
-
+	
 
 private:
-	
+	static dPtr<GameCore> s_core;
 };
 }
 

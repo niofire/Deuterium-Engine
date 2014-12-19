@@ -1,7 +1,7 @@
 #include "game_core.h"
 
-#pragma comment(lib,	"SDL2/lib/x86/SDL2main.lib")
-#pragma comment(lib,	"SDL2/lib/x86/SDL2.lib")
+#pragma comment(lib,	"SDL2/lib/SDL2main.lib")
+#pragma comment(lib,	"SDL2/lib/SDL2.lib")
 #pragma comment(lib,	"Glew/lib/glew32.lib")
 #pragma comment(lib,	"opengl32.lib")
 
@@ -24,7 +24,7 @@ GameCore::~GameCore()
 
 void GameCore::reset()
 {
-	//g_data._renderer_ptr->GetDebugCamera().ResetCameraPosition();
+
 }
 
 void GameCore::exit()
@@ -34,20 +34,24 @@ void GameCore::exit()
 
 void GameCore::main_loop()
 {
-
+	s_core->update();
+	s_core->render();
 }
 
-
+dPtr<GameCore> GameCore::s_core;
 bool GameCore::execute(GameCore* core)
 {	
-	//Javascript tracing
+	if(!s_core.is_null())
+		return false;
+	s_core.alloc(core);
+		//Javascript tracing
 	#ifdef EMSCRIPTEN
 	 EM_ASM(
     console.log("Before GameCore::Init()\n");
 	);
 	#endif
 
-	core->init();
+	s_core->init();
 
 	//Javascript tracing
 	#ifdef EMSCRIPTEN
@@ -61,15 +65,15 @@ bool GameCore::execute(GameCore* core)
 	//			Native App entry point
 	//---------------------------------------------------
 #ifdef DEUTERIUM_PC
-	while (core->is_running())
-		core->main_loop();
+	while (s_core->is_running())
+		s_core->main_loop();
 #endif
 
 	//---------------------------------------------------
 	//			Web Browser entry point
 	//---------------------------------------------------
 #ifdef EMSCRIPTEN
-	emscripten_set_main_loop(core->MainLoop,60,true);
+	emscripten_set_main_loop(s_core->MainLoop,60,true);
 #endif
 	return true;
 }

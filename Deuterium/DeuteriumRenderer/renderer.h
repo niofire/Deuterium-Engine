@@ -1,30 +1,19 @@
 #pragma once
 
-#include <iostream>
-
 #if defined(DEUTERIUM_PC)
 #include "3rdParty\SDL2\include\SDL.h"
 #include "3rdParty\Glew\include\glew.h"
 #endif
 
-#include "mesh_manager.h"
-
-#include "math.h"
-#include <vector>
-#include "render_pipe.h"
-#include "d_typedef.h"
-
 #include "draw_request.h"
+#include "d_typedef.h"
+#include "d_ptr.h"
+#include <vector>
 
 
-//#define ADD_DRAWREQUEST(draw_request)	deuterium::g_data._renderer_ptr->add_draw_request(draw_request)/////...
-//#define ADD_RENDER_PASS_TYPE(enum_name, render_pass_name) 
+
 namespace deuterium
 {
-
-
-
-
 class Renderer
 {
 public:
@@ -32,14 +21,13 @@ public:
 	//					Constructor / Destructor
 	//---------------------------------------------------------
 	virtual			~Renderer();
-					Renderer();
+
 
 	//---------------------------------------------------------
 	//					Core functions
 	//---------------------------------------------------------
-	void			update(float i_fDeltaTime);
+	void			update();
 	void			init();
-	void			init_render_context(int w, int h);
 
 	//---------------------------------------------------------
 	//					Render Settings
@@ -51,8 +39,7 @@ public:
 	//					Rendering Function
 	//---------------------------------------------------------
 
-	void			add_draw_request(dPtr<DrawRequest> request);
-	void			swap_buffer();
+	void			add_draw_request(DrawRequest request);
 	void			flush_draw_requests();
 	void			process_draw_request(dPtr<DrawRequest> request);
 	//--------------------------------------------------------
@@ -70,14 +57,25 @@ public:
 	void			set_clear_color(float r,float g,float b,float a);
 	void			set_depth_priority(bool val)	{_is_depth_priority = val;}
 
+public:
+	//------------------------------------------------------
+	//				Dll Entry Points
+	//------------------------------------------------------
+	static __declspec(dllexport) void add_draw_request(U32 render_pass_id, U32 mesh_handle, U32 material_handle, Mat4x4& transform);   
+   
+    static __declspec(dllexport) void render();   
+   
+    static __declspec(dllexport) void init_renderer();   
+   
+
+	static Renderer& get_instance();
 private:
-#if defined DEUTERIUM_PC
-	SDL_Window*		_sdl_display_window;
-	SDL_GLContext	_sdl_opengl_context;
-#elif defined EMSCRIPTEN
-	SDL_Surface * l_DisplayScreen = NULL;
-#endif
+	
+	Renderer();
+	static dPtr<Renderer> s_renderer;
+	
+	
 	bool			_is_depth_priority;
-	std::vector<dPtr<DrawRequest> > _draw_request_DA;
+	std::vector<DrawRequest> _draw_request_DA;
 };
 }

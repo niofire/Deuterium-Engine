@@ -38,6 +38,11 @@ public:
 	WindowState get_state() {return _state; }
 	bool is_valid() const { return _handle != nullptr; }
 
+	//---------------------------------------
+	//			Rendering functions
+	//---------------------------------------
+	void swap_buffers();
+
 private:
 	const char* _name;
 	WindowState _state;

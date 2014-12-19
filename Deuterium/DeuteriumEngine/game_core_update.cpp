@@ -4,7 +4,6 @@ namespace deuterium
 {
 	void GameCore::update()
 	{
-		
 	}
 
 }

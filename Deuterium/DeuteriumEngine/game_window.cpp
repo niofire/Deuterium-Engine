@@ -75,3 +75,8 @@ void GameWindow::show()
 {
 	SDL_ShowWindow(_handle);
 }
+
+void GameWindow::swap_buffers()
+{
+	SDL_GL_SwapWindow(_handle);
+}

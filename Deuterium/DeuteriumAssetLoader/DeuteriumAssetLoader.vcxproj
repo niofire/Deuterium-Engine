@@ -93,7 +93,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="asset_library.h" />
     <ClInclude Include="IAsset.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="asset_library.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

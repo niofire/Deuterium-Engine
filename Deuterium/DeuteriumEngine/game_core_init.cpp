@@ -14,6 +14,9 @@ bool GameCore::init()
 	_game_window.create_window(_render_context,600,800);
 
 
+	//Initalize the renderer
+	Renderer::init_renderer();
+
 
 
 	//Init render context for PC
