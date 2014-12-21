@@ -7,12 +7,13 @@ namespace deuterium
 		this->set_clear_color(0.3f,0.6f,0.1f,1.0f);
 		this->clear_color_buffer();
 
+		
 	
 	}
 
 	void Renderer::process_draw_request(dPtr<DrawRequest> i_DrawRequest)
 	{
-
+		
 	
 	}
 

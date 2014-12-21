@@ -1,6 +1,7 @@
 #pragma once
 #define NULL 0
 #include <iostream>
+#include "d_typedef.h"
 /* The dPtr class
  *
  *
@@ -25,7 +26,7 @@ class void_dPtr
 
 		//Allocate a memory location to the low_dPtr.
 		void alloc(void* ptr);
-
+		void alloc(U32 byte_size);
 		//Debug function
 		//int* get_num_handle_ptr() { return _num_handles_allocatelow_dPtr;}
 

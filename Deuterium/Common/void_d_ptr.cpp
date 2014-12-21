@@ -1,4 +1,5 @@
 #include "void_d_ptr.h"
+
 namespace deuterium
 {
 
@@ -46,6 +47,12 @@ void void_dPtr::alloc(void* ptr)
 	//store the newly allocated pointer
 	_num_handles_allocated = new int(1);
 	_ptr = ptr;
+}
+
+void void_dPtr::alloc(U32 byte_size)
+{
+	_ptr = malloc(byte_size);
+
 }
 
 void void_dPtr::clear()

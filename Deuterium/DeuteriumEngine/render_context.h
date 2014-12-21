@@ -5,7 +5,7 @@
 class RenderContext
 {
 private:
-	struct FrameBufferSettings
+	struct RenderContextSettings
 	{
 		U8 numberOfBuffers;
 		U8 red;
@@ -43,7 +43,7 @@ private:
 
 
 private:
-	FrameBufferSettings _settings;
+	RenderContextSettings _settings;
 	
 #ifdef DEUTERIUM_PC
 	SDL_GLContext _context; 

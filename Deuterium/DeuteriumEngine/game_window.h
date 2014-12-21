@@ -47,6 +47,7 @@ private:
 	const char* _name;
 	WindowState _state;
 	SDL_Window* _handle;
+	RenderContext _render_context;
 
 
 };

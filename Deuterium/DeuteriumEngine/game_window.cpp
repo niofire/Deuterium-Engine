@@ -29,6 +29,8 @@ void GameWindow::create_window(RenderContext& context)
 		std::cout << "SDL_CreateWindow Error:" << SDL_GetError() << std::endl;
 	}
 	#endif
+	context.create_context(_handle);
+	this->_render_context = context;
 
 	GLenum err = glewInit();
 }

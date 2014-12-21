@@ -12,8 +12,8 @@ bool GameCore::init()
 	//Set default render context settings create a new 600x800 window
 	_render_context.set_default_settings();
 	_game_window.create_window(_render_context,600,800);
-
-
+	const GLubyte* s = glewGetErrorString(glGetError());
+	
 	//Initalize the renderer
 	Renderer::init_renderer();
 

@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStaticPC|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -93,16 +93,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\deuterium_math.h" />
+    <ClInclude Include="..\Common\void_d_ptr.h" />
     <ClInclude Include="draw_request.h" />
+    <ClInclude Include="material.h" />
     <ClInclude Include="renderer.h" />
+    <ClInclude Include="shader_parameter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\deuterium_math.cpp" />
+    <ClCompile Include="..\Common\void_d_ptr.cpp" />
+    <ClCompile Include="material.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="renderer_entrypoint.cpp" />
     <ClCompile Include="renderer_init.cpp" />
     <ClCompile Include="renderer_render.cpp" />
     <ClCompile Include="renderer_update.cpp" />
+    <ClCompile Include="shader_parameter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

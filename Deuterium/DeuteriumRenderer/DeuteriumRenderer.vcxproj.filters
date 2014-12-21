@@ -10,6 +10,15 @@
     <ClInclude Include="..\Common\deuterium_math.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="material.h">
+      <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\void_d_ptr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_parameter.h">
+      <Filter>Material</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="renderer.cpp">
@@ -30,6 +39,15 @@
     <ClCompile Include="renderer_entrypoint.cpp">
       <Filter>Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="material.cpp">
+      <Filter>Material</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\void_d_ptr.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_parameter.cpp">
+      <Filter>Material</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Renderer">
@@ -37,6 +55,9 @@
     </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{4d0a2f97-6f03-4f92-bb75-4661b72e524d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Material">
+      <UniqueIdentifier>{c5ba7740-f017-484e-9531-a4c89913599b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
