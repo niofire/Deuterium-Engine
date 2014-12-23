@@ -17,7 +17,18 @@ ShaderComponent::~ShaderComponent(void)
 }
 
 
+void ShaderComponent::load(std::vector<std::string>& file_contentDA)
+{
+	std::string attribute_tag	= "attribute";
+	std::string uniform_tag		= "uniform";
 
+	//Parse through the shader content and retrieve all uniforms/attribute
+	for(int i = 0; i < file_contentDA.size(); ++i)
+	{
+		file_contentDA[i].
+
+	}
+}
 void ShaderComponent::compile()
 {
 	if(_is_compiled)
@@ -78,14 +89,6 @@ void ShaderComponent::compile()
 
 }
 
-
-void ShaderComponent::delete_and_uncache()
-{
-	if(_component_handle)
-		glDeleteShader(_component_handle);
-
-}
-
 void ShaderComponent::bind_shader_attribute(U32 shader_handle)
 {
 	for(int i = 0; i < _data._attribute_location_DA.size(); ++i)
@@ -110,3 +113,5 @@ void ShaderComponent::add_attribute_location(StreamType type, const char* name)
 }
 
 }
+
+

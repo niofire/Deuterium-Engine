@@ -61,3 +61,10 @@ private:
 	ShaderState _shader_state;
 };
 }
+
+class shader_pass
+{
+public:
+	shader_pass(void);
+	~shader_pass(void);
+};

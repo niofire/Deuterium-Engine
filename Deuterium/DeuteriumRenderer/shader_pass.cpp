@@ -130,3 +130,12 @@ void ShaderPass::end_pass()
 }
 
 }
+
+shader_pass::shader_pass(void)
+{
+}
+
+
+shader_pass::~shader_pass(void)
+{
+}

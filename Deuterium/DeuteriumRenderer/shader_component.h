@@ -12,6 +12,7 @@ namespace deuterium
 {
 class ShaderComponent
 {
+
 	struct AttributeLocation
 	{
 		AttributeLocation(U32 attrib_stream_type, std::string attrib_name)
@@ -27,9 +28,6 @@ class ShaderComponent
 	{
 		GLenum _shader_type;
 		std::string _shader_content;
-		std::vector<dPtr<ShaderExtension>>	_shader_extension_DA;
-		std::vector<dPtr<UniformBuffer>>	_constant_uniform_buffer_DA;
-		dPtr<UniformBuffer>					_dynamic_uniform_buffer;
 		std::vector<AttributeLocation>		_attribute_location_DA;
 		std::string							_name;		
 	};
@@ -38,26 +36,36 @@ public:
 	ShaderComponent();
 	~ShaderComponent(void);
 
-	void load_by_content(std::vector<std::string> file_content);
+	//-------------------------------------------------
+	//				Initialization Functions
+	//-------------------------------------------------
+	void load(std::vector<std::string>& file_content);
 	void compile();
-	void delete_and_uncache();
 
-	const U32	 component_handle() const {return _component_handle;}
-	const std::string source() const {return _data._shader_content;}
+	//-------------------------------------------------
+	//				Accessor / Mutators
+	//-------------------------------------------------
+	
+	//Name of the shader, is unique.
+	void	set_name(std::string& name) { _data._name = name;}
+	const	std::string& name() const { return _data._name;}
 
-	void set_name(std::string& name) { _data._name = name;}
-	void set_type(GLenum type) {_data._shader_type = type;}
-	U32	type()	{return _data._shader_type;}
-	void set_source(std::string str) { _data._shader_content = str;}
-	std::string name() { return _data._name;}
+	//The shader source code used to compile the component
+	void	set_source(std::string str) { _data._shader_content = str;}
+	const	std::string source() const {return _data._shader_content;}
 
-	void add_constant_uniform_buffer(const dPtr<UniformBuffer>& buffer) { _data._constant_uniform_buffer_DA.push_back(buffer);}
-	void set_dynamic_uniform_buffer(dPtr<UniformBuffer>& buffer) { _data._dynamic_uniform_buffer = buffer;}
-	void add_shader_extension(const dPtr<ShaderExtension>& ext) { _data._shader_extension_DA.push_back(ext);}
+	//Shader type, either GL_VERTEX or GL_FRAGMENT
+	void	set_type(GLenum type) {_data._shader_type = type;}
+	U32		type()	{return _data._shader_type;}
+
+	//The ShaderComponent rendering handle
+	const	 U32 handle() const {return _component_handle;}
+	
+	//-------------------------------------------------
+	//				Shader Handling function
+	//-------------------------------------------------
 	void add_attribute_location(StreamType type, const char* name);
 	void bind_shader_attribute(U32 shader_handle);
-	std::vector<dPtr<UniformBuffer> >& get_constant_uniform_buffer() {return _data._constant_uniform_buffer_DA;}
-	dPtr<UniformBuffer> get_dynamic_uniform_buffer() {return _data._dynamic_uniform_buffer;}
 
 
 private:

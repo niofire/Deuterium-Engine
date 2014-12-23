@@ -175,3 +175,12 @@ namespace deuterium
 
 
 }
+
+render_pipe::render_pipe(void)
+{
+}
+
+
+render_pipe::~render_pipe(void)
+{
+}

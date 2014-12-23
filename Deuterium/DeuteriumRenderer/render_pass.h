@@ -26,3 +26,10 @@ namespace deuterium
 	};
 
 }
+
+class render_pass
+{
+public:
+	render_pass(void);
+	~render_pass(void);
+};

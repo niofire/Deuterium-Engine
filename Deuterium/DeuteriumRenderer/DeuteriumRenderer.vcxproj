@@ -97,7 +97,11 @@
     <ClInclude Include="draw_request.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="renderer.h" />
+    <ClInclude Include="render_pass.h" />
+    <ClInclude Include="render_pipe.h" />
+    <ClInclude Include="shader_component.h" />
     <ClInclude Include="shader_parameter.h" />
+    <ClInclude Include="shader_pass.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\deuterium_math.cpp" />
@@ -108,7 +112,11 @@
     <ClCompile Include="renderer_init.cpp" />
     <ClCompile Include="renderer_render.cpp" />
     <ClCompile Include="renderer_update.cpp" />
+    <ClCompile Include="render_pass.cpp" />
+    <ClCompile Include="render_pipe.cpp" />
+    <ClCompile Include="shader_component.cpp" />
     <ClCompile Include="shader_parameter.cpp" />
+    <ClCompile Include="shader_pass.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

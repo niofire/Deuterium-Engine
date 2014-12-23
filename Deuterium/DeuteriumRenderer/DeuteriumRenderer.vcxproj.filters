@@ -4,9 +4,6 @@
     <ClInclude Include="renderer.h">
       <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="draw_request.h">
-      <Filter>Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="..\Common\deuterium_math.h">
       <Filter>Common</Filter>
     </ClInclude>
@@ -18,6 +15,21 @@
     </ClInclude>
     <ClInclude Include="shader_parameter.h">
       <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_request.h">
+      <Filter>RenderPipe</Filter>
+    </ClInclude>
+    <ClInclude Include="render_pipe.h">
+      <Filter>RenderPipe</Filter>
+    </ClInclude>
+    <ClInclude Include="render_pass.h">
+      <Filter>RenderPipe</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_pass.h">
+      <Filter>RenderPipe</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_component.h">
+      <Filter>RenderPipe</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +60,18 @@
     <ClCompile Include="shader_parameter.cpp">
       <Filter>Material</Filter>
     </ClCompile>
+    <ClCompile Include="render_pipe.cpp">
+      <Filter>RenderPipe</Filter>
+    </ClCompile>
+    <ClCompile Include="render_pass.cpp">
+      <Filter>RenderPipe</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_pass.cpp">
+      <Filter>RenderPipe</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_component.cpp">
+      <Filter>RenderPipe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Renderer">
@@ -58,6 +82,9 @@
     </Filter>
     <Filter Include="Material">
       <UniqueIdentifier>{c5ba7740-f017-484e-9531-a4c89913599b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderPipe">
+      <UniqueIdentifier>{468bc8fd-7e51-456f-bc7b-c15bbb98e465}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
