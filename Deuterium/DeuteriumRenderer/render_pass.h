@@ -1,35 +1,25 @@
 #pragma once
+#include "shader_pass.h"
 namespace deuterium
 {
 	class ShaderPass;
 	class RenderTarget;
 	class DrawRequest;
-	struct RenderPass
+
+	class RenderPass
 	{
-		/*	
-		 *
-		 */
-		enum RenderPassType
-		{
-			MESH,
-			POST_PROCESS,
-			LIGHT,
-			
-		};
-		
-		RenderPassType _type;
-		dPtr<ShaderPass> _pass;
-		std::vector<dPtr<RenderTarget>> _input_rt_DA;
-		std::vector<dPtr<RenderTarget>> _output_rt_DA;
-		std::vector<dPtr<DrawRequest> > _draw_request_DA;
-		
+
+	public:
+		RenderPass();
+		~RenderPass();
+
+		//
+		//
+		//
+	private:
+		std::vector<dPtr<DrawRequest>> _draw_requestDA;
+		std::vector<dPtr<ShaderPass>> _shaderPassDA;
 	};
 
-}
 
-class render_pass
-{
-public:
-	render_pass(void);
-	~render_pass(void);
-};
+}

@@ -7,11 +7,11 @@ namespace deuterium
 {
 class ShaderPass
 {
-	enum ShaderState
+	enum PassType
 	{
-		EMPTY,
-		LOADED,
-		COMPILED,
+		MESH_PASS,
+		FULLSCREEN_PASS,
+		LIGHT_PASS,
 	};
 
 	enum SamplerStates
@@ -19,52 +19,46 @@ class ShaderPass
 		//TODO, research
 	};
 
-	struct ShaderComponents
+	struct ShaderProgram
 	{
+		U32				_shader_handle;
 		ShaderComponent _fragment_shader;
 		ShaderComponent _vertex_shader;
 	};
 public:
+	
+	//-------------------------------------------------
+	//				Constructor / Destructor
+	//-------------------------------------------------
+	ShaderPass();
+	ShaderPass(const ShaderPass& p);
 	ShaderPass(ShaderComponent& vertex_shader,ShaderComponent& fragment_shader);
 	~ShaderPass(void);
 
-	//Merges the shader components' uniform buffers
-	void update_uniform_declaration();
 
-	//
-	bool update_parameters(dPtr<ShaderParameterValueSettings> param_val_ptr);
-	
-	bool compile_pass();
-	bool compile_components();
-	
-	//returns a ShaderParameterValueSettings instance only if the pass is compiled.
-	dPtr<ShaderParameterValueSettings> get_parameter_and_value_setting();
-	
-	void set_sampler_state_flags(U32 sampler_states);
+	//-------------------------------------------------
+	//				Initialization Functions
+	//-------------------------------------------------
+	bool	compile_pass();
+
+	//Compile the vertex and fragment shader components
+	//returns false if compilation does not succeed
+	bool	compile_components();
+
+	//-------------------------------------------------
+	//				Rendering Functions
+	//-------------------------------------------------
 	
 	void begin_pass();
-	
 	void end_pass();
+	void set_sampler_state_flags(U32 sampler_states);
 
-	ShaderState shader_state() {return _shader_state;}
-	std::string name() { return _pass_name;}
-	void set_name(std::string name) { _pass_name = name;}
+
 	
 private:
 	U32 _id;
-	ShaderComponents _components;
-	UniformBuffer _uniform_buffer;
-	ShaderParameterValueSettings _param_value_settings;
-	U32 _shader_handle;
+	ShaderProgram _shader;
 	U32 _sampler_state_flags;
 	std::string _pass_name;
-	ShaderState _shader_state;
 };
 }
-
-class shader_pass
-{
-public:
-	shader_pass(void);
-	~shader_pass(void);
-};
