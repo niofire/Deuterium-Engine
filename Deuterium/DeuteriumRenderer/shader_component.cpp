@@ -1,8 +1,7 @@
 #include "shader_component.h"
+#include "stream_data.h"
 #include <iostream>
 #include <fstream>
-#include "stream_data.h"
-
 namespace deuterium
 {
 ShaderComponent::ShaderComponent()

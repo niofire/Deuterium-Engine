@@ -95,6 +95,8 @@
     <ClInclude Include="..\Common\deuterium_math.h" />
     <ClInclude Include="..\Common\void_d_ptr.h" />
     <ClInclude Include="draw_request.h" />
+    <ClInclude Include="rendering_asset.h" />
+    <ClInclude Include="rendering_assets_library.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="render_pass.h" />
@@ -112,6 +114,8 @@
     <ClCompile Include="renderer_init.cpp" />
     <ClCompile Include="renderer_render.cpp" />
     <ClCompile Include="renderer_update.cpp" />
+    <ClCompile Include="rendering_asset.cpp" />
+    <ClCompile Include="rendering_assets_library.cpp" />
     <ClCompile Include="render_pass.cpp" />
     <ClCompile Include="render_pipe.cpp" />
     <ClCompile Include="shader_component.cpp" />

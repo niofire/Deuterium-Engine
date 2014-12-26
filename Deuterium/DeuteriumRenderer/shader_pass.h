@@ -1,12 +1,15 @@
 #pragma once
-#include "global_data.h"
-#include "uniform_buffer.h"
 #include "shader_component.h"
+#include "material.h"
 //Takes in two shader components and various sampler states settings
 namespace deuterium
 {
 class ShaderPass
 {
+public:
+	//-------------------------------------------------
+	//				Struct / Enum Declaration
+	//-------------------------------------------------
 	enum PassType
 	{
 		MESH_PASS,
@@ -49,10 +52,12 @@ public:
 	//				Rendering Functions
 	//-------------------------------------------------
 	
-	void begin_pass();
-	void end_pass();
-	void set_sampler_state_flags(U32 sampler_states);
-
+	void	begin_pass();
+	void	end_pass();
+	void	set_sampler_state_flags(U32 sampler_states);
+	void	bind_material(const Material& m);
+	
+	PassType	type() { return _type; }
 
 	
 private:
@@ -60,5 +65,6 @@ private:
 	ShaderProgram _shader;
 	U32 _sampler_state_flags;
 	std::string _pass_name;
+	PassType _type;
 };
 }

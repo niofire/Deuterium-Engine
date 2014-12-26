@@ -1,12 +1,4 @@
 #pragma once
-#include "shader_component.h"
-#include "json_parser.h"
-#include "3rdParty\rapidjson\stringbuffer.h"
-#include "3rdParty\rapidjson\document.h"
-#include "3rdParty\rapidjson\writer.h"
-#include "shader_pass.h"
-#include "render_target.h"
-#include "draw_request.h"
 #include "render_pass.h"
 namespace deuterium
 {

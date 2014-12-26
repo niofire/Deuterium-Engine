@@ -80,7 +80,9 @@ bool GameCore::execute(GameCore* core)
 
 }
 
+
 int main(int argc, char* argv[])
 {
+
 	return deuterium::GameCore::execute(new deuterium::GameCore());
 }

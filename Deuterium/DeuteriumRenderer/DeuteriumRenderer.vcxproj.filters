@@ -31,6 +31,8 @@
     <ClInclude Include="shader_component.h">
       <Filter>RenderPipe</Filter>
     </ClInclude>
+    <ClInclude Include="rendering_assets_library.h" />
+    <ClInclude Include="rendering_asset.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="renderer.cpp">
@@ -72,6 +74,8 @@
     <ClCompile Include="shader_component.cpp">
       <Filter>RenderPipe</Filter>
     </ClCompile>
+    <ClCompile Include="rendering_assets_library.cpp" />
+    <ClCompile Include="rendering_asset.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Renderer">

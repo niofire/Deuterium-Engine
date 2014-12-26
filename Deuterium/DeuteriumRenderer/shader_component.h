@@ -1,10 +1,6 @@
 #pragma once
 
-#include "global_data.h"
-#include "string_helper.h"
 #include <vector>
-#include "uniform_buffer.h"
-#include "shader_extension.h"
 #include "shader_parameter.h"
 #include "stream_data.h"
 
