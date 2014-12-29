@@ -24,9 +24,9 @@ public:
 
 	struct ShaderProgram
 	{
-		U32				_shader_handle;
-		ShaderComponent _fragment_shader;
-		ShaderComponent _vertex_shader;
+		U32				_handle;
+		ShaderComponent _fragment_component;
+		ShaderComponent _vertex_component;
 	};
 public:
 	

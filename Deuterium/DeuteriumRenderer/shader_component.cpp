@@ -111,6 +111,11 @@ void ShaderComponent::add_attribute_location(StreamType type, const char* name)
 	this->_data._attribute_location_DA.push_back(AttributeLocation(type,name));
 }
 
+void ShaderComponent::attach_to_shader(const U32& handle)
+{
+	glAttachShader(handle,_component_handle);
+}
+
 }
 
 

@@ -16,8 +16,8 @@ namespace deuterium
 		//-----------------------------------------------------
 		//				Material Operations
 		//-----------------------------------------------------
-		void	bind_material();
-		void	unbind_material();
+		void	bind_material() const ;
+		void	unbind_material() const;
 
 		//-----------------------------------------------------
 		//				ShaderParameter Operations

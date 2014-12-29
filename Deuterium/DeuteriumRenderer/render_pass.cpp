@@ -1,5 +1,5 @@
 #include "render_pass.h"
-
+#include "rendering_assets_library.h"
 namespace deuterium
 {
 	RenderPass::RenderPass()
@@ -36,8 +36,26 @@ namespace deuterium
 			{
 				if (p.type() == _draw_requestDA[j]->_type)
 				{
-					//Bind the given shader parameters to the shaderpass
-					_draw_requestDA[j]->
+					
+					
+					dPtr<RenderingAsset> ptr;
+					ptr = RenderingAssetLibrary::instance().fetch_asset(RenderingAsset::MATERIAL,_draw_requestDA[j]->_material_handle);
+					
+					//The material pointer of this particular mesh
+					dPtr<Material> matPtr = dPtr_CAST(Material,ptr);
+
+					//Bind material to shader pass if it exists
+					if(!matPtr.is_null())
+						p.bind_material(matPtr.value());
+					
+					//bind mesh..
+
+
+					//Set render settings..
+
+
+					//Render!
+
 				}
 			}
 

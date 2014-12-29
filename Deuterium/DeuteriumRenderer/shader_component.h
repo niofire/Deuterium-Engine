@@ -37,6 +37,7 @@ public:
 	//-------------------------------------------------
 	void load(std::vector<std::string>& file_content);
 	void compile();
+	void attach_to_shader(const U32& handle);
 
 	//-------------------------------------------------
 	//				Accessor / Mutators
@@ -63,6 +64,7 @@ public:
 	void add_attribute_location(StreamType type, const char* name);
 	void bind_shader_attribute(U32 shader_handle);
 
+	
 
 private:
 	ShaderComponentData _data;
