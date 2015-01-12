@@ -9,7 +9,7 @@
 #include "shader_pass.h"
 #include "assets.h"
 
-#include "json_parser.h"
+
 namespace deuterium
 {
 

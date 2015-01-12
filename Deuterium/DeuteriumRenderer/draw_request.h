@@ -17,6 +17,6 @@ namespace deuterium
 		U32	_mesh_handle;
 		U32 _material_handle;
 		Mat4x4& _transform;
-		ShaderPass::PassType _type;
+		U32 _type;
 	};
 }

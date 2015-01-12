@@ -1,5 +1,6 @@
 #include "render_pass.h"
 #include "rendering_assets_library.h"
+#include "d_ptr.h"
 namespace deuterium
 {
 	RenderPass::RenderPass()
@@ -11,6 +12,15 @@ namespace deuterium
 	{
 
 	}
+
+	//-------------------------------------
+	//			Instantiation Functions
+	//-------------------------------------
+	void RenderPass::compile(U32 id)
+	{
+
+	}
+
 
 
 	//-------------------------------------
@@ -25,14 +35,14 @@ namespace deuterium
 
 	void RenderPass::render()
 	{
-		for (int i = 0; i < _shaderPassDA.size(); ++i)
+		for (U32 i = 0; i < _shaderPassDA.size(); ++i)
 		{
 			ShaderPass& p = _shaderPassDA[i].value();
 
 			//Bind the shader and set the appropriate render states
 			p.begin_pass();
 
-			for (int j = 0; j < _draw_requestDA.size(); ++j)
+			for (U32 j = 0; j < _draw_requestDA.size(); ++j)
 			{
 				if (p.type() == _draw_requestDA[j]->_type)
 				{

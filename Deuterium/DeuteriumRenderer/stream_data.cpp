@@ -97,7 +97,7 @@ namespace deuterium
 	{
 
 	}
-	U32	StreamData::GetStreamComponentOffset(StreamType i_Type)
+	U32	StreamData::GetStreamComponentOffset(VertexAttributeType i_Type)
 	{
 		for(U32 i = 0; i < _stream_component_list.size(); ++i)
 		{
@@ -125,7 +125,7 @@ namespace deuterium
 		glBindBuffer(GL_ARRAY_BUFFER,NULL);
 	}
 
-	U32	StreamData::GetStreamTypeByteSize(StreamType i_StreamType)
+	U32	StreamData::GetStreamTypeByteSize(VertexAttributeType i_StreamType)
 	{
 		for(U32 i = 0; i < _stream_component_list.size();++i)
 		{
@@ -137,11 +137,11 @@ namespace deuterium
 		return 0;
 	}
 
-	U32 StreamData::get_attribute_index(StreamType type)
+	U32 StreamData::get_attribute_index(VertexAttributeType type)
 	{
 		U32 i = 0;
 		U32 t = type;
-		if(type >= StreamType::NULL0)
+		if(type >= VertexAttributeType::NULL0)
 			return -1;
 		while(t)
 		{
@@ -152,21 +152,21 @@ namespace deuterium
 		}
 	}
 
-	StreamType StreamData::to_enum(const char* type)
+	VertexAttributeType StreamData::to_enum(const char* type)
 	{
 		std::string t_str(type);
 		StringHelper::trim(t_str);
-		for(int i = 1; i < StreamType::NULL0; i = i<<1)
+		for(int i = 1; i < VertexAttributeType::NULL0; i = i<<1)
 		{
-			if(StringHelper::is_identical_string(StreamData::to_string((StreamType)i),t_str))
+			if(StringHelper::is_identical_string(StreamData::to_string((VertexAttributeType)i),t_str))
 			{
-				return (StreamType)i;
+				return (VertexAttributeType)i;
 			}
 		}
-		return StreamType::NULL0;
+		return VertexAttributeType::NULL0;
 	}
 	
-	const char* StreamData::to_string(StreamType type)
+	const char* StreamData::to_string(VertexAttributeType type)
 	{
 		switch(type)
 		{
@@ -201,7 +201,7 @@ namespace deuterium
 		}
 	}
 	
-	const char* StreamData::get_primitive_glsl_type_string(StreamType type)
+	const char* StreamData::get_primitive_glsl_type_string(VertexAttributeType type)
 	{
 		switch(type)
 		{

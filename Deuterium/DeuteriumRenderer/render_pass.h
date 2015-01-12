@@ -4,12 +4,19 @@
 namespace deuterium
 {
 
-	class RenderPass
+	class RenderPass 
+		: public IAsset
 	{
 
 	public:
 		RenderPass();
 		~RenderPass();
+
+		//-------------------------------------
+		//			Instantiation Functions
+		//-------------------------------------
+		void		compile(U32 id);
+		void		load_meta(const dPtr<MetaNode> node);
 
 		//-------------------------------------
 		//			Rendering Functions

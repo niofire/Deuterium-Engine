@@ -33,6 +33,10 @@
     </ClInclude>
     <ClInclude Include="rendering_assets_library.h" />
     <ClInclude Include="rendering_asset.h" />
+    <ClInclude Include="stream_data.h" />
+    <ClInclude Include="..\Common\string_helper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="renderer.cpp">
@@ -76,6 +80,10 @@
     </ClCompile>
     <ClCompile Include="rendering_assets_library.cpp" />
     <ClCompile Include="rendering_asset.cpp" />
+    <ClCompile Include="stream_data.cpp" />
+    <ClCompile Include="..\Common\string_helper.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Renderer">

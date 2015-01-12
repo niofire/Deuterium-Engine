@@ -16,11 +16,11 @@ namespace deuterium
 	//-----------------------------------------------------
 	//				Material Operations
 	//-----------------------------------------------------
-	void	Material::bind_material()
+	void	Material::bind_material() const
 	{
 
 	}
-	void	Material::unbind_material()
+	void	Material::unbind_material() const
 	{
 
 	}

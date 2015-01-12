@@ -5,27 +5,24 @@ namespace deuterium
 
 //The RenderPipe class stores all of the rendering pipeline's data, mainly
 // the render process and the compiled shader resources
-class RenderPipe
+class RenderPipe :
+	public IAsset
 {
 	
 public:
 	RenderPipe(void);
 	~RenderPipe(void);
 
-
 	//------------------------------------------------------
 	//			Initializing Functions
 	//------------------------------------------------------
 
-	//load .render_pipe file in order to assign a render proces to the RenderPipe
-	bool load_render_pipe(const char* render_pipe_filename);
-
 	//compile all passes used by the RenderPipe to the current GL context
-	bool compile_render_pipe();
+	void compile(	U32 id);
+	void load_meta(const dPtr<MetaNode> node);
 	//------------------------------------------------------
 	//			Renderpass Functions
 	//------------------------------------------------------
-
 	// Accessor/mutator
 	const	std::string&	get_render_pass_name(U32 pass_id);
 	const	U32				get_render_pass_id(const std::string& name);
@@ -37,11 +34,9 @@ public:
 	//------------------------------------------------------
 	//			Rendering Functions
 	//------------------------------------------------------
-	void			flush_render_pipe();
+	void					flush_render_pipe();
 
 private:
 	std::vector<RenderPass> _render_pass_DA;
-	std::vector<ShaderComponent> _shader_components;
-
 };
 }

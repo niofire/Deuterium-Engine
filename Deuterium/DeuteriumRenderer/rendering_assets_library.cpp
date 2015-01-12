@@ -18,6 +18,8 @@ namespace deuterium
 
 	}
 
+	dPtr<RenderingAssetLibrary> RenderingAssetLibrary::s_assetLibrary;
+
 	RenderingAssetLibrary& RenderingAssetLibrary::instance()
 	{
 		if (s_assetLibrary.is_null())

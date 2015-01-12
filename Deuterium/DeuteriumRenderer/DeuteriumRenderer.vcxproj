@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStaticPC|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -52,7 +52,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugStaticPC|Win32'">
-    <OutDir>$(SolutionDir)Output</OutDir>
+    <OutDir>$(SolutionDir)Output\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -69,12 +69,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Common\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Common\;$(SolutionDir)\DeuteriumAssetLibrary\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;DEUTERIUM_PC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Common\3rdParty</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Common\3rdParty;$(OutDir)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>DeuteriumAssetLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -93,6 +94,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\deuterium_math.h" />
+    <ClInclude Include="..\Common\string_helper.h" />
     <ClInclude Include="..\Common\void_d_ptr.h" />
     <ClInclude Include="draw_request.h" />
     <ClInclude Include="rendering_asset.h" />
@@ -104,9 +106,11 @@
     <ClInclude Include="shader_component.h" />
     <ClInclude Include="shader_parameter.h" />
     <ClInclude Include="shader_pass.h" />
+    <ClInclude Include="stream_data.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\deuterium_math.cpp" />
+    <ClCompile Include="..\Common\string_helper.cpp" />
     <ClCompile Include="..\Common\void_d_ptr.cpp" />
     <ClCompile Include="material.cpp" />
     <ClCompile Include="renderer.cpp" />
@@ -121,6 +125,7 @@
     <ClCompile Include="shader_component.cpp" />
     <ClCompile Include="shader_parameter.cpp" />
     <ClCompile Include="shader_pass.cpp" />
+    <ClCompile Include="stream_data.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

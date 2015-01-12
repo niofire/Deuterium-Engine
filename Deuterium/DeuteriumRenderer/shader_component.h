@@ -3,30 +3,13 @@
 #include <vector>
 #include "shader_parameter.h"
 #include "stream_data.h"
+#include "IAsset.h"
 
 namespace deuterium
 {
-class ShaderComponent
+	class AssetMeta;
+class ShaderComponent : public IAsset
 {
-
-	struct AttributeLocation
-	{
-		AttributeLocation(U32 attrib_stream_type, std::string attrib_name)
-		{
-			_attrib_stream_type = attrib_stream_type;
-			_attrib_name = attrib_name;
-		}
-			U32 _attrib_stream_type;
-			std::string _attrib_name;
-	};
-
-	struct ShaderComponentData
-	{
-		GLenum _shader_type;
-		std::string _shader_content;
-		std::vector<AttributeLocation>		_attribute_location_DA;
-		std::string							_name;		
-	};
 
 public:
 	ShaderComponent();
@@ -35,25 +18,17 @@ public:
 	//-------------------------------------------------
 	//				Initialization Functions
 	//-------------------------------------------------
-	void load(std::vector<std::string>& file_content);
-	void compile();
-	void attach_to_shader(const U32& handle);
 
+	void attach_to_shader(const U32& handle);
+	void compile(U32 id);
 	//-------------------------------------------------
 	//				Accessor / Mutators
 	//-------------------------------------------------
-	
 	//Name of the shader, is unique.
-	void	set_name(std::string& name) { _data._name = name;}
-	const	std::string& name() const { return _data._name;}
-
-	//The shader source code used to compile the component
-	void	set_source(std::string str) { _data._shader_content = str;}
-	const	std::string source() const {return _data._shader_content;}
-
+	const	std::string& name();
+	
 	//Shader type, either GL_VERTEX or GL_FRAGMENT
-	void	set_type(GLenum type) {_data._shader_type = type;}
-	U32		type()	{return _data._shader_type;}
+	U32		type();
 
 	//The ShaderComponent rendering handle
 	const	 U32 handle() const {return _component_handle;}
@@ -61,13 +36,10 @@ public:
 	//-------------------------------------------------
 	//				Shader Handling function
 	//-------------------------------------------------
-	void add_attribute_location(StreamType type, const char* name);
 	void bind_shader_attribute(U32 shader_handle);
 
-	
-
 private:
-	ShaderComponentData _data;
+	dPtr<ShaderComponentMetaNode> meta_ptr();
 	bool	_is_compiled;
 	U32	_component_handle;
 

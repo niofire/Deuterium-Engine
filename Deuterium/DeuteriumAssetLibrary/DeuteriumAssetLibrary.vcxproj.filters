@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="dll_exporter.h" />
+    <ClInclude Include="asset_library.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="IAsset.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="meta_node.h" />
+    <ClInclude Include="meta_data_value.h" />
+    <ClInclude Include="meta_asset.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_attribute_type.h">
+      <Filter>Assets\RenderPipe</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_component_meta_node.h">
+      <Filter>Assets\RenderPipe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="asset_library.cpp">
+      <Filter>Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="meta_node.cpp" />
+    <ClCompile Include="meta_data_value.cpp" />
+    <ClCompile Include="meta_asset.cpp">
+      <Filter>Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_component_meta_node.cpp">
+      <Filter>Assets\RenderPipe</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="JsonParsing">
+      <UniqueIdentifier>{d129b5ca-6fee-4e41-ac9c-a2d1ed29073d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{f78ee488-4b9f-4316-9eee-8517626a87d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\RenderPipe">
+      <UniqueIdentifier>{3c451d46-f652-4916-b214-24d2bf8a0d25}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

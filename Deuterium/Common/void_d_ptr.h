@@ -2,6 +2,7 @@
 #define NULL 0
 #include <iostream>
 #include "d_typedef.h"
+#define VOID_ASSIGNMENT(type, left,right) *((type*)left) = *((type*)right);
 /* The dPtr class
  *
  *

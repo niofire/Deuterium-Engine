@@ -8,7 +8,7 @@
  *
 */
 
-#define dPtr_CAST(new_type,dPtr_var) *((dPtr<Type>*)&var);
+#define dPtr_CAST(new_type,dPtr_var) *((dPtr<new_type>*)&dPtr_var);
 template <class T>
 class dPtr
 	{

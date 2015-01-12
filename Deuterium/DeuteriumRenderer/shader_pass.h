@@ -4,7 +4,7 @@
 //Takes in two shader components and various sampler states settings
 namespace deuterium
 {
-class ShaderPass
+	class ShaderPass : public IAsset
 {
 public:
 	//-------------------------------------------------
@@ -42,12 +42,14 @@ public:
 	//-------------------------------------------------
 	//				Initialization Functions
 	//-------------------------------------------------
-	bool	compile_pass();
+	void	compile(U32 id);
 
 	//Compile the vertex and fragment shader components
 	//returns false if compilation does not succeed
 	bool	compile_components();
 
+
+	void load_meta(const dPtr<MetaNode> node);
 	//-------------------------------------------------
 	//				Rendering Functions
 	//-------------------------------------------------

@@ -33,7 +33,9 @@ bool ShaderPass::compile_components()
 
 	return true;
 }
-bool ShaderPass::compile_pass()
+
+
+void ShaderPass::compile(U32 id)
 {
 	//compile the components we an updated uniform buffer
 	this->compile_components();
@@ -58,7 +60,6 @@ bool ShaderPass::compile_pass()
 		
 		glLinkProgram(_shader._handle);
 
-	return true;
 }
 
 
